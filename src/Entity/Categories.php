@@ -25,11 +25,21 @@ class Categories
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="categories")
+     * @ORM\ManyToMany(targetEntity=user::class, inversedBy="categories")
      */
     private $user;
 
+    /**
+     * @ORM\OneToOne(targetEntity=categories::class, cascade={"persist", "remove"})
+     */
+    private $categorie;
 
+    public function __construct()
+    {
+        $this->user = new ArrayCollection();
+    }
+
+  
    
     public function getId(): ?int
     {
@@ -55,15 +65,42 @@ class Categories
         return $this->getName();
     }
 
-    public function getUser(): ?user
+    /**
+     * @return Collection|user[]
+     */
+    public function getUser(): Collection
     {
         return $this->user;
     }
 
-    public function setUser(?user $user): self
+    public function addUser(user $user): self
     {
-        $this->user = $user;
+        if (!$this->user->contains($user)) {
+            $this->user[] = $user;
+        }
 
         return $this;
     }
+
+    public function removeUser(user $user): self
+    {
+        $this->user->removeElement($user);
+
+        return $this;
+    }
+
+    public function getCategorie(): ?categories
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?categories $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+  
+
 }

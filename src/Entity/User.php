@@ -130,7 +130,7 @@ class User implements UserInterface
     private $amis_id;
 
     /**
-     * @ORM\OneToMany(targetEntity=Categories::class, mappedBy="user")
+     * @ORM\ManyToMany(targetEntity=Categories::class, mappedBy="user")
      */
     private $categories;
 
@@ -139,6 +139,7 @@ class User implements UserInterface
         $this->categories = new ArrayCollection();
     }
 
+   
   
 
     public function getId(): ?int
@@ -451,7 +452,7 @@ class User implements UserInterface
     {
         if (!$this->categories->contains($category)) {
             $this->categories[] = $category;
-            $category->setUser($this);
+            $category->addUser($this);
         }
 
         return $this;
@@ -460,15 +461,11 @@ class User implements UserInterface
     public function removeCategory(Categories $category): self
     {
         if ($this->categories->removeElement($category)) {
-            // set the owning side to null (unless already changed)
-            if ($category->getUser() === $this) {
-                $category->setUser(null);
-            }
+            $category->removeUser($this);
         }
 
         return $this;
     }
 
-    
     
 }
