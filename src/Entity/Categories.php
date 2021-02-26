@@ -29,9 +29,15 @@ class Categories
      */
     private $sousCategories;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="categories")
+     */
+    private $User_id;
+
     public function __construct()
     {
         $this->sousCategories = new ArrayCollection();
+        $this->User_id = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -77,6 +83,30 @@ class Categories
                 $sousCategory->setCategories(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUserId(): Collection
+    {
+        return $this->User_id;
+    }
+
+    public function addUserId(User $userId): self
+    {
+        if (!$this->User_id->contains($userId)) {
+            $this->User_id[] = $userId;
+        }
+
+        return $this;
+    }
+
+    public function removeUserId(User $userId): self
+    {
+        $this->User_id->removeElement($userId);
 
         return $this;
     }
