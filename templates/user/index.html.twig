@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+                <th>Sexe</th>
+                <th>Point</th>
+                <th>Date_inscription</th>
+                <th>Date_naissance</th>
+                <th>Date_connexion</th>
+                <th>Recherche</th>
+                <th>Situation</th>
+                <th>Profession</th>
+                <th>Ville</th>
+                <th>Dapartement</th>
+                <th>Image_fond</th>
+                <th>Taille</th>
+                <th>Cheveux</th>
+                <th>Astrologique</th>
+                <th>Amis_id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.sexe }}</td>
+                <td>{{ user.point }}</td>
+                <td>{{ user.dateInscription ? user.dateInscription|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.dateNaissance ? user.dateNaissance|date('Y-m-d') : '' }}</td>
+                <td>{{ user.dateConnexion ? user.dateConnexion|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.recherche }}</td>
+                <td>{{ user.situation }}</td>
+                <td>{{ user.profession }}</td>
+                <td>{{ user.ville }}</td>
+                <td>{{ user.dapartement }}</td>
+                <td>{{ user.imageFond }}</td>
+                <td>{{ user.taille }}</td>
+                <td>{{ user.cheveux }}</td>
+                <td>{{ user.astrologique }}</td>
+                <td>{{ user.amisId }}</td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="23">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}">Create new</a>
+{% endblock %}

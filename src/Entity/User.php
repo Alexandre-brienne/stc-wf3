@@ -11,7 +11,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
+ * @UniqueEntity(fields={"username"}, message="je suis vraiment dessolé mais ce pseudo existe déja :(")
+ * @UniqueEntity(fields={"email"}, message="je suis vraiment dessolé mais l'adresse existe déja :(")
  */
 class User implements UserInterface
 {
@@ -39,7 +40,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,nullable=true)
      */
     private $nom;
 

@@ -13,7 +13,7 @@ class CategoriesType extends AbstractType
     {
         $builder
             ->add('name')
-            // ->add('User_id')
+            ->add('User_id')
         ;
     }
 

@@ -34,20 +34,19 @@ class RegistrationController extends AbstractController
             $user->setSexe("homme");
             $user->setNom("alexandre");
             $user->setPrenom("toto");
-            $user->setEmail("alexandre@gmail.com");
-            $user->setPoint(10);
-            $user->setRecherche("femme");
-            $user->setSituation("celibaitre");
-            $user->setProfession("blabla");
-            $user->setDapartement("13");
-            $user->setImageFond("toot.jpg");
-            $user->setCheveux("toot.jpg");
-            $user->setAstrologique("lion");
-            $user->setAmisId(5);
+            // $user->setPoint(10);
+
+        
+ 
+
+
+
+
+            // $user->setAmisId(5);
          
             $user->setDateInscription(new \DateTime());
             $user->setDateNaissance(new \DateTime());
-            $user->setDateConnexion(new \DateTime());
+
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
