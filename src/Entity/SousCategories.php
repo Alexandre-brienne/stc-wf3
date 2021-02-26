@@ -23,9 +23,11 @@ class SousCategories
     private $nom;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity=categories::class, inversedBy="sousCategories")
      */
-    private $categorie_id;
+    private $categories;
+
+   
 
     public function getId(): ?int
     {
@@ -52,6 +54,18 @@ class SousCategories
     public function setCategorieId(int $categorie_id): self
     {
         $this->categorie_id = $categorie_id;
+
+        return $this;
+    }
+
+    public function getCategories(): ?categories
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(?categories $categories): self
+    {
+        $this->categories = $categories;
 
         return $this;
     }

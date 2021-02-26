@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CategoriesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,6 +24,16 @@ class Categories
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(targetEntity=SousCategories::class, mappedBy="categories")
+     */
+    private $sousCategories;
+
+    public function __construct()
+    {
+        $this->sousCategories = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +47,36 @@ class Categories
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SousCategories[]
+     */
+    public function getSousCategories(): Collection
+    {
+        return $this->sousCategories;
+    }
+
+    public function addSousCategory(SousCategories $sousCategory): self
+    {
+        if (!$this->sousCategories->contains($sousCategory)) {
+            $this->sousCategories[] = $sousCategory;
+            $sousCategory->setCategories($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSousCategory(SousCategories $sousCategory): self
+    {
+        if ($this->sousCategories->removeElement($sousCategory)) {
+            // set the owning side to null (unless already changed)
+            if ($sousCategory->getCategories() === $this) {
+                $sousCategory->setCategories(null);
+            }
+        }
 
         return $this;
     }
