@@ -25,21 +25,12 @@ class Categories
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity=SousCategories::class, mappedBy="categories")
+     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="categories")
      */
-    private $sousCategories;
+    private $user;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="categories")
-     */
-    private $User_id;
 
-    public function __construct()
-    {
-        $this->sousCategories = new ArrayCollection();
-        $this->User_id = new ArrayCollection();
-    }
-
+   
     public function getId(): ?int
     {
         return $this->id;
@@ -57,63 +48,22 @@ class Categories
         return $this;
     }
 
-    /**
-     * @return Collection|SousCategories[]
-     */
-    public function getSousCategories(): Collection
-    {
-        return $this->sousCategories;
-    }
-
-    public function addSousCategory(SousCategories $sousCategory): self
-    {
-        if (!$this->sousCategories->contains($sousCategory)) {
-            $this->sousCategories[] = $sousCategory;
-            $sousCategory->setCategories($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSousCategory(SousCategories $sousCategory): self
-    {
-        if ($this->sousCategories->removeElement($sousCategory)) {
-            // set the owning side to null (unless already changed)
-            if ($sousCategory->getCategories() === $this) {
-                $sousCategory->setCategories(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|User[]
-     */
-    public function getUserId(): Collection
-    {
-        return $this->User_id;
-    }
-
-    public function addUserId(User $userId): self
-    {
-        if (!$this->User_id->contains($userId)) {
-            $this->User_id[] = $userId;
-        }
-
-        return $this;
-    }
-
-    public function removeUserId(User $userId): self
-    {
-        $this->User_id->removeElement($userId);
-
-        return $this;
-    }
 
     
     public function __toString()
     {
         return $this->getName();
+    }
+
+    public function getUser(): ?user
+    {
+        return $this->user;
+    }
+
+    public function setUser(?user $user): self
+    {
+        $this->user = $user;
+
+        return $this;
     }
 }
