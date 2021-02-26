@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+
+use App\Entity\User;
 use App\Entity\Categories;
 use App\Form\CategoriesType;
 use App\Repository\CategoriesRepository;
@@ -24,17 +26,23 @@ class CategoriesController extends AbstractController
     #[Route('/new', name: 'categories_new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
     {
+        $user = new User();
         $category = new Categories();
         $form = $this->createForm(CategoriesType::class, $category);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $category->getUserId($user);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($category);
             $entityManager->flush();
 
             return $this->redirectToRoute('categories_index');
         }
+
 
         return $this->render('categories/new.html.twig', [
             'category' => $category,
