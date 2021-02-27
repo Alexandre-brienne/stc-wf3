@@ -134,6 +134,11 @@ class User implements UserInterface
      */
     private $categories;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image_profil;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
@@ -463,6 +468,18 @@ class User implements UserInterface
         if ($this->categories->removeElement($category)) {
             $category->removeUser($this);
         }
+
+        return $this;
+    }
+
+    public function getImageProfil(): ?string
+    {
+        return $this->image_profil;
+    }
+
+    public function setImageProfil(?string $image_profil): self
+    {
+        $this->image_profil = $image_profil;
 
         return $this;
     }

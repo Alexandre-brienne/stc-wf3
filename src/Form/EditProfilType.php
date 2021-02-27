@@ -11,18 +11,34 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\Length;
-
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints\Image;
 
 class EditProfilType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-
+            
             ->add('nom', textType::class)
             ->add('prenom', textType::class)
             ->add('email', textType::class)
+            ->add('image_profil',FileType::class,[
+                "label" => "votre image de profil",
+                "required" => false,
+                "constraints" => [
+                    new Image([
+                        // "maxsize" => "10240k",
+                        'minWidth' => 250,
+                        'maxWidth' => 250,
+                        'minHeight' => 400,
+                        'maxHeight' => 400,
+                    ])
+                ]
+
+            ])
             ->add('sexe', ChoiceType::class, [
                 'choices' => [
                     'Homme' => 'Homme',
