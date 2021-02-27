@@ -24,7 +24,7 @@ class MembreController extends AbstractController
         ]);
     }
 
-    #[Route('/profil/{id}/edit', name: 'profil_edit', methods: ['GET', 'POST'])]
+    #[Route('/profil/{username}/edit', name: 'profil_edit', methods: ['GET', 'POST'])]
 
     public function edit(Request $request, User $user): Response
     {
