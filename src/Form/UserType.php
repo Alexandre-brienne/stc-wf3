@@ -34,6 +34,7 @@ class UserType extends AbstractType
             ->add('astrologique')
             ->add('amis_id')
             ->add('categories')
+            
         ;
     }
 

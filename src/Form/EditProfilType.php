@@ -26,15 +26,16 @@ class EditProfilType extends AbstractType
             ->add('prenom', textType::class)
             ->add('email', textType::class)
             ->add('image_profil',FileType::class,[
+                'data_class' => null,
                 "label" => "votre image de profil",
                 "required" => false,
                 "constraints" => [
                     new Image([
                         // "maxsize" => "10240k",
-                        'minWidth' => 250,
-                        'maxWidth' => 250,
-                        'minHeight' => 400,
-                        'maxHeight' => 400,
+                        'minWidth' => 200,
+                        'maxWidth' => 1000,
+                        'minHeight' => 200,
+                        'maxHeight' => 1000,
                     ])
                 ]
 
@@ -64,7 +65,9 @@ class EditProfilType extends AbstractType
             ])
             ->add('profession', textType::class)
             ->add('ville' ,textType::class)
-            ->add('dapartement', textType::class)
+            ->add('dapartement', textType::class,[
+                'label' => 'votre departement ?'
+            ])
             ->add('taille', textType::class)
             ->add('cheveux' ,textType::class)
             ->add('astrologique', ChoiceType::class, [

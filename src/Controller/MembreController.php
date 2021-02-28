@@ -11,7 +11,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 #[Route('/membre')]
 class MembreController extends AbstractController
@@ -24,9 +25,18 @@ class MembreController extends AbstractController
         ]);
     }
 
+    #[Route('/profil/{username}', name: 'profil', methods: ['GET'])]
+    public function profil(User $user): Response
+    {
+        return $this->render('user/show.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
+
     #[Route('/profil/{username}/edit', name: 'profil_edit', methods: ['GET', 'POST'])]
 
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request, User $user, SluggerInterface $slugger): Response
     {
         $userConnecte = $this->getUser();
         $userprofil = $user->getId();
@@ -37,8 +47,34 @@ class MembreController extends AbstractController
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                $this->getDoctrine()->getManager()->flush();
+                $imageFile = $form->get('image_profil')->getData();
 
+                if ($imageFile) {
+                    $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                    $safeFilename = $slugger->slug($originalFilename);
+                    $newFilename  = md5(uniqid()) . '.' . $imageFile->guessExtension();
+                    try {
+                        $imageFile->move(
+                            $this->getParameter('images_directory'),    // dossier cible
+                            $newFilename
+                        );
+                    } catch (FileException $e) {
+                        // ... handle exception if something happens during file upload
+                    }
+
+                    // supprimer l'image d'avant
+                    $dossierUpload = $this->getParameter('images_directory');
+                    $fichierImage = "$dossierUpload/" . $user->getImageProfil();
+                    if (is_file($fichierImage)) {
+                        unlink($fichierImage);
+                    }
+
+                    $user->setImageProfil($newFilename);
+                }
+
+
+
+                $this->getDoctrine()->getManager()->flush();
                 return $this->redirectToRoute('user_index');
             }
 
@@ -46,7 +82,7 @@ class MembreController extends AbstractController
                 'user' => $user,
                 'form' => $form->createView(),
             ]);
-        }else{
+        } else {
 
             return $this->redirectToRoute('membre');
         }
