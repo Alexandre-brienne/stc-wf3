@@ -25,7 +25,8 @@ class Categories
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=user::class, inversedBy="categories")
+     * @ORM\ManyToMany(targetEntity=user::class, inversedBy="categories",fetch="EAGER")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $user;
 

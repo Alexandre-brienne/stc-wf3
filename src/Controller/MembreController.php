@@ -56,10 +56,10 @@ class MembreController extends AbstractController
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $imageFile = $form->get('image_profil')->getData();
-
+                
                 if ($imageFile) {
                     $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
-                    $safeFilename = $slugger->slug($originalFilename);
+                    // $safeFilename = $slugger->slug($originalFilename);
                     $newFilename  = md5(uniqid()) . '.' . $imageFile->guessExtension();
                     try {
                         $imageFile->move(
@@ -67,7 +67,7 @@ class MembreController extends AbstractController
                             $newFilename
                         );
                     } catch (FileException $e) {
-                        // ... handle exception if something happens during file upload
+                        // ... handle exception if something happens d uring file upload
                     }
 
                     // supprimer l'image d'avant

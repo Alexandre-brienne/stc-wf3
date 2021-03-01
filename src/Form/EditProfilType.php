@@ -28,6 +28,7 @@ class EditProfilType extends AbstractType
             ->add('image_profil',FileType::class,[
                 'data_class' => null,
                 "label" => "votre image de profil",
+                "empty_data" => 'acune image', 
                 "required" => false,
                 "constraints" => [
                     new Image([
