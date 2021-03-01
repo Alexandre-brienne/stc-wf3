@@ -1,78 +1,83 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}User
+{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
+	<h1>User</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Username</th>
-                <td>{{ user.username }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ user.nom }}</td>
-            </tr>
-            <tr>
-                <th>Prenom</th>
-                <td>{{ user.prenom }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <th>Sexe</th>
-                <td>{{ user.sexe }}</td>
-            </tr>
-            <tr>
-                <th>Point</th>
-                <td>{{ user.point }}</td>
-            </tr>
-            <tr>
-                <th>Recherche</th>
-                <td>{{ user.recherche }}</td>
-            </tr>
-            <tr>
-                <th>Situation</th>
-                <td>{{ user.situation }}</td>
-            </tr>
-            <tr>
-                <th>Profession</th>
-                <td>{{ user.profession }}</td>
-            </tr>
-            <tr>
-                <th>Ville</th>
-                <td>{{ user.ville }}</td>
-            </tr>
-            <tr>
-                <th>Dapartement</th>
-                <td>{{ user.dapartement }}</td>
-            </tr>
-            <tr>
-                <th>Taille</th>
-                <td>{{ user.taille }}</td>
-            </tr>
-            <tr>
-                <th>Cheveux</th>
-                <td>{{ user.cheveux }}</td>
-            </tr>
-            <tr>
-                <th>Astrologique</th>
-                <td>{{ user.astrologique }}</td>
-            </tr>
-             <tr>
-                <th>image profil</th>
-                <td>{{ user.imageprofil }}</td>
-            </tr>
-          
-        </tbody>
-    </table>
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Username</th>
+				<td>{{ user.username }}</td>
+			</tr>
+			<tr>
+				<th>Nom</th>
+				<td>{{ user.nom }}</td>
+			</tr>
+			<tr>
+				<th>Prenom</th>
+				<td>{{ user.prenom }}</td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td>{{ user.email }}</td>
+			</tr>
+			<tr>
+				<th>Sexe</th>
+				<td>{{ user.sexe }}</td>
+			</tr>
+			<tr>
+				<th>Point</th>
+				<td>{{ user.point }}</td>
+			</tr>
+			<tr>
+				<th>Recherche</th>
+				<td>{{ user.recherche }}</td>
+			</tr>
+			<tr>
+				<th>Situation</th>
+				<td>{{ user.situation }}</td>
+			</tr>
+			<tr>
+				<th>Profession</th>
+				<td>{{ user.profession }}</td>
+			</tr>
+			<tr>
+				<th>Ville</th>
+				<td>{{ user.ville }}</td>
+			</tr>
+			<tr>
+				<th>Dapartement</th>
+				<td>{{ user.dapartement }}</td>
+			</tr>
+			<tr>
+				<th>Taille</th>
+				<td>{{ user.taille }}</td>
+			</tr>
+			<tr>
+				<th>Cheveux</th>
+				<td>{{ user.cheveux }}</td>
+			</tr>
+			<tr>
+				<th>Astrologique</th>
+				<td>{{ user.astrologique }}</td>
+			</tr>
+			<tr>
+				<th>image profil</th>
+				<td>{{ user.imageprofil }}</td>
+			</tr>
+			<tr>
+				<th>categorie</th>
+                <td>
+                    {{ dump(user.categories) }}
+                </td>
+			</tr>
+            <pre>
+                {{ dump(user) }}
+            </pre>
+		</tbody>
+	</tr>
 
- 
-
-    <a href="{{ path('profil_edit', {'username': user.username}) }}">edit</a>
-
-{% endblock %}
+</tbody></table><a href="{{ path('profil_edit', {'username': user.username}) }}">edit</a>{% endblock %}
