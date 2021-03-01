@@ -49,10 +49,27 @@
 						</a>
 					</div>
 					<div class="login-container">
-						<form action="/action_page.php">
-							<input type="text" placeholder="Pseudo" name="username">
-							<input type="password" placeholder="Mot de passe" name="psw">
-							<button type="submit">connexion</button>
+						<form method="POST">
+							{% if error %}
+								<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+							{% endif %}
+
+							{% if app.user %}
+								<div class="logininfomation">
+									<p>Vous etes connecté
+										{{ app.user.username }}
+									</p>
+									<a href="{{ path('app_logout') }}">Se deconnecter</a>
+								</div>
+
+							{% else %}
+								<input type="text" placeholder="Pseudo" value="{{ last_username }}" id="inputUsername" name="username" required autofocus>
+								<input type="password" placeholder="Mot de passe" id="inputPassword" name="password">
+								<input type="hidden" name="_csrf_token" value="{{csrf_token('authenticate')}}">
+								<button type="submit">connexion</button>
+							{% endif %}
+
+
 						</form>
 						<a class="Contact" href="">Contacter-Nous</a>
 					</div>
@@ -60,22 +77,20 @@
 
 
 				<div class="container">
-					<div class ="logos">
-						<img  class ="imagelogo"src="image/logo_geekandstart.png" alt="">
+					<div class="logos">
+						<img class="imagelogo" src="image/logo_geekandstart.png" alt="">
 					</div>
-					<section>
+					<section class='phrase'>
 						<article>
-							<p>PHRASES D'ACCROCHE :
-								                    Lorem ipsum dolor sit amet consectetur
-								                    adipisicing elit. Ab mollitia impedit,
-								                    ad aliquid fugit, nobis maxime, quis at
-								                    veritatis quas nulla consequuntur.
-								                    Magnam explicabo molestiae, atque
-								                    perferendis ipsam molestias rerum!
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+																																																								                    adipisicing elit. Ab mollitia impedit,
+																																																								                    ad aliquid fugit, nobis maxime, quis at
+																																																								                    veritatis quas nulla consequuntur.
+																																																								                    Magnam explicabo molestiae, atque
+																																																								                    perferendis ipsam molestias rerum!
 							</p>
 						</article>
-
-
 					</section>
 
 					<form id="form-welcom">
@@ -104,28 +119,28 @@
 				<section>
 					<h2>Pourquoi nous rej</h2>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing
-						                elit. Quia ab nihil repellat illum sit alias impedit
-						                eius laudantium dolorem inventore rem iusto eum,
-						                doloribus perferendis veniam doloremque itaque debitis
-						                velit beatae rerum? Sunt iure explicabo magni impedit
-						                ad earum omnis obcaecati corporis, officiis ipsum
-						                eveniet enim numquam ex blanditiis libero!</p>
+																																										                elit. Quia ab nihil repellat illum sit alias impedit
+																																										                eius laudantium dolorem inventore rem iusto eum,
+																																										                doloribus perferendis veniam doloremque itaque debitis
+																																										                velit beatae rerum? Sunt iure explicabo magni impedit
+																																										                ad earum omnis obcaecati corporis, officiis ipsum
+																																										                eveniet enim numquam ex blanditiis libero!</p>
 
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing
-						                elit. Quia ab nihil repellat illum sit alias impedit
-						                eius laudantium dolorem inventore rem iusto eum,
-						                doloribus perferendis veniam doloremque itaque debitis
-						                velit beatae rerum? Sunt iure explicabo magni impedit
-						                ad earum omnis obcaecati corporis, officiis ipsum
-						                eveniet enim numquam ex blanditiis libero!</p>
+																																										                elit. Quia ab nihil repellat illum sit alias impedit
+																																										                eius laudantium dolorem inventore rem iusto eum,
+																																										                doloribus perferendis veniam doloremque itaque debitis
+																																										                velit beatae rerum? Sunt iure explicabo magni impedit
+																																										                ad earum omnis obcaecati corporis, officiis ipsum
+																																										                eveniet enim numquam ex blanditiis libero!</p>
 
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing
-						                elit. Quia ab nihil repellat illum sit alias impedit
-						                eius laudantium dolorem inventore rem iusto eum,
-						                doloribus perferendis veniam doloremque itaque debitis
-						                velit beatae rerum? Sunt iure explicabo magni impedit
-						                ad earum omnis obcaecati corporis, officiis ipsum
-						                eveniet enim numquam ex blanditiis libero!</p>
+																																										                elit. Quia ab nihil repellat illum sit alias impedit
+																																										                eius laudantium dolorem inventore rem iusto eum,
+																																										                doloribus perferendis veniam doloremque itaque debitis
+																																										                velit beatae rerum? Sunt iure explicabo magni impedit
+																																										                ad earum omnis obcaecati corporis, officiis ipsum
+																																										                eveniet enim numquam ex blanditiis libero!</p>
 
 				</section>
 				<!-- J'ai mis des cards pour le moment  -->
@@ -134,41 +149,18 @@
 					<h2>Ils sont deja membre</h2>
 					<div>
 						<!--Grid des User -->
-						<article>
-							<img src="image/index.png" alt="image d'attente">
-							<h3>Amandine du 38</h3>
-							<p>
-								Lorem ipsum dolor sit amet 
-								                            consectetur 1
-							</p>
-
-						</article>
-						<article>
-							<img src="image/index.png" alt="image d'attente">
-							<h3>Arouf Gangsta</h3>
-							<p>
-								Lorem ipsum dolor sit amet 
-								                            consectetur 2
-							</p>
-
-						</article>
-						<article>
-							<img src="image/index.png" alt="image d'attente">
-							<h3>Mounir Mouns</h3>
-							<p>
-								Lorem ipsum dolor sit amet 
-								                            consectetur 3
-							</p>
-
-						</article>
-						<article>
-							<img src="image/index.png" alt="image d'attente">
-							<h3>Woltthy</h3>
-							<p>
-								Lorem ipsum dolor sit amet 
-								                            consectetur 4
-							</p>
-						</article>
+						{% for membre in membres %}
+							<article>
+								<img src="uploads/{{membre.imageProfil}}" alt="image d'attente">
+								<h3>{{membre.username}}</h3>
+								<p>
+									Lorem ipsum dolor sit amet 
+																																																									                            consectetur 1
+								</p>
+							</article>
+                        {% else %}
+                                <p> il n'a pas de membres </p>
+						{% endfor %}
 					</div>
 					<!-- Appel a l'action -->
 					<section>

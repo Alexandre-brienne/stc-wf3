@@ -53,6 +53,17 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     }
     */
 
+
+    public function select5user(){
+        return $this->createQueryBuilder('u')
+        ->orderBy('u.date_connexion', 'DESC')
+        ->setMaxResults(4)
+        ->getQuery()
+        ->getResult()
+    ;
+    }
+
+
     /*
     public function findOneBySomeField($value): ?User
     {

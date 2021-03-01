@@ -60,10 +60,7 @@ class Categories
 
 
     
-    public function __toString()
-    {
-        return $this->getName();
-    }
+ 
 
     /**
      * @return Collection|user[]
@@ -101,6 +98,10 @@ class Categories
         return $this;
     }
 
-  
+    public function __toString()
+    {
+        return $this->getName();
+
+    }
 
 }

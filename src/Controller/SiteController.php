@@ -3,6 +3,8 @@
 namespace App\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\User;
+use App\Form\UserType;
+use App\Repository\UserRepository;
 use App\Form\RegistrationFormType;
 use App\Security\LoginFormAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -10,17 +12,33 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
-
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SiteController extends AbstractController
 {
     #[Route('/', name: 'site')]
-    public function index(): Response
-    {
+    public function index(AuthenticationUtils $authenticationUtils,UserRepository $userRepository): Response
+    {   
+        if ($this->getUser()) {
+            return $this->redirectToRoute('membre');
+        }
+
+
+            $membres = $userRepository->select5user();
+        
+
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $lastUsername = $authenticationUtils->getLastUsername();
         return $this->render('site/index.html.twig', [
-            'controller_name' => 'SiteController',
+            'last_username' => $lastUsername,
+            'error' => $error,
+            "membres" =>$membres,
+           
         ]);
     }
+
+    
+
 
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator): Response
@@ -73,4 +91,5 @@ class SiteController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
+
 }

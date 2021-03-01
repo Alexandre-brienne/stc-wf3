@@ -34,8 +34,6 @@ class CategoriesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
 
-            $category->getUserId($user);
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($category);
             $entityManager->flush();
