@@ -7,20 +7,27 @@ use App\Entity\User;
 use App\Form\EditProfilType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
-
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 #[Route('/membre')]
 class MembreController extends AbstractController
 {
     #[Route('/', name: 'membre')]
-    public function index(): Response
+    public function index(AuthenticationUtils $authenticationUtils,UserRepository $userRepository): Response
     {
+        
+        $id = $this->getUser()->getid();
+        $date = new DateTime(); 
+        $userRepository->editdateconexion($id,$date->format('Y-m-d H:i:s'));
+        
+        
         return $this->render('membre/index.html.twig', [
             'controller_name' => 'MembreController',
         ]);
