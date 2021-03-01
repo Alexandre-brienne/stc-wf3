@@ -28,6 +28,7 @@ a {
 }
 
 header {
+    height: 100vh;
     background-color: #111A39;
     background-image: url(../image/Bannier.png);
     background-size: cover;
@@ -347,8 +348,6 @@ footer p {
 }
 
 
-
-
 /************************************************** Vue ordi *********************************/
 /* Ecran de minimum 1000px */
 @media screen and (min-width:1000px) {
@@ -393,6 +392,8 @@ footer p {
     }
 
     .container {
+        display: flex;
+        flex-wrap: wrap;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -400,18 +401,21 @@ footer p {
         text-align: center;
         color: #699BF7;
         text-shadow: 1px 1px 1px rgb(0, 0, 0);
-        width: 50%;
+        width: 100%;
         padding: 50px;
         box-sizing: border-box;
     }
     
+.logos{
+    width: 100%;
+}
+
     #form-welcom {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1.0rem;
-        margin-left: 30rem;
+
         width: 30rem;
-        margin-bottom: 5rem;
         background-color: rgba(105, 105, 105, 0.5);
         border-radius: 10px;
         padding: 45px;
