@@ -1,0 +1,80 @@
+/* body{
+    margin: 0;
+} */
+
+
+
+
+/* Ce selecteur "selectionne" toute les balises P de notre document */
+p{
+    color: green;
+}
+
+/* Ce selecteur "selectionne" toute les elemants comportant classe "bleue" */
+.bleue{
+        color: blue;
+}
+
+/* Ce selecteur "selectionne" toute les elemants comportant classe "gras" */
+.gras{
+       font-weight: bold;     
+}
+
+/* Ce selecteur "selectionne" l'élément avec l'ID "navigation"*/
+#navigation{
+        /* border-width: 10px ;
+        border-style: double;
+        border-color: rgb(104, 29, 190); */
+        border: 5px double red;
+}
+
+/* On selectionne la "nav */
+/* Les balises nav DANS une balise header */
+header nav{
+/* mettre l'image et le ul cote a cote */
+        display: flex; /* flexbox*/
+        flex-direction: row; /* Direction de la flexbox (Par defaut)*/
+        justify-content: space-between;
+        align-items: center;
+}
+/* Les balises img DANS une nav DANS un header */
+header nav img{
+        width: 100px;
+/* Les balises li DANS ul DANS une nav DANS un header */
+}
+
+head nav ul{
+        margin-right: 20px;
+}
+
+header ul li{
+        display: inline
+}
+/* On utilise JAMAIS margin ou padding pour placer */
+footer{
+    background-color: rgb(161, 113, 184);
+    display: flex;
+}
+footer section{
+    flex: 1 1 100px;
+}
+
+/* 1ére section -> Moitié du footer  */
+/* flex: 2 ;*/
+/*section qui est le 1er enfant dans footer  */
+footer section:first-child{
+    flex: 2;
+}
+
+/* Dans la partie social, le 1er li en gras et le dernier en italique */
+footer ul li:first-child{
+    font-weight: bold;
+}
+
+footer ul li:last-child  {
+    font-style: italic;
+}
+
+footer ul li:nth-child(2) {
+        background-color: rgb(251, 255, 0);
+}

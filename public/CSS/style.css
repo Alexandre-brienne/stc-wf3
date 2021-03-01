@@ -1,0 +1,435 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111A39;
+    font-size: 1.6rem;
+    
+    /* => 16px */
+
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    /* Sélecteur root, ou sélecteur racine */
+    /* On y difinit la taille de  irem */
+    font-size: 10px;
+
+    /* On y définnit os variable CSS */
+    /* --nom: valeur */
+    --rouge: #79f4fd;
+    /* On nomme la couleur #ff0000 sous le nom rouge */
+    --bleu: #0000ff;
+    --bordure: 1px solid var(--rouge);
+}
+
+header {
+    background-color: #111A39;
+    background-image: url(../image/Bannier.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header img {
+    width: 50%;
+}
+
+.nav{
+    display: none;
+}
+
+#form-welcom {
+    display: none;
+}
+
+header nav {
+    display: flex; 
+    justify-content: space-between;/* Repartition horizontal*/
+    align-items: center; /* alignement verticale */
+    background-color: rgba(105, 105, 105, 0.5);    background-size: cover;
+    padding-left: 50px;
+    padding-right: 50px;
+    top: 0rem;
+    right: 0rem;
+    left: 0;
+    font-size: 4.0rem;
+    z-index: 1;
+}
+
+header nav div a {
+    color: #699BF7;
+    
+    margin: 0;
+    padding: -1.0rem;
+
+}
+header nav div {
+    display: inline;
+    margin-right: 3.5rem;
+
+}
+
+header nav ul li{
+    display: inline;
+    margin-left: 2.0rem;
+}
+header nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul a{
+    color: rgb(0, 255, 0);
+    
+}
+
+/* Vue mobile */
+h1 {
+    color: #0000ff;
+    font-size: rem;
+    text-align: center;
+
+}
+
+h2 {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+p {
+    font-size: 1rem;
+}
+
+header section:first-of-type {
+    text-align: center;
+    color: #699BF7;
+    background-color: rgba(105, 105, 105, 0.5);
+    margin: auto;
+    
+
+}
+
+
+
+main {
+
+    padding: 1.0rem;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+main img {
+    width: 80%;
+}
+
+main section div {
+    display: flex;
+    text-align: center;
+}
+
+
+/* Section Pouquoi nous  */
+main section:first-child {
+    border-bottom: var(--bordure);
+    color: whitesmoke;
+    background-color: #2E416F;
+}
+
+/* Section deja membre */
+main section:nth-child(2) {
+
+    color: whitesmoke;
+    background-color: #2E416F;
+
+}
+
+main section:nth-child(2) div {
+
+    display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.0rem;
+
+}
+
+
+/* Section pour Placer le Boutton "Rejoin-nous" */
+main section:nth-child(3) {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+/* -------------------------------Boutton-------------------------------------------- */
+
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #111A39;
+
+    border-radius: 1.0rem;
+    background-color: #FFFF00;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+
+}
+
+.styled:hover {
+    background-color: rgb(0, 119, 255)
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+        inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+/* -------------------------------Boutton-------------------------------------------- */
+
+
+footer {
+    background-color: #2E416F;
+    text-align: center;
+    padding: 5.0rem;
+}
+
+footer p {
+    color: white;
+}
+
+/********************************* Vue tablette *************************/
+/* Ecran et a partir d'une largeur de 600px */
+@media screen and (min-width:600px) {
+
+/* --------J'ai mis la nav mobile en none------------- */
+    .mobilenav{
+        display: none;
+    }
+
+/*________________ID du formulaire d'inscription________________________ */
+    #form-welcom {
+        display: none;
+    }
+
+    .nav{
+        display: flex;
+    }
+    input::placeholder {
+        text-align: center;
+        color: #699BF7;
+      }
+
+    .login-container {
+            float: none;
+      }
+    
+      input[type=text] {
+        padding: 0.1rem;
+        margin-top: 2rem;
+        font-size: 1.7rem;
+        border-radius: 1.0rem ;
+        border: none;
+        width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+      }
+
+      input[type=password] {
+        padding: 0.1rem;
+        margin-top: 2rem;
+        font-size: 1.7rem;
+        border-radius: 1.0rem ;
+        border: none;
+        width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+      }
+
+      input[type=email] {
+        padding: 0.1rem;
+        margin-top: 2rem;
+        font-size: 1.7rem;
+        border-radius: 1.0rem ;
+        border: none;
+        width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+      }
+
+      .login-container button {
+        float: right;
+        padding: 0.1rem;
+        margin-top: 2rem;
+        width: 100px; 
+        background: #699BF7;
+        border-radius: 1.0rem ;
+        font-size: 1.7rem;
+        border: none;
+        cursor: pointer;
+        margin-left: 1rem;
+        color: whitesmoke;
+      }
+
+      header nav div a {
+        color: #699BF7;
+        
+    
+    }
+    header nav div {
+        display: inline;
+        margin-right: 1.5rem;
+    
+    }
+    
+    header nav ul li{
+        display: inline;
+    
+    }
+    header nav ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    header nav {
+        /* vh = viewport height  100vh = 100% de la hauteur visible */
+        /* vw = viewport width  100vw = 100% de la largeur visible */
+        /* vmin = viewport min  vw ou vh, selon le plus petit des 2 */
+        /* vmax = viewport max  vw ou vh, selon le plus grand des 2 */
+        /* Image de fond */
+        background-color: rgba(0, 0, 0, 0.518);
+        background-image: url("../image/illusindoptique.jpg");
+        /* (../) permet de SORTIR du dossier CSS*/
+        background-position: center;
+        /* Positionner l'image dans le header*/
+        background-size: cover;
+        /* Couvrir le header avec l'image sans la déformer (perte de certaine partie de l'image*/
+        /* background-attachment: fixed;Permet de Figer l'image */
+    }
+
+    /* Le CSS s'applique uniquement a partir de 600px de largeur d'ecran */
+    /* Dans la media querie on ecris uniquement le code a modifier  */
+    :root {
+        font-size: 12px;
+    }
+
+    h1 {
+        color: red;
+    }
+
+    /* section deja member  */
+    main section:nth-child(2) div {
+
+        display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1.0rem;
+    
+    }
+
+    main section:first-child {
+        border-bottom: none;
+        border-right: blue 1px solid;
+    }
+    .Contact{
+        color: #699BF7;
+        text-decoration: underline;
+        font-size: 2.0rem;
+        margin: 0;
+        padding: 1.0rem;
+        margin-left: 20rem;
+        }
+
+
+
+}
+
+
+
+
+/************************************************** Vue ordi *********************************/
+/* Ecran de minimum 1000px */
+@media screen and (min-width:1000px) {
+    header section:first-of-type{
+/* 4 lignes "magiques" pour centrer parfaitement un bloc */
+            display: flex;
+            margin-left: 1.0rem;
+            text-align: center;
+            background-color: rgba(105, 105, 105, 0.5);
+            border-radius: 10px;
+
+            color: #699BF7;
+            text-shadow: 1px 1px 1px rgb(0, 0, 0);
+            width: 40%;
+            padding: 3.0rem;
+            box-sizing: border-box;
+    
+            
+}
+
+
+    header img {
+        width: 30%;
+    }
+ 
+    h1 {
+        display: flex;
+        margin-right: 10rem;
+        text-decoration: underline;
+    }
+
+    main section {
+        flex: 1;
+        text-align: center;
+    }
+
+    main section:nth-child(3) {
+
+        display: flex;
+        justify-content: right;
+
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #699BF7;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        width: 50%;
+        padding: 50px;
+        box-sizing: border-box;
+    }
+    
+    #form-welcom {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.0rem;
+        margin-left: 30rem;
+        width: 30rem;
+        margin-bottom: 5rem;
+        background-color: rgba(105, 105, 105, 0.5);
+        border-radius: 10px;
+        padding: 45px;
+        box-shadow: 10px 10px 34px -14px rgba(0, 0, 0,);
+    }
+
+    .inscriptionbutton{
+    border: 0;
+    line-height: 2.5;
+    padding: 0rem 2.0rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #111A39;
+    border-radius: 1.0rem;
+    background-color: #FFFF00;
+
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+    }
+
+    
+}
