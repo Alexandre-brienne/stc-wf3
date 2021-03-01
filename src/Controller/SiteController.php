@@ -24,9 +24,8 @@ class SiteController extends AbstractController
         }
 
 
-            $membres = $userRepository->select5user();
-        
 
+        $membres = $userRepository->select5user(); 
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
         return $this->render('site/index.html.twig', [
@@ -71,7 +70,7 @@ class SiteController extends AbstractController
             // $user->setAmisId(5);
          
             $user->setDateInscription(new \DateTime());
-            $user->setDateNaissance(new \DateTime());
+            // $user->setDateNaissance(new \DateTime());
 
 
             $entityManager = $this->getDoctrine()->getManager();
