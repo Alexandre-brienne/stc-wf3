@@ -1,20 +1,169 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Hello SiteController!{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    
+</head>
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<body>
+    <header>
+        {% block header %}
+        <nav class="mobilenav">
+            <div>
+            <a href="#"><i class="lab la-facebook"></i></a>
+            <a href="#"><i class="lab la-twitter"></i></a>
+            <a href="#"><i class="lab la-instagram"></i></a>
+            </div>
+            <ul>
+                <a href="#">
+                <li><i class="las la-power-off"></i></li>
+                </a>
+              
+            </ul>
+        </nav>
+        <nav class="nav">
+            <div>
+            <a href="#"><i class="lab la-facebook"></i></a>
+            <a href="#"><i class="lab la-twitter"></i></a>
+            <a href="#"><i class="lab la-instagram"></i></a>
+            </div>
+            <div class="login-container">
+                <form action="/action_page.php">
+                  <input type="text" placeholder="Pseudo" name="username">
+                  <input type="password" placeholder="Mot de passe" name="psw">
+                  <button type="submit">connexion</button>
+                </form>
+                <a class="Contact" href="">Contacter-Nous</a>
+              </div>
+        </nav>
+        <h1><img src="image/logo_geekandstart.png" alt=""></h1>
+        <section>
+            <article>
+                <p>PHRASES D'ACCROCHE :
+                    Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Ab mollitia impedit,
+                    ad aliquid fugit, nobis maxime, quis at
+                    veritatis quas nulla consequuntur.
+                    Magnam explicabo molestiae, atque
+                    perferendis ipsam molestias rerum!
+                </p>
+            </article>
+            
+            
+        </section>
+        <div class="container">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <form id="form-welcom">
+                <h2>Inscription</h2>
+    
+                <!-- Pseudo -->
+                <div class="pseudo">
+                    <label for="pseudo" >Pseudo</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="Email">
+                    <label>Email</label>
+                    <input type="email" class="form-control">
+                </div>
+    
+                <div >
+                    <button class="inscriptionbutton" type="button">Rejoint nous</button>
+                </div>
+            </form>
+    
+        </div>
+    {% endblock %}
+    </header>
+    <main>
+        <section>
+            <h2>Pourquoi nous rej</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Quia ab nihil repellat illum sit alias impedit
+                eius laudantium dolorem inventore rem iusto eum,
+                doloribus perferendis veniam doloremque itaque debitis
+                velit beatae rerum? Sunt iure explicabo magni impedit
+                ad earum omnis obcaecati corporis, officiis ipsum
+                eveniet enim numquam ex blanditiis libero!</p>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/laragon/www/stc-wf3/src/Controller/SiteController.php'|file_link(0) }}">src/Controller/SiteController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/laragon/www/stc-wf3/templates/site/index.html.twig'|file_link(0) }}">templates/site/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Quia ab nihil repellat illum sit alias impedit
+                eius laudantium dolorem inventore rem iusto eum,
+                doloribus perferendis veniam doloremque itaque debitis
+                velit beatae rerum? Sunt iure explicabo magni impedit
+                ad earum omnis obcaecati corporis, officiis ipsum
+                eveniet enim numquam ex blanditiis libero!</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Quia ab nihil repellat illum sit alias impedit
+                eius laudantium dolorem inventore rem iusto eum,
+                doloribus perferendis veniam doloremque itaque debitis
+                velit beatae rerum? Sunt iure explicabo magni impedit
+                ad earum omnis obcaecati corporis, officiis ipsum
+                eveniet enim numquam ex blanditiis libero!</p>
+
+        </section>
+        <!-- J'ai mis des cards pour le moment  -->
+        
+        <section>
+            <h2>Ils sont deja membre</h2>
+            <div><!--Grid des User --> 
+                <article>
+                        <img src="image/index.png" alt="image d'attente">
+                        <h3>Amandine du 38</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet 
+                            consectetur 1
+                        </p>
+                         
+                </article>
+                <article>
+                    <img src="image/index.png" alt="image d'attente">
+                        <h3>Arouf Gangsta</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet 
+                            consectetur 2
+                        </p>
+                        
+                </article>
+                <article>
+                    <img src="image/index.png" alt="image d'attente">
+                        <h3>Mounir Mouns</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet 
+                            consectetur 3
+                        </p>
+                        
+                </article>
+                <article>
+                    <img src="image/index.png" alt="image d'attente">
+                        <h3>Woltthy</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet 
+                            consectetur 4
+                        </p>                      
+                </article>
+            </div> 
+            <!-- Appel a l'action -->
+            <section>
+                <input class="favorite styled"
+                        type="button"
+                        value="Rejoint nous">
+            </section>              
+        </section><!--- Réalisation --->
+
+        
+
+    </main>
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+</body>
+
+</html>
