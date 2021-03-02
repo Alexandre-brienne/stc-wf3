@@ -56,11 +56,11 @@ class MembreController extends AbstractController
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $imageFile = $form->get('image_profil')->getData();
-                
+
                 if ($imageFile) {
                     $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
-                    // $safeFilename = $slugger->slug($originalFilename);
-                    $newFilename  = md5(uniqid()) . '.' . $imageFile->guessExtension();
+                    $safeFilename = $slugger->slug($originalFilename);
+                    $newFilename  = $safeFilename.md5(uniqid()) . '.' . $imageFile->guessExtension();
                     try {
                         $imageFile->move(
                             $this->getParameter('images_directory'),    // dossier cible
@@ -83,9 +83,9 @@ class MembreController extends AbstractController
 
 
                 $this->getDoctrine()->getManager()->flush();
-                return $this->redirectToRoute('user_index');
+                // return $this->redirectToRoute('membre');
             }
-
+            dump($user);
             return $this->render('user/edit.html.twig', [
                 'user' => $user,
                 'form' => $form->createView(),

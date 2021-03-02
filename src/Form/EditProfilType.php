@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Categories;
+
 use App\Entity\User;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints\Image;
+use App\Entity\Categories;
 
 class EditProfilType extends AbstractType
 {
@@ -28,7 +29,7 @@ class EditProfilType extends AbstractType
             ->add('image_profil',FileType::class,[
                 'data_class' => null,
                 "label" => "votre image de profil",
-                "empty_data" => 'acune image', 
+                "empty_data" => 'accune image', 
                 "required" => false,
                 "constraints" => [
                     new Image([
@@ -87,13 +88,16 @@ class EditProfilType extends AbstractType
                     "poissons" =>    "poissons",
                 ]
             ])
-
             ->add('categories', EntityType::class, [
                 'class' => Categories::class,
                 'choice_label' => 'name',
+                // 'choices' => 'id',
                 'multiple' => true,
                 'expanded' => true,
-            ]);
+            ])
+  
+            
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
