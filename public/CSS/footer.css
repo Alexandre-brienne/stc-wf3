@@ -1,0 +1,59 @@
+footer{
+    margin: 0 12rem;
+    background-color:#111A39;
+    font-size: 1.5rem;
+
+}
+footer h3{
+    color: #0b3086;
+}
+footer ul{
+    margin: 0;
+}
+footer li{
+    list-style: none ;
+    color: white;
+   
+}
+footer p{
+    text-align: center;
+    color: white;
+
+}
+footer hr{
+    height: 0.2rem;
+    background-color: white;
+}
+#image-logo{
+    width: 18rem;
+    height: 6rem;
+}
+.first-section-footer{
+    margin-bottom: 1rem;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+.social-logo li{
+    display: inline;
+    padding: 1rem 3rem;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+.social-logo{
+    padding: 0  5rem;
+}
+.lab {
+    color:white;
+    font-size: 2rem;
+    border: white solid 2px;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-decoration: none;
+}

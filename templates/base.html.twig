@@ -1,19 +1,86 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle`
+		           and uncomment the following Encore helpers to start using Symfony UX #}
+		{% block stylesheets %}
+			{#{{ encore_entry_link_tags('app') }}#}
+		{% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		{% block javascripts %}
+			{#{{ encore_entry_script_tags('app') }}#}
+		{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+
+			{% block form %}
+
+				{% block pseudo %}{% endblock %}
+				{% block email %}{% endblock %}
+				{% block password %}{% endblock %}
+				{% block sexe %}{% endblock %}
+
+			{% endblock %}
+
+			{% block footer %}
+            <link rel="stylesheet" href="../public/CSS/footer.css">
+				<footer>
+					<hr>
+					<section class="first-section-footer">
+						<img src="logo_geekandstart.png" alt="logo" id="image-logo">
+						<div class="social-logo">
+							<i class="lab la-instagram"></i>
+							<i class="lab la-facebook-f"></i>
+							<i class="lab la-twitter"></i>
+						</div>
+					</section>
+					<section class="list">
+						<div>
+							<ul>
+								<h3>
+									Informations
+								</h3>
+								<li>Fonctionnalitées</li>
+								<li>Actualités</li>
+								<li>Rencontres</li>
+								<li></li>
+								<li></li>
+							</ul>
+						</div>
+						<div>
+							<ul>
+								<h3>.....</h3>
+								<li>Lorem, ipsum dolor.</li>
+								<li>Lorem, ipsum dolor.</li>
+								<li>Lorem, ipsum dolor.</li>
+								<li>Lorem, ipsum dolor.</li>
+								<li>Lorem, ipsum dolor.</li>
+							</ul>
+						</div>
+						<div>
+							<ul>
+								<h3>
+									Contact
+								</h3>
+								<li>Nous contacter</li>
+								<li>Mentions légal</li>
+								<li>Conditions générales</li>
+								<li>Partenariat</li>
+								<li>Résaux</li>
+							</ul>
+						</div>
+					</section>
+					<p>Copyright © 2021 GeekAndStart SARL Tous droits réservés
+					</p>
+				</footer>
+			{% endblock %}
+
+		{% endblock %}
+	</body>
 </html>
