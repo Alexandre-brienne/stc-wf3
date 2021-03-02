@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		{% block head %}
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Document</title>
+			<link rel="stylesheet" href="css/normalize.css">
+			<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+			<link rel="stylesheet" href="CSS/style.css">
+		{% endblock %}
+	</head>
+
+	<body>
+		<header>
+			{% block header %}
+				<nav class="mobilenav">
+					<div>
+						<a href="#">
+							<i class="lab la-facebook"></i>
+						</a>
+						<a href="#">
+							<i class="lab la-twitter"></i>
+						</a>
+						<a href="#">
+							<i class="lab la-instagram"></i>
+						</a>
+					</div>
+					<ul>
+						<a href="#">
+							<li>
+								<i class="las la-power-off"></i>
+							</li>
+						</a>
+
+					</ul>
+				</nav>
+				<nav class="nav">
+					<div class="logos">
+						<img class="imagelogo" src="image/logo_geekandstart.png" alt="">
+					</div>
+					<div>
+						<a href="#">
+							<i class="lab la-facebook"></i>
+						</a>
+						<a href="#">
+							<i class="lab la-twitter"></i>
+						</a>
+						<a href="#">
+							<i class="lab la-instagram"></i>
+						</a>
+					</div>
+					<div class="login-container">
+						<form method="POST">
+							{% if error %}
+								<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+							{% endif %}
+
+							{% if app.user %}
+								<div class="logininfomation">
+									<p>Vous etes connecté
+										{{ app.user.username }}
+									</p>
+									<a href="{{ path('app_logout') }}">Se deconnecter</a>
+								</div>
+
+							{% else %}
+								<input type="text" placeholder="Pseudo" value="{{ last_username }}" id="inputUsername" name="username" required autofocus>
+								<input type="password" placeholder="Mot de passe" id="inputPassword" name="password">
+								<input type="hidden" name="_csrf_token" value="{{csrf_token('authenticate')}}">
+								<button type="submit">connexion</button>
+							{% endif %}
+
+
+						</form>
+						<a class="Contact" href="">Contacter-Nous</a>
+					</div>
+				</nav>
+
+
+				<div class="container">
+				
+					<section class='phrase'>
+						<article>
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+														adipisicing elit. Ab mollitia impedit,
+														ad aliquid fugit, nobis maxime, quis at
+														veritatis quas nulla consequuntur.
+														Magnam explicabo molestiae, atque
+														perferendis ipsam molestias rerum!
+							</p>
+						</article>
+					</section>
+
+					<form id="form-welcom">
+						<h2>Inscription</h2>
+
+						<!-- Pseudo -->
+						<div class="pseudo">
+							<label for="pseudo">Pseudo</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="Email">
+							<label>Email</label>
+							<input type="email" class="form-control">
+						</div>
+
+						<div>
+							<button class="inscriptionbutton" type="button">Rejoint nous</button>
+						</div>
+					</form>
+
+				</div>
+			{% endblock %}
+		</header>
+		<main>
+			{% block main %}
+			
+			{% endblock %}
+		</main>
+
+
+		<footer>
+				<section class="first-section-footer">
+					<div class="social-logo">
+						<i class="lab la-instagram"></i>
+						<i class="lab la-facebook-f"></i>
+						<i class="lab la-twitter"></i>
+					</div>
+				</section>
+				<section class="list">
+					<div>
+						<ul>
+							<h3>
+								Informations
+							</h3>
+							<li>Fonctionnalitées</li>
+							<li>Actualités</li>
+							<li>Rencontres</li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<h3>.....</h3>
+							<li>Lorem, ipsum dolor.</li>
+							<li>Lorem, ipsum dolor.</li>
+							<li>Lorem, ipsum dolor.</li>
+							<li>Lorem, ipsum dolor.</li>
+							<li>Lorem, ipsum dolor.</li>
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<h3>
+								Contact
+							</h3>
+							<li>Nous contacter</li>
+							<li>Mentions légal</li>
+							<li>Conditions générales</li>
+							<li>Partenariat</li>
+							<li>Résaux</li>
+						</ul>
+					</div>
+					<p>Copyright © 2021 GeekAndStart SARL Tous droits réservés</p>
+				</section>
+				
+		</footer>
+
+
+	</body>
+
+</html>

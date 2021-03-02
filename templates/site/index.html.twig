@@ -1,185 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-
-	<head>
-		{% block head %}
-			<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>Document</title>
-			<link rel="stylesheet" href="css/normalize.css">
-			<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-			<link rel="stylesheet" href="CSS/style.css">
-		{% endblock %}
-	</head>
-
-	<body>
-		<header>
-			{% block header %}
-				<nav class="mobilenav">
-					<div>
-						<a href="#">
-							<i class="lab la-facebook"></i>
-						</a>
-						<a href="#">
-							<i class="lab la-twitter"></i>
-						</a>
-						<a href="#">
-							<i class="lab la-instagram"></i>
-						</a>
-					</div>
-					<ul>
-						<a href="#">
-							<li>
-								<i class="las la-power-off"></i>
-							</li>
-						</a>
-
-					</ul>
-				</nav>
-				<nav class="nav">
-					<div>
-						<a href="#">
-							<i class="lab la-facebook"></i>
-						</a>
-						<a href="#">
-							<i class="lab la-twitter"></i>
-						</a>
-						<a href="#">
-							<i class="lab la-instagram"></i>
-						</a>
-					</div>
-					<div class="login-container">
-						<form method="POST">
-							{% if error %}
-								<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-							{% endif %}
-
-							{% if app.user %}
-								<div class="logininfomation">
-									<p>Vous etes connecté
-										{{ app.user.username }}
-									</p>
-									<a href="{{ path('app_logout') }}">Se deconnecter</a>
-								</div>
-
-							{% else %}
-								<input type="text" placeholder="Pseudo" value="{{ last_username }}" id="inputUsername" name="username" required autofocus>
-								<input type="password" placeholder="Mot de passe" id="inputPassword" name="password">
-								<input type="hidden" name="_csrf_token" value="{{csrf_token('authenticate')}}">
-								<button type="submit">connexion</button>
-							{% endif %}
+{% extends 'parent.html.twig' %}
 
 
-						</form>
-						<a class="Contact" href="">Contacter-Nous</a>
-					</div>
-				</nav>
 
 
-				<div class="container">
-					<div class="logos">
-						<img class="imagelogo" src="image/logo_geekandstart.png" alt="">
-					</div>
-					<section class='phrase'>
-						<article>
-							<p>
-								Lorem ipsum dolor sit amet consectetur
-																																																																                    adipisicing elit. Ab mollitia impedit,
-																																																																                    ad aliquid fugit, nobis maxime, quis at
-																																																																                    veritatis quas nulla consequuntur.
-																																																																                    Magnam explicabo molestiae, atque
-																																																																                    perferendis ipsam molestias rerum!
-							</p>
-						</article>
-					</section>
 
-					<form id="form-welcom">
-						<h2>Inscription</h2>
+{% block main %}
+<section>
+			<h2>Pourquoi nous rejoindre</h2>
+			<article>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adi elit. Quia ab nihil repellat illum sit alias impedit eius
+					laudantdzzium dolorem inventore rem iusto eum, doloribus perferendis veniam doloremque itaque debitis
+					velit beatae rerum? Sunt iure explicabo magni impedit ad earum omnis obcaecati corporis, officiis
+					ipsum eveniet enim numquam ex blanditiis libero!
+				</p>
+			</article>
 
-						<!-- Pseudo -->
-						<div class="pseudo">
-							<label for="pseudo">Pseudo</label>
-							<input type="text" class="form-control">
-						</div>
-						<div class="Email">
-							<label>Email</label>
-							<input type="email" class="form-control">
-						</div>
 
-						<div>
-							<button class="inscriptionbutton" type="button">Rejoint nous</button>
-						</div>
-					</form>
 
-				</div>
-			{% endblock %}
-		</header>
-		<main>
-			{% block main %}
-				<section>
-					<h2>Pourquoi nous rej</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing
-																																																                elit. Quia ab nihil repellat illum sit alias impedit
-																																																                eius laudantium dolorem inventore rem iusto eum,
-																																																                doloribus perferendis veniam doloremque itaque debitis
-																																																                velit beatae rerum? Sunt iure explicabo magni impedit
-																																																                ad earum omnis obcaecati corporis, officiis ipsum
-																																																                eveniet enim numquam ex blanditiis libero!</p>
+		</section>
+		<!-- J'ai mis des cards pour le moment  -->
 
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing
-																																																                elit. Quia ab nihil repellat illum sit alias impedit
-																																																                eius laudantium dolorem inventore rem iusto eum,
-																																																                doloribus perferendis veniam doloremque itaque debitis
-																																																                velit beatae rerum? Sunt iure explicabo magni impedit
-																																																                ad earum omnis obcaecati corporis, officiis ipsum
-																																																                eveniet enim numquam ex blanditiis libero!</p>
-
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing
-																																																                elit. Quia ab nihil repellat illum sit alias impedit
-																																																                eius laudantium dolorem inventore rem iusto eum,
-																																																                doloribus perferendis veniam doloremque itaque debitis
-																																																                velit beatae rerum? Sunt iure explicabo magni impedit
-																																																                ad earum omnis obcaecati corporis, officiis ipsum
-																																																                eveniet enim numquam ex blanditiis libero!</p>
-
-				</section>
-				<!-- J'ai mis des cards pour le moment  -->
-
-				<section>
-					<h2>Ils sont deja membre</h2>
-					<div>
-						<!--Grid des User -->
-						{% for membre in membres %}
-							<article>
-								<img src="uploads/{{membre.imageProfil}}" alt="image d'attente">
-								<h3>{{membre.username}}</h3>
-								<p>
-									Lorem ipsum dolor sit amet 
-																																																																		                            consectetur 1
-								</p>
-							</article>
-						{% else %}
-							<p>
-								il n'a pas de membres
-							</p>
-						{% endfor %}
-					</div>
-					<!-- Appel a l'action -->
-					<section>
-						<input class="favorite styled" type="button" value="Rejoint nous">
-					</section>
-				</section>
-				<!--- Réalisation -->
-
-			{% endblock %}
-		</main>
-
-		<footer>
-			{% block footer %}
-				<p>Footer</p>
-			{% endblock %}
-		</footer>
-
-	</body>
-
-</html>
+		<section>
+			<h2>Ils sont deja membre</h2>
+			<div>
+				<!--Grid des User -->
+				{% for membre in membres %}
+				<article>
+					<img src="uploads/{{membre.imageProfil}}" alt="image d'attente">
+					<h3>{{membre.username}}</h3>
+					<p>
+						Lorem ipsum dolor sit amet
+						consectetur 1
+					</p>
+				</article>
+				{% else %}
+				<p>
+					il n'a pas de membres
+				</p>
+				{% endfor %}
+			</div>
+			<!-- Appel a l'action -->
+			<section>
+				<input class="favorite styled" type="button" value="Rejoint nous">
+			</section>
+		</section>
+{% endblock %}
