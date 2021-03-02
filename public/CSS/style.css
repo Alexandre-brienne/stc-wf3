@@ -58,7 +58,6 @@ header nav {
     top: 0rem;
     right: 0rem;
     left: 0;
-    font-size: 4.0rem;
     z-index: 1;
 }
 
@@ -232,7 +231,8 @@ footer hr{
     background-color: white;
 }
 .imagelogo{
-    width: 100%;
+    min-width: 200px;
+    max-width: 300px;
 }
 .first-section-footer{
   width: 100%;
@@ -251,7 +251,7 @@ footer hr{
 .lab {
     background-color:rgb(65, 61, 61) ;
     color:white;
-    font-size: 2.5rem;
+    font-size: 2rem;
     border: white solid 2px;
     border-radius: 50%;
     padding: 0.5rem;
@@ -266,11 +266,12 @@ footer hr{
 
 /********************************* Vue tablette *************************/
 /* Ecran et a partir d'une largeur de 600px */
-@media screen and (min-width:600px) {
+@media screen and (min-width:775px) {
 
 /* --------J'ai mis la nav mobile en none------------- */
     .mobilenav{
         display: none;
+    
     }
 
 /*________________ID du formulaire d'inscription________________________ */
@@ -279,7 +280,25 @@ footer hr{
     }
 
     .nav{
+
         display: flex;
+
+    }
+
+    .logos{
+        flex: 1;
+    }
+    .socialnetwork{
+        flex:1;
+    }
+    .login-container{
+        flex: 1;
+       
+    }
+    .login-container>form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     input::placeholder {
         text-align: center;
@@ -291,21 +310,25 @@ footer hr{
       }
     
       input[type=text] {
-        padding: 0.1rem;
-        margin-top: 2rem;
+        padding-top: 0.5rem;
+       
+        padding-bottom: 0.5rem;
         font-size: 1.7rem;
         border-radius: 1.0rem ;
         border: none;
-        width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+        width: 150px;
+        height: 2rem;
       }
 
-      input[type=password] {
-        padding: 0.1rem;
-        margin-top: 2rem;
+      input[type=Password] {
+        padding-top: 1rem;
+       
+        padding-bottom: 1rem;
         font-size: 1.7rem;
         border-radius: 1.0rem ;
         border: none;
         width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+        height: 2rem;
       }
 
       input[type=email] {
@@ -319,9 +342,8 @@ footer hr{
 
       .login-container button {
         float: right;
-        padding: 0.1rem;
-        margin-top: 2rem;
-        width: 100px; 
+        padding: 1rem;
+        width: 12rem; 
         background: #699BF7;
         border-radius: 1.0rem ;
         font-size: 1.7rem;
