@@ -53,9 +53,8 @@ header nav {
     display: flex; 
     justify-content: space-between;/* Repartition horizontal*/
     align-items: center; /* alignement verticale */
-    background-color: rgba(105, 105, 105, 0.5);    background-size: cover;
-    padding-left: 50px;
-    padding-right: 50px;
+    background-color: rgba(105, 105, 105, 0.5);    
+    background-size: cover;
     top: 0rem;
     right: 0rem;
     left: 0;
@@ -123,7 +122,7 @@ header section:first-of-type {
 main {
 
     padding: 1.0rem;
-    width: 80%;
+    width: 100%;
     margin: auto;
     text-align: center;
 }
@@ -132,7 +131,14 @@ main img {
     width: 80%;
 }
 
+main>section{
+
+    padding: 1.8rem;
+
+}
+
 main section div {
+    padding: 1.5rem;
     display: flex;
     text-align: center;
 }
@@ -199,14 +205,63 @@ main section:nth-child(3) {
 /* -------------------------------Boutton-------------------------------------------- */
 
 
-footer {
-    background-color: #2E416F;
+footer{
+    padding: 1.8rem;
+    background-color:#2E416F;
+    font-size: 1.5rem;
+
+}
+footer h3{
+    color: #0b3086;
+}
+footer ul{
+    margin: 0;
+}
+footer li{
+    list-style: none ;
+    color: white;
+   
+}
+footer p{
     text-align: center;
-    padding: 5.0rem;
+    color: white;
+
+}
+footer hr{
+    height: 0.2rem;
+    background-color: white;
+}
+.imagelogo{
+    width: 100%;
+}
+.first-section-footer{
+  width: 100%;
+}
+.social-logo>i{
+
+    color: white;
+    margin-left: 1.5rem;
+
+}
+.social-logo{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+.lab {
+    background-color:rgb(65, 61, 61) ;
+    color:white;
+    font-size: 2.5rem;
+    border: white solid 2px;
+    border-radius: 50%;
+    padding: 0.5rem;
+   
 }
 
-footer p {
-    color: white;
+.list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-decoration: none;
 }
 
 /********************************* Vue tablette *************************/
@@ -298,19 +353,8 @@ footer p {
     }
 
     header nav {
-        /* vh = viewport height  100vh = 100% de la hauteur visible */
-        /* vw = viewport width  100vw = 100% de la largeur visible */
-        /* vmin = viewport min  vw ou vh, selon le plus petit des 2 */
-        /* vmax = viewport max  vw ou vh, selon le plus grand des 2 */
-        /* Image de fond */
+
         background-color: rgba(0, 0, 0, 0.518);
-        background-image: url("../image/illusindoptique.jpg");
-        /* (../) permet de SORTIR du dossier CSS*/
-        background-position: center;
-        /* Positionner l'image dans le header*/
-        background-size: cover;
-        /* Couvrir le header avec l'image sans la déformer (perte de certaine partie de l'image*/
-        /* background-attachment: fixed;Permet de Figer l'image */
     }
 
     /* Le CSS s'applique uniquement a partir de 600px de largeur d'ecran */
@@ -406,7 +450,7 @@ footer p {
         margin-right: 10rem;
         text-decoration: underline;
     }
-
+    
     main section {
         flex: 1;
         text-align: center;
@@ -435,7 +479,7 @@ footer p {
     }
     
 .logos{
-    width: 100%;
+    width: 250px;
 }
 
     #form-welcom {
