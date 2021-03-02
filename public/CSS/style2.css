@@ -6,19 +6,25 @@
 body {
     font-family: Roboto;
     background-color: #111A39;
+    padding: 0;
     
 }
-
+h1{
+    font-size: 1.3rem;
+    margin: 0.1rem;
+    font-weight: normal;
+}
 a {
     text-decoration: none;
 }
 
 
 header {
-    background-image: url(/images/magic-499137_2_1.png);
+    background-image: url(magic-499137_2_1.png);
     margin: -0.5rem;
     background-size: 100vmax;
     background-repeat: no-repeat;
+    
 }
 
 /*________________________________________________________________*
@@ -40,17 +46,20 @@ nav { /* Navigateur */
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.336);
 }
-
 .fab{ /* Icons */
     margin-top: 0.625rem;
     margin-left: 0.9375rem;
     font-size: 2.5rem;
     color: white;
+    margin: 1rem;
 }
 
 nav img { /* Logo */
     width: 11.25rem;
     margin-right: 6.25rem;
+}
+.brand-logo{
+    margin-left: 5rem;
 }
 
 /*_________________________________________________________________*
@@ -63,6 +72,10 @@ nav img { /* Logo */
 
 #principal { /* Séparations des Sections des Formulaires */
     display: inline-block;
+    flex: 1;
+}
+#all{
+    display:flex
 }
 
 
@@ -75,31 +88,48 @@ nav img { /* Logo */
 #inscription {
     margin-top: 3.125rem;
     margin-left: 3.125rem;
+    margin-bottom: 2rem ;
     border-radius: 1.25rem;
     border: 0.3125rem solid rgba(0, 0, 0, 0);
     background-color: rgba(0, 0, 0, 0.514);
+
 }
 
 #inscription div {
-    display: flex;
     justify-content: space-around;
 }
 
-#inscription div div {
+.grid2{
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+   
+}
+.grid3{
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+}
+#principal1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
 }
 
-#inscription a { /* Lien "Nous Contacter" */
-    margin-left: 3.125rem;
+#ButtonContact-Rejoindre  { /* Lien "Nous Contacter" */
+    margin-left: 2.5rem;
     color: yellow;
+    text-decoration: underline;
 }
 
 #rejoindre { /* Button Inscription */
     background-color: yellow;
     border-color: yellow;
     color: #073590;
-    margin-top: 0.9375rem;
-    margin-left: 40%;
+    margin-top: 1.5rem;
+    margin-left: 0%;
+}
+input[type="checkbox"], .accept-cgu{
+    margin-top: 1.5rem;
 }
 
 /*_________________________________________________________________*
@@ -115,11 +145,14 @@ nav img { /* Logo */
 
                         Début partie Connexion 
 *__________________________________________________________________*/
-
+#principal2{
+    position: absolute;
+    right: 10rem;
+}
 #connexion {
-    margin-top: 1rem;
+    margin-top: 3.2rem;
     margin-left: 3.125rem;
-    margin-bottom: 4.375rem;
+    margin-bottom: 1.375rem;
     border: 0.9375rem solid rgba(0, 0, 0, 0);
     border-radius: 1.25rem;
     background-color: rgba(0, 0, 0, 0.514);
@@ -183,26 +216,29 @@ form {
 }
 
 form div div input {
-    border: solid white 1.25rem;
+    border: solid white 0.700rem;
     font-size: large;
     border-radius: 0.9375rem;
 }
 
 form div div select { /* Selection du Sexe */
-    border: solid white 0.9375rem;
+    border: solid white 0.700rem;
     font-size: large;
     border-radius: 0.9375rem;
 }
 
 form div div label {
-    margin: 0.625rem;
+    margin: 0.25rem;
+    margin-top: 0;
 }
-
+input[type="date"]{
+    width: 13.5rem;
+}
 
 
 form button { /* Formes des button */
     border: solid 0.625rem;
-    border-radius: 0.3125rem;
+    border-radius: 1.3125rem;
     font-size: large;
 }
 
