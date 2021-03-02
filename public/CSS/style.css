@@ -28,6 +28,7 @@ a {
 }
 
 header {
+   
     height: 100vh;
     background-color: #111A39;
     background-image: url(../image/Bannier.png);
@@ -108,6 +109,7 @@ p {
 }
 
 header section:first-of-type {
+    padding: 1.6rem;
     text-align: center;
     color: #699BF7;
     background-color: rgba(105, 105, 105, 0.5);
@@ -347,6 +349,32 @@ footer p {
 
 }
 
+.container{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-sizing: border-box;
+}
+
+
+.logininfomation{
+    display: flex;
+    color: #699BF7;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.logininfomation>p{
+
+    width: 50%;
+}
+
+.logininfomation>a{
+    color: red;
+    padding-top: 0.5rem;
+    font-size: 1.5rem;
+    width: 50%;
+    padding-bottom: 0.5rem;
+}
 
 /************************************************** Vue ordi *********************************/
 /* Ecran de minimum 1000px */

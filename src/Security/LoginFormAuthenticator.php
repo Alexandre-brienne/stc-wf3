@@ -24,7 +24,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 {
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_login';
+    public const LOGIN_ROUTE = 'site';
 
     private $entityManager;
     private $urlGenerator;
@@ -106,10 +106,10 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
                $nomRouteRedirection = "admin";
            }
            elseif ($this->security->isGranted("ROLE_USER")) {
-               // redirection vers la page /admin
+               // redirection vers la page /membre
                $nomRouteRedirection = "membre";
            }
-
+           
 
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
         return new RedirectResponse($this->urlGenerator->generate($nomRouteRedirection));

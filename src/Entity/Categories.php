@@ -24,19 +24,22 @@ class Categories
      */
     private $name;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=user::class, inversedBy="categories")
-     */
-    private $user;
+  
 
     /**
      * @ORM\OneToOne(targetEntity=categories::class, cascade={"persist", "remove"})
      */
     private $categorie;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="categories")
+     */
+    private $users;
+
     public function __construct()
     {
-        $this->user = new ArrayCollection();
+      
+        $this->users = new ArrayCollection();
     }
 
   
@@ -59,35 +62,6 @@ class Categories
     }
 
 
-    
-    public function __toString()
-    {
-        return $this->getName();
-    }
-
-    /**
-     * @return Collection|user[]
-     */
-    public function getUser(): Collection
-    {
-        return $this->user;
-    }
-
-    public function addUser(user $user): self
-    {
-        if (!$this->user->contains($user)) {
-            $this->user[] = $user;
-        }
-
-        return $this;
-    }
-
-    public function removeUser(user $user): self
-    {
-        $this->user->removeElement($user);
-
-        return $this;
-    }
 
     public function getCategorie(): ?categories
     {
@@ -101,6 +75,34 @@ class Categories
         return $this;
     }
 
-  
+    public function __toString()
+    {
+        return $this->getName();
+
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        $this->users->removeElement($user);
+
+        return $this;
+    }
 
 }

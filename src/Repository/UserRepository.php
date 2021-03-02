@@ -53,6 +53,37 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     }
     */
 
+
+    public function select5user(){
+        return $this->createQueryBuilder('u')
+        ->orderBy('u.date_connexion', 'DESC')
+        ->setMaxResults(4)
+        ->getQuery()
+        ->getResult()
+    ;
+    }
+
+    public function editdateconexion($id,$date){
+       
+        $conn= $this->getEntityManager()->getConnection();
+
+        // ATTENTION: REQUETE EN DQL (Doctrine Query Language)
+        $sql = 
+            'UPDATE User
+            SET user.date_connexion =:connexion
+            WHERE user.id =:id
+          ';
+    
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['connexion' => $date,
+                        'id' => $id
+        ]);
+            
+
+
+        return $stmt->execute();
+    }
+
     /*
     public function findOneBySomeField($value): ?User
     {

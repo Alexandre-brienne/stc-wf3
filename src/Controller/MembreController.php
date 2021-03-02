@@ -7,19 +7,27 @@ use App\Entity\User;
 use App\Form\EditProfilType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 #[Route('/membre')]
 class MembreController extends AbstractController
 {
     #[Route('/', name: 'membre')]
-    public function index(): Response
+    public function index(AuthenticationUtils $authenticationUtils,UserRepository $userRepository): Response
     {
+        
+        $id = $this->getUser()->getid();
+        $date = new DateTime(); 
+        $userRepository->editdateconexion($id,$date->format('Y-m-d H:i:s'));
+        
+        
         return $this->render('membre/index.html.twig', [
             'controller_name' => 'MembreController',
         ]);
@@ -52,14 +60,14 @@ class MembreController extends AbstractController
                 if ($imageFile) {
                     $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                     $safeFilename = $slugger->slug($originalFilename);
-                    $newFilename  = md5(uniqid()) . '.' . $imageFile->guessExtension();
+                    $newFilename  = $safeFilename.md5(uniqid()) . '.' . $imageFile->guessExtension();
                     try {
                         $imageFile->move(
                             $this->getParameter('images_directory'),    // dossier cible
                             $newFilename
                         );
                     } catch (FileException $e) {
-                        // ... handle exception if something happens during file upload
+                        // ... handle exception if something happens d uring file upload
                     }
 
                     // supprimer l'image d'avant
@@ -75,9 +83,9 @@ class MembreController extends AbstractController
 
 
                 $this->getDoctrine()->getManager()->flush();
-                return $this->redirectToRoute('user_index');
+                // return $this->redirectToRoute('membre');
             }
-
+            dump($user);
             return $this->render('user/edit.html.twig', [
                 'user' => $user,
                 'form' => $form->createView(),
