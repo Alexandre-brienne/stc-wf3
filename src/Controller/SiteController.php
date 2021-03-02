@@ -1,12 +1,16 @@
 <?php
 
 namespace App\Controller;
+
+use App\Entity\contact;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\User;
+use App\Form\ContactType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use App\Form\RegistrationFormType;
 use App\Security\LoginFormAuthenticator;
+use Symfony\Component\PropertyAccess\PropertyAccessor as property ;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,8 +27,6 @@ class SiteController extends AbstractController
             return $this->redirectToRoute('membre');
         }
 
-
-
         $membres = $userRepository->select5user(); 
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
@@ -35,6 +37,7 @@ class SiteController extends AbstractController
            
         ]);
     }
+    
 
     
 
@@ -60,12 +63,6 @@ class SiteController extends AbstractController
             $user->setNom("alexandre");
             $user->setPrenom("toto");
             // $user->setPoint(10);
-
-        
- 
-
-
-
 
             // $user->setAmisId(5);
          
