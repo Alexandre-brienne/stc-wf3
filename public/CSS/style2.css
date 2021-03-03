@@ -22,7 +22,7 @@ a {
 header {
     background-image: url(../uploads/magic-499137_2_1.png);
     margin: -0.5rem;
-    background-size: 100vmax;
+    background-size: cover;
     background-repeat: no-repeat;
     
 }
@@ -241,8 +241,59 @@ form button { /* Formes des button */
     border-radius: 1.3125rem;
     font-size: large;
 }
+#rejoindre{
+    display: block;
+}
 
 /*_________________________________________________________________*
 
                 Fin de la partie des Formulaires
 *__________________________________________________________________*/
+
+@media screen  and (max-width: 1070px){
+    .logo-nav{
+        display: none;
+    }
+    #connexion-responsive{
+        display: initial;
+        margin: 0.5rem;
+        margin-right: 2rem;
+        font-size: 1.5rem;
+    }
+    #inscription{
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 1rem ;
+        border-radius: 1.25rem;
+        border: 0.1125rem solid rgba(0, 0, 0, 0);
+    }
+    #principal2{
+        display: none;
+    }
+    .fab{
+        font-size: 1rem;
+        margin: 0.5rem;
+    }
+
+    .lab {
+        color:white;
+        font-size: 1em;
+        border: white solid 2px;
+        border-radius: 50%;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    label{
+        display: block;
+    }
+    select, input{
+        width: 12rem;
+    }
+    #principal1{
+        display: initial;
+    }
+    .grid2{
+        display: initial;
+    }
+}
