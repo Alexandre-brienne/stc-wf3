@@ -37,6 +37,16 @@ class Messagerie
      */
     private $date_envoi;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="messageries")
+     */
+    private $expediteur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="Userdestinataire")
+     */
+    private $destinataire;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,4 +99,30 @@ class Messagerie
 
         return $this;
     }
+
+    public function getExpediteur(): ?User
+    {
+        return $this->expediteur;
+    }
+
+    public function setExpediteur(?User $expediteur): self
+    {
+        $this->expediteur = $expediteur;
+
+        return $this;
+    }
+
+    public function getDestinataire(): ?User
+    {
+        return $this->destinataire;
+    }
+
+    public function setDestinataire(?User $destinataire): self
+    {
+        $this->destinataire = $destinataire;
+
+        return $this;
+    }
+
+    
 }

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messagerie index{% endblock %}
+
+{% block body %}
+    <h1>Messagerie index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Expediteur_id</th>
+                <th>Destinataire_id</th>
+                <th>Message</th>
+                <th>Date_envoi</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for messagerie in messageries %}
+            <tr>
+               <td>{{ messagerie.expediteur.username }}</td>
+               <td>{{ messagerie.message }}</td>
+             {# <td>{{ messagerie.expediteur_id }}</td>
+            <td>{{ messagerie.destinataire_id }}</td>
+         
+            <td>{{ messagerie.date_envoi }}</td> #}
+                   
+{#           
+                <td>{{ messagerie.expediteurId }}</td>
+                <td>{{ messagerie.destinataireId }}</td>
+                <td>{{ messagerie.message }}</td>
+                <td>{{ messagerie.dateEnvoi ? messagerie.dateEnvoi|date('Y-m-d H:i:s') : '' }}</td> #}
+                <td>
+                    {# <a href="{{ path('messagerie_show', {'id': messagerie.id}) }}">show</a>
+                    <a href="{{ path('messagerie_edit', {'id': messagerie.id}) }}">edit</a> #}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ {{ dump( messageries ) }}
+    <a href="{{ path('messagerie_new') }}">Create new</a>
+{% endblock %}

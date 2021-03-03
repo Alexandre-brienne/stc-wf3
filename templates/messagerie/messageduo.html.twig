@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messagerie index
+{% endblock %}
+
+{% block body %}
+	{% for messagerie in messageries %}
+		
+			<p>{{ messagerie.expediteur.username }} {{ messagerie.message }}</p>
+
+    
+
+	{% else %}
+           <p>oh je suis dessolé mais il y'a pas de message avec cette personne :(</p>         
+	{% endfor %}
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+    <pre>
+        {{ dump(messageries) }}
+    </pre>
+{% endblock %}
