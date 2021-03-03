@@ -20,14 +20,14 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class MembreController extends AbstractController
 {
     #[Route('/', name: 'membre')]
-    public function index(AuthenticationUtils $authenticationUtils,UserRepository $userRepository): Response
+    public function index(AuthenticationUtils $authenticationUtils, UserRepository $userRepository): Response
     {
-        
+
         $id = $this->getUser()->getid();
-        $date = new DateTime(); 
-        $userRepository->editdateconexion($id,$date->format('Y-m-d H:i:s'));
-        
-        
+        $date = new DateTime();
+        $userRepository->editdateconexion($id, $date->format('Y-m-d H:i:s'));
+
+
         return $this->render('membre/index.html.twig', [
             'controller_name' => 'MembreController',
         ]);
@@ -48,8 +48,8 @@ class MembreController extends AbstractController
     {
         $userConnecte = $this->getUser();
         $userprofil = $user->getId();
+        $userImage = $user->getImageProfil();
         if ($userConnecte->getid() == $userprofil) {
-
 
             $form = $this->createForm(EditProfilType::class, $user);
             $form->handleRequest($request);
@@ -60,24 +60,36 @@ class MembreController extends AbstractController
                 if ($imageFile) {
                     $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                     $safeFilename = $slugger->slug($originalFilename);
-                    $newFilename  = $safeFilename.md5(uniqid()) . '.' . $imageFile->guessExtension();
+                    $newFilename  = $safeFilename . md5(uniqid()) . '.' . $imageFile->guessExtension();
                     try {
-                        $imageFile->move(
-                            $this->getParameter('images_directory'),    // dossier cible
-                            $newFilename
-                        );
+                        $dossierUpload = $this->getParameter('images_directory');
+                        $fichierImageold = "$dossierUpload/$userImage";
+                        if ($user->getImageProfil() != $newFilename) {
+                            if (is_file($fichierImageold)) {
+                                unlink($fichierImageold);
+                            }
+                            $imageFile->move($dossierUpload, $newFilename);
+                            $user->setImageProfil($newFilename);
+                        } elseif ($user->getImageProfil() === NULL) {
+                            $imageFile->move($dossierUpload, $newFilename);
+                            $user->setImageProfil($newFilename);
+                        }
                     } catch (FileException $e) {
                         // ... handle exception if something happens d uring file upload
                     }
+                    // BDD image 0     diferent de imageDAZAZDA
+                    // if ($user->getImageProfil() != $newFilename ){
+                    //     unlink($user->getImageProfil());
 
+                    // }
                     // supprimer l'image d'avant
-                    $dossierUpload = $this->getParameter('images_directory');
-                    $fichierImage = "$dossierUpload/" . $user->getImageProfil();
-                    if (is_file($fichierImage)) {
-                        unlink($fichierImage);
-                    }
+                    // $dossierUpload = $this->getParameter('images_directory');
+                    // $fichierImage = "$dossierUpload/" . $user->getImageProfil();
+                    // if (is_file($fichierImage)) {
+                    //     unlink($fichierImage);
+                    // }
 
-                    $user->setImageProfil($newFilename);
+                    // $user->setImageProfil($newFilename);
                 }
 
 
