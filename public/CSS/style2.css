@@ -20,10 +20,11 @@ a {
 
 
 header {
-    background-image: url(../uploads/magic-499137_2_1.png);
+    background-image: url(../image/Bannier.png);
     margin: -0.5rem;
-    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    
     
 }
 
@@ -57,6 +58,9 @@ nav { /* Navigateur */
 nav img { /* Logo */
     width: 11.25rem;
     margin-right: 6.25rem;
+}
+#connexion-responsive{
+    display: none;
 }
 .brand-logo{
     margin-left: 5rem;

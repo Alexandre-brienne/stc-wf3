@@ -16,6 +16,7 @@
 	</head>
 
 	<body>
+	{% block body %}
 		<header>
 			<nav>
 				<div class="brand-logo">
@@ -29,8 +30,8 @@
 						<i class="fab fa-instagram"></i>
 					</a>
 				</div>
-				<a href="#"><img src="images/logo_geekandstart_W.png" alt="logo" class="logo-nav"></a>
-				<i class="las la-power-off"></i>
+				<a href="#"><img src="public/image/logo_geekandstart.png" alt="logo" class="logo-nav"></a>
+				<i id="#connexion-responsive" class="las la-power-off"></i>
 			</nav>
 			<!-- Formulaire d'inscription -->
 			<section id="all">
@@ -91,8 +92,7 @@
 
 				<section id="principal2" class="principal">
 					<section id="connexion">
-						<h1>
-							Déjà membre?</h1>
+						<h1>Déjà membre?</h1>
 						<h1>Connecte toi.</h1>
 					</section>
 					<!-- Formulaire Connexion -->
@@ -118,9 +118,15 @@
 		</header>
 		<script src="https://kit.fontawesome.com/e4895b9a2a.js" crossorigin="anonymous"></script>
 
+	{% block footer %}
+	
+	{% endblock %}
 
 	</body>
+	{% endblock %}
 	{% block javascripts %}
 		<script src="https://kit.fontawesome.com/e4895b9a2a.js" crossorigin="anonymous"></script>
 	{% endblock %}
-</html></body></html>
+</html>
+</body>
+</html>
