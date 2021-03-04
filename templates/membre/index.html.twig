@@ -1,20 +1,323 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}Hello MembreController!{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/laragon/www/stc-wf3/src/Controller/MembreController.php'|file_link(0) }}">src/Controller/MembreController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/laragon/www/stc-wf3/templates/membre/index.html.twig'|file_link(0) }}">templates/membre/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Page Index Membre</title>
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/membre.css">
+  
+</head>
+
+
+<body>
+
+    <header>
+   
+        <div class="profil">
+            <div class="info_profil">
+                <p>Sarah</p>
+                <p >200 GeekCoin</p>
+            </div>
+            <img src="image/profil.png" alt="photo de profil" class="photoprofil">
+        </div>
+
+<div>
+      <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-transparent p-4">
+              <h5 class="text-light h4">Collapsed content</h5>
+              <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+          </div>
+          <nav class="navbar navbar-dark bg-transparent position-absolute bottom-0 end-0">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </nav>
+
+</div>        
+
+        <nav class="menu_profil">
+
+            <a href="#"><img src="image/Sans_titre.png" alt="logo GaS" class="logo"></a>
+
+            <section class="liste">
+
+                <ul>
+                    <li><a href="#" class="onglet">Mon Profil<a></li>
+                    <li><a href="#" class="onglet">Mes Amis</a></li>
+                    <li><a href="#" class="onglet">Messagerie</a></li>
+                    <li><a href="#" class="deconnexion">Déconnexion</a></li>
+                </ul>
+
+            </section>
+        </nav>
+   
+    </header>
+
+    <main>
+        
+        <section class="profils">
+
+            <div class="input">
+                <div class="cp">
+                <input type="text" placeholder="code postal" >
+                </div>
+                <div class="ville">
+                <input type="text" placeholder="ville">
+            </div>
+            </div>
+            
+                <div class="profilco">
+                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <div class="description">
+                        <div class="prenom">
+                            <p>MARINE</p>
+                            <span>23 ans</span>
+                        </div>
+                        <div class="lieu">
+                            <p>Grenoble</p>
+                            <a href="#"><i class="las la-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profilco">
+                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <div class="description">
+                        <div class="prenom">
+                            <p>MARINE</p>
+                            <span>23 ans</span>
+                        </div>
+                        <div class="lieu">
+                            <p>Grenoble</p>
+                            <a href="#"><i class="las la-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profilco">
+                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <div class="description">
+                        <div class="prenom">
+                            <p>MARINE</p>
+                            <span>23 ans</span>
+                        </div>
+                        <div class="lieu">
+                            <p>Grenoble</p>
+                            <a href="#"><i class="las la-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+           
+                <div class="profilco">
+                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <div class="description">
+                        <div class="prenom">
+                            <p>MARINE</p>
+                            <span>23 ans</span>
+                        </div>
+                        <div class="lieu">
+                            <p>Grenoble</p>
+                            <a href="#"><i class="las la-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profilco vm">
+                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <div class="description">
+                        <div class="prenom">
+                            <p>MARINE</p>
+                            <span>23 ans</span>
+                        </div>
+                        <div class="lieu">
+                            <p>Grenoble</p>
+                            <a href="#"><i class="las la-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profilco vm">
+                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <div class="description">
+                        <div class="prenom">
+                            <p>MARINE</p>
+                            <span>23 ans</span>
+                        </div>
+                        <div class="lieu">
+                            <p>Grenoble</p>
+                            <a href="#"><i class="las la-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profilco vm">
+                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <div class="description">
+                        <div class="prenom">
+                            <p>MARINE</p>
+                            <span>23 ans</span>
+                        </div>
+                        <div class="lieu">
+                            <p>Grenoble</p>
+                            <a href="#"><i class="las la-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profilco vm">
+                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <div class="description">
+                        <div class="prenom">
+                            <p>MARINE</p>
+                            <span>23 ans</span>
+                        </div>
+                        <div class="lieu">
+                            <p>Grenoble</p>
+                            <a href="#"><i class="las la-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            
+
+            <a href="#" class="boutonprofil">Afficher plus de profils</a>
+
+        </section>
+
+        <section class="liste_articles">
+
+            <h2>Les Actualités</h2>
+
+            <div class="articles">
+                <div>
+                    <figure class="article">
+                        <img src="image/article.png" alt="article1" class="article_img">
+                        <figcaption class="article_text">
+
+                            <h3>Titre Article</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur.
+                                Lorem ipsum dolor sit amet consectetur.
+                                Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Unde ab nulla optio incidunt,
+                                dolores eligendi magnam minus ut atque soluta,
+                                perferendis illum architecto saepe earum!
+                            </p>
+                            <button>Lire Article</button>
+                        </figcaption>
+
+                    </figure>
+
+                    <figure class="article part2_articles">
+                        <img src="image/article.png" alt="article2" class="article_img">
+                        <figcaption class="article_text">
+                            <h3>Titre Article</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur.
+                                Lorem ipsum dolor sit amet consectetur.
+                                Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Unde ab nulla optio incidunt,
+                                dolores eligendi magnam minus ut atque soluta,
+                                perferendis illum architecto saepe earum!
+                            </p>
+                            <button>Lire Article</button>
+                        </figcaption>
+                    </figure>
+                </div>
+
+
+                <div>
+                    <figure class="article vm">
+                        <img src="image/article.png" alt="article3" class="article_img">
+                        <figcaption class="article_text">
+                            <h3>Titre Article</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur.
+                                Lorem ipsum dolor sit amet consectetur.
+                                Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Unde ab nulla optio incidunt,
+                                dolores eligendi magnam minus ut atque soluta,
+                                perferendis illum architecto saepe earum!
+                            </p>
+                            <button>Lire Article</button>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="article vm">
+                        <div class="part2_articles">
+                            <img src="image/article.png" alt="article4" class="article_img">
+                            <figcaption class="article_text">
+                                <h3>Titre Article</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur.
+                                    Lorem ipsum dolor sit amet consectetur.
+                                    Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Unde ab nulla optio incidunt,
+                                    dolores eligendi magnam minus ut atque soluta,
+                                    perferendis illum architecto saepe earum!
+                                </p>
+                                <button>Lire Article</button>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </div>
+                <div>
+                    <figure class="article vm">
+                        <img src="image/article.png" alt="article5" class="article_img">
+                        <figcaption class="article_text">
+                            <h3>Titre Article</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur.
+                                Lorem ipsum dolor sit amet consectetur.
+                                Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Unde ab nulla optio incidunt,
+                                dolores eligendi magnam minus ut atque soluta,
+                                perferendis illum architecto saepe earum!
+                            </p>
+                            <button>Lire Article</button>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="article vm">
+                        <div class="part2_articles">
+                            <img src="image/article.png" alt="article6" class="article_img">
+                            <figcaption class="article_text">
+                                <h3>Titre Article</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur.
+                                    Lorem ipsum dolor sit amet consectetur.
+                                    Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Unde ab nulla optio incidunt,
+                                    dolores eligendi magnam minus ut atque soluta,
+                                    perferendis illum architecto saepe earum!
+                                </p>
+                                <button>Lire Article</button>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+
+            <a href="#" class="button">Afficher plus d'articles</a>
+        </section>
+   
+    </main>
+
+    <footer>
+        
+    </footer>
+
+</body>
+
+
+</html>
