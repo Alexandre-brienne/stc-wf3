@@ -10,6 +10,7 @@ body {
 }
 
 /*vm => class qui permet de cacher une partie des profil et articles en vue mobile*/
+/*vt => class qui permet de cacher une partie articles en vue tablette*/
 
 
 
@@ -377,7 +378,7 @@ h2 {
     
     }
     
-    }
+}
     
     
 
