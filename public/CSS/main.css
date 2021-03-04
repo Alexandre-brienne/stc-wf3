@@ -1,8 +1,947 @@
+/****************************** INDEX *******************************************************************************************************************/
+
+
+.body-of-index * {
+    box-sizing: border-box;
+}
+
+.body-of-index {
+    background-color: #111A39;
+    font-size: 1.6rem;
+    
+    /* => 16px */
+
+}
+
+.body-of-index a {
+    text-decoration: none;
+}
+
+:root {
+    /* Sélecteur root, ou sélecteur racine */
+    /* On y difinit la taille de  irem */
+    font-size: 10px;
+
+    /* On y définnit os variable CSS */
+    /* --nom: valeur */
+    --rouge: #79f4fd;
+    /* On nomme la couleur #ff0000 sous le nom rouge */
+    --bleu: #0000ff;
+    --bordure: 1px solid var(--rouge);
+}
+
+.header-index {
+   
+    height: 100vh;
+    background-color: #111A39;
+    background-image: url(../image/Bannier.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-index img {
+    width: 50%;
+}
+
+.nav-index{
+    display: none;
+}
+
+
+.inscriptionbutton-index{
+    border: 0;
+    line-height: 2.5;
+    padding: 0rem 2.0rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #111A39;
+    border-radius: 1.0rem;
+    background-color: #FFFF00;
+
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+}
+
+.container-index {
+    display:grid;
+    grid-template-columns: 1fr;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #699BF7;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.header-index section:first-of-type{
+    /* 4 lignes "magiques" pour centrer parfaitement un bloc */
+    display: flex;
+    margin-left: 1.0rem;
+    text-align: center;
+    background-color: rgba(105, 105, 105, 0.5);
+    border-radius: 10px;
+    
+    color: #699BF7;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    width: 40%;
+    padding: 3.0rem;
+    box-sizing: border-box; 
+        
+}
+
+.header-index .mobilenav {
+    display: flex; 
+    justify-content: space-between;/* Repartition horizontal*/
+    align-items: center; /* alignement verticale */
+    background-color: rgba(105, 105, 105, 0.5);    
+    background-size: cover;
+    top: 0rem;
+    right: 0rem;
+    left: 0;
+    z-index: 1;
+}
+
+.header-index nav div a {
+    color: #699BF7;
+    
+    margin: 0;
+    padding: -1.0rem;
+
+}
+.header-index nav div {
+    display: inline;
+    margin-right: 3.5rem;
+
+}
+
+.header-index nav ul li{
+    display: inline;
+    margin-left: 2.0rem;
+}
+.header-index nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-index nav ul a{
+    color: rgb(0, 255, 0);
+    
+}
+
+/* Vue mobile */
+.body-of-index h1 {
+    color: #0000ff;
+    font-size: rem;
+    text-align: center;
+
+}
+
+.body-of-index h2 {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.body-of-index p {
+    font-size: 1rem;
+}
+
+.header-index section:first-of-type {
+    padding: 1.6rem;
+    text-align: center;
+    color: #699BF7;
+    background-color: rgba(105, 105, 105, 0.5);
+    margin: auto;
+    
+
+}
+.logo2-index{
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 85%;
+    min-width:50px;
+    max-width: 300px;
+}
+
+
+
+.main-of-index {
+
+    padding: 1.0rem;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.main-of-index img {
+    width: 80%;
+}
+
+.main-of-index>section{
+
+    padding: 1.8rem;
+
+}
+
+.main-of-index section div {
+    padding: 1.5rem;
+    display: flex;
+    text-align: center;
+}
+
+
+/* Section Pouquoi nous  */
+.main-of-index section:first-child {
+    border-bottom: var(--bordure);
+    color: whitesmoke;
+    background-color: #2E416F;
+}
+
+/* Section deja membre */
+.main_of_index section:nth-child(2) {
+
+    color: whitesmoke;
+    background-color: #2E416F;
+
+}
+
+.main-of-index section:nth-child(2) div {
+
+    display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.0rem;
+
+}
+
+
+/* Section pour Placer le Boutton "Rejoin-nous" */
+.main-of-index section:nth-child(3) {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+/* -------------------------------Boutton-------------------------------------------- */
+
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #111A39;
+
+    border-radius: 1.0rem;
+    background-color: #FFFF00;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+
+}
+
+.styled:hover {
+    background-color: rgb(0, 119, 255)
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+        inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+/* -------------------------------Boutton-------------------------------------------- */
+
+
+footer{
+    padding: 1.8rem;
+    background-color:#2E416F;
+    font-size: 1.5rem;
+
+}
+footer h3{
+    color: #0b3086;
+}
+footer ul{
+    margin: 0;
+}
+footer li{
+    list-style: none ;
+    color: white;
+   
+}
+footer p{
+    text-align: center;
+    color: white;
+
+}
+footer hr{
+    height: 0.2rem;
+    background-color: white;
+}
+.imagelogo{
+    min-width: 200px;
+    max-width: 300px;
+}
+.first-section-footer{
+  width: 100%;
+}
+.social-logo>i{
+
+    color: white;
+    margin-left: 1.5rem;
+
+}
+.social-logo{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+.body-of-index .lab {
+    background-color:rgb(65, 61, 61) ;
+    color:white;
+    font-size: 2rem;
+    border: white solid 2px;
+    border-radius: 50%;
+    padding: 0.5rem;
+   
+}
+
+.list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-decoration: none;
+}
+
+/********************************* Vue tablette *************************/
+/* Ecran et a partir d'une largeur de 600px */
+@media screen and (min-width:775px) {
+
+/* --------J'ai mis la nav mobile en none------------- */
+    .header-index .mobilenav{
+        display: none;
+    
+    }
+    .nav-index{
+        display: flex;
+    }
+    
+
+/*________________ID du formulaire d'inscription________________________ */
+    .inscriptionbutton-index{
+        border: 0;
+        line-height: 2.5;
+        padding: 0rem 2.0rem;
+        font-size: 1rem;
+        text-align: center;
+        color: #111A39;
+        border-radius: 1.0rem;
+        background-color: #FFFF00;
+    
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+    }
+
+    .container-index {
+        flex-wrap: wrap;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #699BF7;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        width: 100%;
+        padding: 50px;
+        box-sizing: border-box;
+    }
+    .header-index section:first-of-type{
+        /* 4 lignes "magiques" pour centrer parfaitement un bloc */  
+        margin-left: 1.0rem;
+        text-align: center;
+        background-color: rgba(105, 105, 105, 0.5);
+        border-radius: 10px;
+        
+        color: #699BF7;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        width: 40%;
+        padding: 3.0rem;
+        box-sizing: border-box; 
+        position: absolute ;
+        left: 50%;
+        transform: translate(-50%);
+            
+    }
+    .logo2-index{
+        display: none;
+    }
+    .body-of-index .lab {
+        background-color:rgb(65, 61, 61) ;
+        color:white;
+        font-size: 1.5rem;
+        border: white solid 2px;
+        border-radius: 50%;
+        padding: 0.2rem;
+       
+    }
+    .socialnetwork{
+        margin-top:1rem;
+    }
+    
+                    
+    .header-index img {
+        width: 30%;
+    }
+         
+    .body-of-index h1 {
+        display: flex;
+        margin-right: 10rem;
+        text-decoration: underline;
+    }
+            
+    .main_of-section section {
+        flex: 1;
+        text-align: center;
+    }
+        
+    .main_of-section section:nth-child(3) {
+        
+        display: flex;
+        justify-content: right;
+        
+    }
+        
+
+    .logos-index{
+        flex: 1;
+    }
+    .socialnetwork{
+        flex:1;
+    }
+    .login-container{
+        flex: 1;
+        margin-top: 1rem;
+       
+    }
+    .login-container>form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .body-of-index input::placeholder {
+        text-align: center;
+        color: #699BF7;
+      }
+
+    .login-container {
+            float: none;
+      }
+    
+    .body-of-index input[type=text] {
+        padding-top: 0.5rem;
+       
+        padding-bottom: 0.5rem;
+        font-size: large;
+        border-radius: 0.9375rem ;
+        border: solid white 0.700rem;
+        width: 150px;
+        height: 3rem;
+      }
+
+    .body-of-index input[type=Password] {
+        padding-top: 1rem;
+       
+        padding-bottom: 1rem;
+        font-size: 1.7rem;
+        border-radius: 0.9375rem ;
+        border: none;
+        width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+        height: 3rem;
+      }
+
+    .body-of-index input[type=email] {
+        padding: 0.1rem;
+        margin-top: 2rem;
+        font-size: 1.7rem;
+        border-radius: 1.0rem ;
+        border: none;
+        width: 150px;
+        height: 3rem;
+         /* adjust as needed (as long as it doesn't break the topnav) */
+      }
+
+    .login-container button {
+        float: right;
+        padding: 0.6rem;
+        width: 12rem; 
+        background: #699BF7;
+        border-radius: 1.0rem ;
+        font-size: 1.5rem;
+        border: none;
+        cursor: pointer;
+        margin-left: 1rem;
+        color: whitesmoke;
+      }
+      
+
+    .header-index nav div a {
+        color: #699BF7;
+        
+    
+    }
+    .header-index nav div {
+        display: inline;
+        margin-right: 0.5rem;
+    
+    }
+    
+    .header-index nav ul li{
+        display: inline;
+    
+    }
+    .header-index nav ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-index nav {
+
+        background-color: rgba(0, 0, 0, 0.518);
+    }
+
+    /* Le CSS s'applique uniquement a partir de 600px de largeur d'ecran */
+    /* Dans la media querie on ecris uniquement le code a modifier  */
+    :root {
+        font-size: 12px;
+    }
+
+
+    /* section deja member  */
+    .main-of-section section:nth-child(2) div {
+
+        display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1.0rem;
+    
+    }
+
+    .main-of-section section:first-child {
+        border-bottom: none;
+        border-right: blue 1px solid;
+    }
+    .body-of-index .Contact{
+        color: #699BF7;
+        text-decoration: underline;
+        font-size: 2.0rem;
+        margin: 0;
+        padding: 1.0rem;
+        margin-left: 20rem;
+    }
+
+
+}
+
+.container-index{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.logininfomation{
+    display: flex;
+    color: #699BF7;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.logininfomation>p{
+
+    width: 50%;
+}
+
+.logininfomation>a{
+    color: red;
+    padding-top: 0.5rem;
+    font-size: 1.5rem;
+    width: 50%;
+    padding-bottom: 0.5rem;
+}
+
+/************************************************** Vue ordi *********************************/
+/* Ecran de minimum 1000px */
+@media screen and (min-width:1000px) {
+    .header-index section:first-of-type{
+/* 4 lignes "magiques" pour centrer parfaitement un bloc */
+        
+        margin-left: 1.0rem;
+        text-align: center;
+        background-color: rgba(105, 105, 105, 0.5);
+        border-radius: 10px;
+
+        color: #699BF7;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        width: 40%;
+        padding: 3.0rem;
+        box-sizing: border-box;
+    
+            
+    }
+
+
+    .header-index img {
+        width: 30%;
+    }
+ 
+    .body-of-index h1 {
+        display: flex;
+        margin-right: 10rem;
+        text-decoration: underline;
+    }
+    
+    .main_of-section section {
+        flex: 1;
+        text-align: center;
+    }
+
+    .main_of-section section:nth-child(3) {
+
+        display: flex;
+        justify-content: right;
+
+    }
+
+    .container-index {
+        
+        flex-wrap: wrap;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #699BF7;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        width: 100%;
+        padding: 50px;
+        box-sizing: border-box;
+    }
+    
+    .logos-index{
+        width: 250px;
+}
+
+    .inscriptionbutton-index{
+        border: 0;
+        line-height: 2.5;
+        padding: 0rem 2.0rem;
+        font-size: 1rem;
+        text-align: center;
+        color: #111A39;
+        border-radius: 1.0rem;
+        background-color: #FFFF00;
+
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+    }
+}
+
+
+
+
+/************************** Register****************************/
+
+
+/*________________________________________________________________*
+
+                        Début partie Corps
+*_________________________________________________________________*/
+
+.register-body {
+    font-family: Roboto;
+    background-color: #111A39;
+    padding: 0;
+    
+}
+.register-h1{
+    font-size: 1.3rem;
+    margin: 0.1rem;
+    font-weight: normal;
+}
+.register-a {
+    text-decoration: none;
+}
+
+
+.register-header {
+    background-image: url(../image/Bannier.png);
+    margin: -0.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+}
+
+/*________________________________________________________________*
+
+                        Fin partie Corps
+*_________________________________________________________________*/
 
 
 
 
 
+/*________________________________________________________________*
+
+                    Début partie Navigateur
+*_________________________________________________________________*/
+
+.register-nav { /* Navigateur */
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.336);
+}
+.register-body .fab{ /* Icons */
+    margin-top: 0.625rem;
+    margin-left: 0.9375rem;
+    font-size: 2.5rem;
+    color: white;
+    margin: 1rem;
+}
+
+.register-body nav img { /* Logo */
+    width: 11.25rem;
+    margin-right: 6.25rem;
+}
+#connexion-responsive{
+    display: none;
+}
+.register-brand-logo{
+    margin-left: 5rem;
+}
+
+/*_________________________________________________________________*
+
+                        Fin partie Navigateur
+*__________________________________________________________________*/
+
+
+
+
+.register-body #principal { /* Séparations des Sections des Formulaires */
+    display: inline-block;
+    flex: 1;
+}
+#all{
+    display:flex
+}
+
+
+
+/*_________________________________________________________________*
+
+                        Début partie Inscription
+*__________________________________________________________________*/
+
+#register-inscription {
+    margin-top: 3.125rem;
+    margin-left: 3.125rem;
+    margin-bottom: 2rem ;
+    border-radius: 1.25rem;
+    border: 0.3125rem solid rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.514);
+
+}
+
+.register-body #inscription div {
+    justify-content: space-around;
+}
+
+.register-grid2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+   
+}
+.register-grid3{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    color: #699BF7;
+}
+#register-principal1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+#ButtonContact-Rejoindre  { /* Lien "Nous Contacter" */
+    margin-left: 2.5rem;
+    color: yellow;
+    text-decoration: underline;
+}
+
+#rejoindre { /* Button Inscription */
+    background-color: yellow;
+    border: yellow 0.3rem solid;
+    color: #073590;
+    margin-top: 1.5rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.9rem;
+}
+.register-body input[type="checkbox"], .accept-cgu{
+    margin-top: 1.5rem;
+}
+
+.register-body label{
+    color: #699BF7;
+}
+
+/*_________________________________________________________________*
+
+                        Fin partie inscription
+*__________________________________________________________________*/
+
+
+
+
+
+/* ________________________________________________________________*
+
+                        Début partie Connexion 
+*__________________________________________________________________*/
+
+    
+
+
+
+.sexe {
+    display: grid;
+}
+
+.register-body form span { /* phrase CGU */
+    color: white;
+}
+
+.register-body #connecté { /* Button Connexion */
+    background-color: #699BF7;
+    border-color: #699BF7;
+    color: white;
+    margin-top: 0.9375rem;
+    margin-left: 50%;
+    margin-bottom: 0.9375rem;
+}
+
+/*_________________________________________________________________*
+
+                        Fin partie Connexion
+*__________________________________________________________________*/
+
+
+
+
+
+/*_________________________________________________________________*
+
+                    Début partie des Formulaires 
+*__________________________________________________________________*/
+
+.form-register {
+    margin: 2.5rem;
+}
+
+#register-title { /* Labels des formulaires */
+    color: #699BF7;
+    font-size: large;
+}
+
+.form-register div div input {
+    border: solid white 0.700rem;
+    font-size: large;
+    border-radius: 0.9375rem;
+}
+
+.form-register div div select { /* Selection du Sexe */
+    border: solid white 0.700rem;
+    font-size: large;
+    border-radius: 0.9375rem;
+}
+
+.form-register div div label {
+    margin: 0.25rem;
+    margin-top: 0;
+}
+.register-body input[type="date"]{
+    width: 13.5rem;
+}
+
+
+.register-body form button { /* Formes des button */
+    border: solid 0.625rem;
+    border-radius: 1.3125rem;
+    font-size: large;
+}
+#rejoindre{
+    display: block;
+}
+
+/*_________________________________________________________________*
+
+                Fin de la partie des Formulaires
+*__________________________________________________________________*/
+
+@media screen  and (max-width: 1070px){
+    .register-body .logo-nav{
+        display: none;
+    }
+    #connexion-responsive{
+        display: initial;
+        margin: 0.5rem;
+        margin-right: 2rem;
+        font-size: 1.5rem;
+    }
+    #inscription{
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 1rem ;
+        border-radius: 1.25rem;
+        border: 0.1125rem solid rgba(0, 0, 0, 0);
+    }
+    #register-principal2{
+        display: none;
+    }
+    .register-body .fab{
+        font-size: 1rem;
+        margin: 0.5rem;
+    }
+
+    .register-body .lab {
+        color:white;
+        font-size: 1em;
+        border: white solid 2px;
+        border-radius: 50%;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    .register-body label{
+        display: block;
+    }
+    .register-body select, input{
+        width: 12rem;
+    }
+    #register-principal1{
+        display: initial;
+    }
+    .register-grid2{
+        display: initial;
+    }
+    
+}
 
 
 
