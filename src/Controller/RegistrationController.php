@@ -30,20 +30,7 @@ class RegistrationController extends AbstractController
                 )
             );
 
-            $user->setRoles(["ROLE_USER"]);
-            $user->setSexe("homme");
-            $user->setNom("alexandre");
-            $user->setPrenom("toto");
-            // $user->setPoint(10);
-
-        
- 
-
-
-
-
-            // $user->setAmisId(5);
-         
+            $user->setRoles(["ROLE_USER"]);   
             $user->setDateInscription(new \DateTime());
             $user->setDateNaissance(new \DateTime());
 

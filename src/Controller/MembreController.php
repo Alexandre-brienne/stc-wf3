@@ -26,9 +26,9 @@ class MembreController extends AbstractController
     public function index(AuthenticationUtils $authenticationUtils, UserRepository $userRepository): Response
     {
 
-        $id = $this->getUser()->getid();
+        // $id = $this->getUser()->getid();
         $date = new DateTime();
-        $userRepository->editdateconexion($id, $date->format('Y-m-d H:i:s'));
+        // $userRepository->editdateconexion($id, $date->format('Y-m-d H:i:s'));
 
 
         return $this->render('membre/index.html.twig', [
