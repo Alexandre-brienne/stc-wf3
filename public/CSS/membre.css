@@ -473,6 +473,11 @@ h2 {
 
     }
 
+    input{
+        width: 12rem;
+        height: 1.5rem;
+    }
+
     .input {
        
         display: grid;
@@ -587,8 +592,8 @@ h2 {
         display: flex;
         padding-top: 5rem;
         padding-bottom: 5rem;
-        margin-right: 6rem;
-        margin-left: 6rem;
+        margin-right: 3rem;
+        margin-left: 3rem;
 
     }
 
@@ -599,6 +604,13 @@ h2 {
         margin-top: 5rem;
         margin-right: 0;
         margin-left: 0;
+    
+    }
+
+    .articles_vt {
+
+        display: initial;
+        
     
     }
 
