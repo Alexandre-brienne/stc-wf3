@@ -45,7 +45,7 @@ header img {
     display: none;
 }
 
-#form-welcom {
+#form-welcom-index {
     display: none;
 }
 
@@ -285,7 +285,7 @@ footer hr{
 
     }
 
-    .logos{
+    .logos-index{
         flex: 1;
     }
     .socialnetwork{
@@ -415,7 +415,7 @@ footer hr{
 
 }
 
-.container{
+.container-index{
     padding-left: 2rem;
     padding-right: 2rem;
     box-sizing: border-box;
@@ -485,7 +485,7 @@ footer hr{
 
     }
 
-    .container {
+    .container-index {
         display: flex;
         flex-wrap: wrap;
         position: absolute;
@@ -500,11 +500,11 @@ footer hr{
         box-sizing: border-box;
     }
     
-.logos{
+.logos-index{
     width: 250px;
 }
 
-    #form-welcom {
+    #form-welcom-index {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1.0rem;
@@ -516,7 +516,7 @@ footer hr{
         box-shadow: 10px 10px 34px -14px rgba(0, 0, 0,);
     }
 
-    .inscriptionbutton{
+    .inscriptionbutton-index{
     border: 0;
     line-height: 2.5;
     padding: 0rem 2.0rem;
