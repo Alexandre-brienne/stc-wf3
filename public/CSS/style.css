@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-body {
+.body-of-index {
     background-color: #111A39;
     font-size: 1.6rem;
     
@@ -10,7 +10,7 @@ body {
 
 }
 
-a {
+.body-of-index a {
     text-decoration: none;
 }
 
@@ -27,7 +27,7 @@ a {
     --bordure: 1px solid var(--rouge);
 }
 
-header {
+.header-index {
    
     height: 100vh;
     background-color: #111A39;
@@ -37,19 +37,60 @@ header {
     background-position: center;
 }
 
-header img {
+.header-index img {
     width: 50%;
 }
 
-.nav{
+.nav-index{
     display: none;
 }
 
-#form-welcom-index {
-    display: none;
+
+.inscriptionbutton-index{
+    border: 0;
+    line-height: 2.5;
+    padding: 0rem 2.0rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #111A39;
+    border-radius: 1.0rem;
+    background-color: #FFFF00;
+
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
 }
 
-header nav {
+.container-index {
+    display:grid;
+    grid-template-columns: 1fr;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #699BF7;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.header-index section:first-of-type{
+    /* 4 lignes "magiques" pour centrer parfaitement un bloc */
+    display: flex;
+    margin-left: 1.0rem;
+    text-align: center;
+    background-color: rgba(105, 105, 105, 0.5);
+    border-radius: 10px;
+    
+    color: #699BF7;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    width: 40%;
+    padding: 3.0rem;
+    box-sizing: border-box; 
+        
+}
+
+.header-index .mobilenav {
     display: flex; 
     justify-content: space-between;/* Repartition horizontal*/
     align-items: center; /* alignement verticale */
@@ -61,52 +102,52 @@ header nav {
     z-index: 1;
 }
 
-header nav div a {
+.header-index nav div a {
     color: #699BF7;
     
     margin: 0;
     padding: -1.0rem;
 
 }
-header nav div {
+.header-index nav div {
     display: inline;
     margin-right: 3.5rem;
 
 }
 
-header nav ul li{
+.header-index nav ul li{
     display: inline;
     margin-left: 2.0rem;
 }
-header nav ul{
+.header-index nav ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-header nav ul a{
+.header-index nav ul a{
     color: rgb(0, 255, 0);
     
 }
 
 /* Vue mobile */
-h1 {
+.body-of-index h1 {
     color: #0000ff;
     font-size: rem;
     text-align: center;
 
 }
 
-h2 {
+.body-of-index h2 {
     font-size: 1.6rem;
     text-align: center;
 }
 
-p {
+.body-of-index p {
     font-size: 1rem;
 }
 
-header section:first-of-type {
+.header-index section:first-of-type {
     padding: 1.6rem;
     text-align: center;
     color: #699BF7;
@@ -115,10 +156,18 @@ header section:first-of-type {
     
 
 }
+.logo2-index{
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 85%;
+    min-width:50px;
+    max-width: 300px;
+}
 
 
 
-main {
+.main-of-index {
 
     padding: 1.0rem;
     width: 100%;
@@ -126,17 +175,17 @@ main {
     text-align: center;
 }
 
-main img {
+.main-of-index img {
     width: 80%;
 }
 
-main>section{
+.main-of-index>section{
 
     padding: 1.8rem;
 
 }
 
-main section div {
+.main-of-index section div {
     padding: 1.5rem;
     display: flex;
     text-align: center;
@@ -144,21 +193,21 @@ main section div {
 
 
 /* Section Pouquoi nous  */
-main section:first-child {
+.main-of-index section:first-child {
     border-bottom: var(--bordure);
     color: whitesmoke;
     background-color: #2E416F;
 }
 
 /* Section deja membre */
-main section:nth-child(2) {
+.main_of_index section:nth-child(2) {
 
     color: whitesmoke;
     background-color: #2E416F;
 
 }
 
-main section:nth-child(2) div {
+.main-of-index section:nth-child(2) div {
 
     display: grid;
         grid-template-columns: 1fr 1fr;
@@ -168,7 +217,7 @@ main section:nth-child(2) div {
 
 
 /* Section pour Placer le Boutton "Rejoin-nous" */
-main section:nth-child(3) {
+.main-of-index section:nth-child(3) {
 
     display: flex;
     justify-content: center;
@@ -248,7 +297,7 @@ footer hr{
     display: flex;
     width: 100%;
 }
-.lab {
+.body-of-index .lab {
     background-color:rgb(65, 61, 61) ;
     color:white;
     font-size: 2rem;
@@ -269,21 +318,98 @@ footer hr{
 @media screen and (min-width:775px) {
 
 /* --------J'ai mis la nav mobile en none------------- */
-    .mobilenav{
+    .header-index .mobilenav{
         display: none;
     
     }
+    .nav-index{
+        display: flex;
+    }
+    
 
 /*________________ID du formulaire d'inscription________________________ */
-    #form-welcom {
+    .inscriptionbutton-index{
+        border: 0;
+        line-height: 2.5;
+        padding: 0rem 2.0rem;
+        font-size: 1rem;
+        text-align: center;
+        color: #111A39;
+        border-radius: 1.0rem;
+        background-color: #FFFF00;
+    
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+    }
+
+    .container-index {
+        flex-wrap: wrap;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #699BF7;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        width: 100%;
+        padding: 50px;
+        box-sizing: border-box;
+    }
+    .header-index section:first-of-type{
+        /* 4 lignes "magiques" pour centrer parfaitement un bloc */  
+        margin-left: 1.0rem;
+        text-align: center;
+        background-color: rgba(105, 105, 105, 0.5);
+        border-radius: 10px;
+        
+        color: #699BF7;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        width: 40%;
+        padding: 3.0rem;
+        box-sizing: border-box; 
+        position: absolute ;
+        left: 50%;
+        transform: translate(-50%);
+            
+    }
+    .logo2-index{
         display: none;
     }
-
-    .nav{
-
-        display: flex;
-
+    .body-of-index .lab {
+        background-color:rgb(65, 61, 61) ;
+        color:white;
+        font-size: 1.5rem;
+        border: white solid 2px;
+        border-radius: 50%;
+        padding: 0.2rem;
+       
     }
+    .socialnetwork{
+        margin-top:1rem;
+    }
+    
+                    
+    .header-index img {
+        width: 30%;
+    }
+         
+    .body-of-index h1 {
+        display: flex;
+        margin-right: 10rem;
+        text-decoration: underline;
+    }
+            
+    .main_of-section section {
+        flex: 1;
+        text-align: center;
+    }
+        
+    .main_of-section section:nth-child(3) {
+        
+        display: flex;
+        justify-content: right;
+        
+    }
+        
 
     .logos-index{
         flex: 1;
@@ -293,6 +419,7 @@ footer hr{
     }
     .login-container{
         flex: 1;
+        margin-top: 1rem;
        
     }
     .login-container>form{
@@ -300,7 +427,7 @@ footer hr{
         justify-content: center;
         align-items: center;
     }
-    input::placeholder {
+    .body-of-index input::placeholder {
         text-align: center;
         color: #699BF7;
       }
@@ -309,72 +436,75 @@ footer hr{
             float: none;
       }
     
-      input[type=text] {
+    .body-of-index input[type=text] {
         padding-top: 0.5rem;
        
         padding-bottom: 0.5rem;
-        font-size: 1.7rem;
-        border-radius: 1.0rem ;
-        border: none;
+        font-size: large;
+        border-radius: 0.9375rem ;
+        border: solid white 0.700rem;
         width: 150px;
-        height: 2rem;
+        height: 3rem;
       }
 
-      input[type=Password] {
+    .body-of-index input[type=Password] {
         padding-top: 1rem;
        
         padding-bottom: 1rem;
         font-size: 1.7rem;
-        border-radius: 1.0rem ;
+        border-radius: 0.9375rem ;
         border: none;
         width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
-        height: 2rem;
+        height: 3rem;
       }
 
-      input[type=email] {
+    .body-of-index input[type=email] {
         padding: 0.1rem;
         margin-top: 2rem;
         font-size: 1.7rem;
         border-radius: 1.0rem ;
         border: none;
-        width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+        width: 150px;
+        height: 3rem;
+         /* adjust as needed (as long as it doesn't break the topnav) */
       }
 
-      .login-container button {
+    .login-container button {
         float: right;
-        padding: 1rem;
+        padding: 0.6rem;
         width: 12rem; 
         background: #699BF7;
         border-radius: 1.0rem ;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         border: none;
         cursor: pointer;
         margin-left: 1rem;
         color: whitesmoke;
       }
+      
 
-      header nav div a {
+    .header-index nav div a {
         color: #699BF7;
         
     
     }
-    header nav div {
+    .header-index nav div {
         display: inline;
-        margin-right: 1.5rem;
+        margin-right: 0.5rem;
     
     }
     
-    header nav ul li{
+    .header-index nav ul li{
         display: inline;
     
     }
-    header nav ul{
+    .header-index nav ul{
         list-style-type: none;
         margin: 0;
         padding: 0;
     }
 
-    header nav {
+    .header-index nav {
 
         background-color: rgba(0, 0, 0, 0.518);
     }
@@ -385,12 +515,9 @@ footer hr{
         font-size: 12px;
     }
 
-    h1 {
-        color: red;
-    }
 
     /* section deja member  */
-    main section:nth-child(2) div {
+    .main-of-section section:nth-child(2) div {
 
         display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -398,19 +525,18 @@ footer hr{
     
     }
 
-    main section:first-child {
+    .main-of-section section:first-child {
         border-bottom: none;
         border-right: blue 1px solid;
     }
-    .Contact{
+    .body-of-index .Contact{
         color: #699BF7;
         text-decoration: underline;
         font-size: 2.0rem;
         margin: 0;
         padding: 1.0rem;
         margin-left: 20rem;
-        }
-
+    }
 
 
 }
@@ -419,6 +545,7 @@ footer hr{
     padding-left: 2rem;
     padding-right: 2rem;
     box-sizing: border-box;
+    text-align: center;
 }
 
 
@@ -445,40 +572,40 @@ footer hr{
 /************************************************** Vue ordi *********************************/
 /* Ecran de minimum 1000px */
 @media screen and (min-width:1000px) {
-    header section:first-of-type{
+    .header-index section:first-of-type{
 /* 4 lignes "magiques" pour centrer parfaitement un bloc */
-            display: flex;
-            margin-left: 1.0rem;
-            text-align: center;
-            background-color: rgba(105, 105, 105, 0.5);
-            border-radius: 10px;
+        
+        margin-left: 1.0rem;
+        text-align: center;
+        background-color: rgba(105, 105, 105, 0.5);
+        border-radius: 10px;
 
-            color: #699BF7;
-            text-shadow: 1px 1px 1px rgb(0, 0, 0);
-            width: 40%;
-            padding: 3.0rem;
-            box-sizing: border-box;
+        color: #699BF7;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        width: 40%;
+        padding: 3.0rem;
+        box-sizing: border-box;
     
             
-}
+    }
 
 
-    header img {
+    .header-index img {
         width: 30%;
     }
  
-    h1 {
+    .body-of-index h1 {
         display: flex;
         margin-right: 10rem;
         text-decoration: underline;
     }
     
-    main section {
+    .main_of-section section {
         flex: 1;
         text-align: center;
     }
 
-    main section:nth-child(3) {
+    .main_of-section section:nth-child(3) {
 
         display: flex;
         justify-content: right;
@@ -486,7 +613,7 @@ footer hr{
     }
 
     .container-index {
-        display: flex;
+        
         flex-wrap: wrap;
         position: absolute;
         top: 50%;
@@ -500,34 +627,20 @@ footer hr{
         box-sizing: border-box;
     }
     
-.logos-index{
-    width: 250px;
+    .logos-index{
+        width: 250px;
 }
 
-    #form-welcom-index {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.0rem;
-
-        width: 30rem;
-        background-color: rgba(105, 105, 105, 0.5);
-        border-radius: 10px;
-        padding: 45px;
-        box-shadow: 10px 10px 34px -14px rgba(0, 0, 0,);
-    }
-
     .inscriptionbutton-index{
-    border: 0;
-    line-height: 2.5;
-    padding: 0rem 2.0rem;
-    font-size: 1rem;
-    text-align: center;
-    color: #111A39;
-    border-radius: 1.0rem;
-    background-color: #FFFF00;
+        border: 0;
+        line-height: 2.5;
+        padding: 0rem 2.0rem;
+        font-size: 1rem;
+        text-align: center;
+        color: #111A39;
+        border-radius: 1.0rem;
+        background-color: #FFFF00;
 
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
     }
-
-    
 }

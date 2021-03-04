@@ -14,8 +14,8 @@
 		{% endblock %}
 	</head>
 
-	<body>
-		<header>
+	<body class="body-of-index">
+		<header class=" header-index ">
 			{% block header %}
 				<nav class="mobilenav">
 					<div>
@@ -38,10 +38,10 @@
 
 					</ul>
 				</nav>
-				<nav class="nav">
+				<nav class="nav-index">
 
 					<div class="logos-index">
-						<img class="imagelogo" src="image/logo_geekandstart.png" alt="">
+						<img class="imagelogo" src="image/logo_geekandstart.png" alt="logo">
 					</div>
 					<div class="socialnetwork">
 						<ul>
@@ -78,42 +78,32 @@
 
 
 				<div class="container-index">
+
+				<img src="image/logo_geekandstart.png" alt="logo" class="logo2-index">
 				
 					<section class='phrase'>
 						<article>
 							<p>
 								Lorem ipsum dolor sit amet consectetur
-														adipisicing elit. Ab mollitia impedit,
-														ad aliquid fugit, nobis maxime, quis at
-														veritatis quas nulla consequuntur.
-														Magnam explicabo molestiae, atque
-														perferendis ipsam molestias rerum!
+								adipisicing elit. Ab mollitia impedit,
+								ad aliquid fugit, nobis maxime, quis at
+								veritatis quas nulla consequuntur.
+								Magnam explicabo molestiae, atque
+								perferendis ipsam molestias rerum!
 							</p>
-						</article>
-					</section>
-
-					<form id="form-welcom-index">
+					<div>
 						<h2>Inscription</h2>
-
-						<!-- Pseudo -->
-						<div class="pseudo">
-							<label for="pseudo">Pseudo</label>
-							<input type="text" class="form-control">
-						</div>
-						<div class="Email">
-							<label>Email</label>
-							<input type="email" class="form-control">
-						</div>
-
 						<div>
 							<button class="inscriptionbutton-index" type="button">Rejoint nous</button>
 						</div>
-					</form>
+					</div>
+						</article>
+					</section>
 
 				</div>
 			{% endblock %}
 		</header>
-		<main>
+		<main class="main-of-index">
 			{% block main %}
 			
 			{% endblock %}
