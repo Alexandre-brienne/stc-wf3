@@ -37,51 +37,10 @@
 
 					<section id="register-principal1" class="principal">
 						<section id="register-inscription">
-							<form method="post" class="form-register">
-								<div class="register-grid2">
-									<div class="register-grid3">
-										<label id="register-title" for="username">Pseudo</label>
-										<input type="text" id="username" required placeholder="username">
-									</div>
-									<div class="register-grid3">
-										<label class="sexe" for="sexe">
-											<span id="register-title">Sexe</span>
-											<select name="sexe" id="sexe" required>
-												<option value="homme">Homme</option>
-												<option value="femme">Femme</option>
-											</select>
-										</label>
-									</div>
-								</div>
-								<div class="register-grid2">
-									<div class="register-grid3">
-										<label id="register-title" for="password">Mot de Passe</label>
-										<input type="text" id="password" required placeholder="password">
-									</div>
-									<div class="register-grid3">
-										<label id="register-title" for="date_naissance">Née le</label>
-										<input type="date" id="date_naissance" required placeholder="date_naissance">
-									</div>
-								</div>
-								<!-- Vérification email -->
-								<div class="register-grid2">
-									<div class="register-grid3">
-										<label id="register-title" for="email1">Email</label>
-										<input type="email" id="email1" required placeholder="email">
-									</div>
-									<div class="register-grid3">
-										<label id="register-title" for="email2">Confirmer Email</label>
-										<input type="text" id="email2" required placeholder="email">
-									</div>
-								</div>
-								<label for="cgu">
-									<input type="checkbox">
-									<span class="accept-cgu">Je certifie avoir plus de 18ans;<br>Et confirme avoir lu et accepté les conditions
-										<a class='register-a' class="cgu" href="#">générale d'utilisation.</a>
-									</span>
-								</label>
-								<button type="submit" id="rejoindre">Rejoins-Nous!</button>
-							</form>
+
+							{{ include('site/_formregister.html.twig') }}
+
+							
 							<a class='register-a' id="ButtonContact-Rejoindre" href="#">Nous Contacter</a>
 						</section>
 					</section>
@@ -95,20 +54,9 @@
 						</section>
 						<!-- Formulaire Connexion -->
 						<section id="register-connexion2">
-							<form method="post" class="form-register">
-								<div>
-									<div>
-										<label id="register-title" for="username">Pseudo</label>
-										<input type="text" id="username" required placeholder="username">
-									</div>
-									<div>
-										<label id="register-title" for="password">Mot de Passe</label>
-										<input type="text" id="password" required placeholder="password">
-									</div>
-								</div>
-								<!-- Valider connexion -->
-								<button type="submit" id="connecté">Connexion</button>
-							</form>
+						
+							{{ include('site/_formconnexion.html.twig') }}
+							
 						</section>
 					</section>
 				</section>

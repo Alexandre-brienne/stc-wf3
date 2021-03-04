@@ -13,6 +13,7 @@ use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
@@ -23,7 +24,7 @@ class RegistrationFormType extends AbstractType
         $builder
       
             ->add('Sexe', ChoiceType::class, [
-
+                'label' => 'genre',
                 'choices' => [
 
                     'Homme' => 'Homme',
@@ -42,7 +43,11 @@ class RegistrationFormType extends AbstractType
                 ],
 
             ])
-            ->add('username')
+            ->add('username',TextType::class,[
+                'label' => 'pseudo'
+
+            ]
+            )
             ->add('email',RepeatedType::class, [
                 'type' => EmailType::class,
                 'first_options'  => ['label' => 'email '],
@@ -51,6 +56,7 @@ class RegistrationFormType extends AbstractType
             ])
             // ->add('confirm_email')
             ->add('agreeTerms', CheckboxType::class, [
+                'label' => "Je certifie etre majeur et avoir lu le CGU.",
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -62,7 +68,7 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
 
-             
+                'label' => 'mot de passe',
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([
