@@ -1,0 +1,49 @@
+
+<div class="form-register">
+
+
+{{form_start(registrationForm)}}
+	<div class="register-grid2">
+		<div class="register-grid3">
+
+
+            {{form_row(registrationForm.username)}}
+		</div>
+		<div class="register-grid3">
+	
+            {{form_label(registrationForm.Sexe)}}
+            {{form_widget(registrationForm.Sexe)}}
+            {{form_help(registrationForm.Sexe)}}
+		</div>
+	</div>
+	<div class="register-grid2">
+		<div class="register-grid3">
+		
+            {{form_row(registrationForm.plainPassword)}}
+		</div>
+		<div class="register-grid3">
+          {{form_row(registrationForm.DateNaissance)}}
+		
+		</div>
+	</div>
+	<!-- Vérification email -->
+	<div class="register-grid2">
+		<div class="register-grid3">
+			
+            {{form_row(registrationForm.email.first)}}
+		</div>
+		<div class="register-grid3">
+                {{form_row(registrationForm.email.second)}}
+		
+		</div>
+	</div>
+	<label for="cgu"
+
+        {{form_row(registrationForm.agreeTerms)}}
+	</label>
+	<button type="submit" id="rejoindre">Rejoins-Nous!</button>
+    {{form_end(registrationForm)}}
+    </div>
+
+
+

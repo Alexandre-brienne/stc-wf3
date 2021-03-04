@@ -10,7 +10,7 @@ use App\Form\UserType;
 use App\Repository\UserRepository;
 use App\Form\RegistrationFormType;
 use App\Security\LoginFormAuthenticator;
-use Symfony\Component\PropertyAccess\PropertyAccessor as property ;
+use Symfony\Component\PropertyAccess\PropertyAccessor as property;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,28 +21,24 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SiteController extends AbstractController
 {
     #[Route('/', name: 'site')]
-    public function index(AuthenticationUtils $authenticationUtils,UserRepository $userRepository): Response
-    {   
+    public function index(AuthenticationUtils $authenticationUtils, UserRepository $userRepository): Response
+    {
         if ($this->getUser()) {
             return $this->redirectToRoute('membre');
         }
 
-        $membres = $userRepository->select5user(); 
+        $membres = $userRepository->select5user();
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
         return $this->render('site/index.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,
-            "membres" =>$membres,
-           
+            "membres" => $membres,
+
         ]);
     }
-    
 
-    
-
-
-    #[Route('/register', name: 'app_register')]
+    #[Route('/register', name:'app_register')]
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator): Response
     {
         $user = new User();
@@ -59,15 +55,8 @@ class SiteController extends AbstractController
             );
 
             $user->setRoles(["ROLE_USER"]);
-            $user->setSexe("homme");
-            $user->setNom("alexandre");
-            $user->setPrenom("toto");
-            // $user->setPoint(10);
-
-            // $user->setAmisId(5);
-         
             $user->setDateInscription(new \DateTime());
-            // $user->setDateNaissance(new \DateTime());
+            $user->setDateNaissance(new \DateTime());
 
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -87,5 +76,4 @@ class SiteController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
-
 }

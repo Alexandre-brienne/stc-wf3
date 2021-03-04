@@ -1,0 +1,386 @@
+/*__________________________________________________________________________________*
+
+                                Début page Inscription
+*___________________________________________________________________________________*/
+
+/*________________________________________________________________*
+
+                        Début partie Corps
+*_________________________________________________________________*/
+
+body {
+    font-family: Roboto;
+    background-color: #111A39;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+header {
+    background-image: url(/images/magic-499137_2_1.png);
+    margin: -8px;
+    background-size: 100vmax;
+    background-repeat: no-repeat;
+}
+
+/*________________________________________________________________*
+
+                        Fin partie Corps
+*_________________________________________________________________*/
+
+
+
+
+
+/*________________________________________________________________*
+
+                    Début partie Navigateur
+*_________________________________________________________________*/
+
+#navInscription { /* Navigateur */
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.336);
+}
+
+#navInscription .fab{ /* Icons */
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 40px;
+    color: white;
+}
+
+#navInscription img { /* Logo */
+    width: 180px;
+    margin-right: 100px;
+}
+
+/*_________________________________________________________________*
+
+                        Fin partie Navigateur
+*__________________________________________________________________*/
+
+
+
+
+#principal { /* Séparations des Sections des Formulaires */
+    display: inline-block;
+}
+
+
+
+/*_________________________________________________________________*
+
+                        Début partie Inscription
+*__________________________________________________________________*/
+
+#inscription {
+    margin-top: 15px;
+    margin-left: 50px;
+    border-radius: 20px;
+    border: 5px solid rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+#inscription div {
+    display: flex;
+    justify-content: space-around;
+}
+
+#inscription div div {
+    display: grid;
+}
+
+#inscription a { /* Lien "Nous Contacter" */
+    margin-left: 50px;
+    color: yellow;
+}
+
+#rejoindre { /* Button Inscription */
+    background-color: yellow;
+    border-color: yellow;
+    color: #073590;
+    margin-top: 15px;
+    margin-left: 40%;
+}
+
+/*_________________________________________________________________*
+
+                        Fin partie inscription
+*__________________________________________________________________*/
+
+
+
+
+
+/* ________________________________________________________________*
+
+                        Début partie Connexion 
+*__________________________________________________________________*/
+
+#connexion {
+    margin-top: 8px;
+    margin-left: 50px;
+    margin-bottom: 70px;
+    border: 15px solid rgba(0, 0, 0, 0);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+#connexion h1 {
+    margin-left: 80px;
+    color: #699BF7;
+}
+
+#connexion2 {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    border-top: solid rgba(0, 0, 0, 0);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+#connexion2 div {
+    display: grid;
+}
+
+.sexe {
+    display: grid;
+}
+
+form span { /* phrase CGU */
+    color: white;
+}
+
+#connecté { /* Button Connexion */
+    background-color: #699BF7;
+    border-color: #699BF7;
+    color: white;
+    margin-top: 15px;
+    margin-left: 50%;
+    margin-bottom: 15px;
+}
+
+/*_________________________________________________________________*
+
+                        Fin partie Connexion
+*__________________________________________________________________*/
+
+
+
+
+
+/*_________________________________________________________________*
+
+                    Début partie des Formulaires 
+*__________________________________________________________________*/
+
+form {
+    margin: 40px;
+}
+
+#title { /* Labels des formulaires */
+    color: #699BF7;
+    font-size: large;
+}
+
+form div div input {
+    border: solid white 20px;
+    font-size: large;
+    border-radius: 15px;
+}
+
+form div div select { /* Selection du Sexe */
+    border: solid white 15px;
+    font-size: large;
+    border-radius: 15px;
+}
+
+form div div label {
+    margin: 10px;
+}
+
+
+
+form button { /* Formes des button */
+    border: solid 10px;
+    border-radius: 5px;
+    font-size: large;
+}
+
+/*_________________________________________________________________*
+
+                Fin de la partie des Formulaires
+*__________________________________________________________________*/
+
+
+
+
+/*
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________*/
+
+
+
+
+
+/*__________________________________________________________________________________*
+
+                        Début page Contact non-connecté
+*___________________________________________________________________________________*/
+
+/*________________________________________________________________*
+
+                    Début partie Navigateur
+*_________________________________________________________________*/
+#navIndex {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.336);
+}
+
+#navIndex img {
+    margin-top: 1.2rem;
+    margin-left: 2rem;
+    width: 11rem;
+}
+
+#navIndex form input {
+    margin-right: 1rem;
+    border: solid white 0.4rem;
+    font-size: small;
+    border-radius: 1rem;
+}
+
+#navIndex form button {
+    background-color: #699BF7;
+    border-color: #699BF7;
+    color: white;
+}
+
+/*_________________________________________________________________*
+
+                        Fin partie Navigateur
+*__________________________________________________________________*/
+
+
+
+
+
+/*_________________________________________________________________*
+
+                  Début partie Formulaire de Contact
+*__________________________________________________________________*/
+
+#contacter {
+    margin-top: 0rem;
+    margin-left: 8rem;
+    border-radius: 1.2rem;
+    border: 1rem solid rgba(0, 0, 0, 0);
+    display: grid;
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+#contacter div input {
+    border: solid white 1rem;
+    font-size: large;
+    margin-bottom: 3.5rem;
+    border-radius: 1rem;
+    justify-content: space-around;
+}
+
+#email {
+    margin-left: 1rem;
+}
+
+#contacter input {
+    border: solid white 1rem;
+    font-size: large;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+#contacter textarea {
+    border: solid white 1rem;
+    font-size: large;
+    border-radius: 1rem;
+    font-family: Roboto;
+}
+
+#contacter Button {
+    justify-self: right;
+    background-color: yellow;
+    border-color: yellow;
+    color: #073590;
+    margin-top: 1rem;
+}
+
+/*_________________________________________________________________*
+
+                  Fin partie Formulaire de Contact
+*__________________________________________________________________*/
+
+
+
+
+
+/*_________________________________________________________________*
+
+                Début partie redirection vers Register
+*__________________________________________________________________*/
+
+#pageRegister {
+    margin-top: 1rem;
+    margin-left: 20rem;
+    border-radius: 1.2rem;
+    border: 1.2rem solid rgba(0, 0, 0, 0);
+    display: grid;
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+#pageRegister h1 {
+    color: yellow;
+}
+
+#pageRegister button {
+    justify-self: center;
+    background-color: yellow;
+    border: solid 10px;
+    border-radius: 5px;
+    font-size: large;
+    border-color: yellow;
+    color: #073590;
+}
+
+/*_________________________________________________________________*
+
+                  Fin partie Formulaire de Contact
+*__________________________________________________________________*/
+
+
+
+
+
+/*_________________________________________________________________*
+
+                        Début partie Social
+*__________________________________________________________________*/
+
+#social {
+    margin-left: 72rem;
+    display: inline;
+    position: relative;
+    bottom: 3.8rem;
+}
+
+#social .fab {
+    margin-left: 1rem;
+    font-size: 2rem;
+    color: white;
+}
+
+/*_________________________________________________________________*
+
+                          Fin partie Social
+*__________________________________________________________________*/

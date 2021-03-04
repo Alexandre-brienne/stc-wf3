@@ -23,8 +23,8 @@ use Symfony\Component\Security\Http\Util\TargetPathTrait;
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements PasswordAuthenticatedInterface
 {
     use TargetPathTrait;
-
     public const LOGIN_ROUTE = 'site';
+
 
     private $entityManager;
     private $urlGenerator;
@@ -43,8 +43,12 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 
     public function supports(Request $request)
     {
+
+    
         return self::LOGIN_ROUTE === $request->attributes->get('_route')
             && $request->isMethod('POST');
+
+            dump($request);
     }
 
     public function getCredentials(Request $request)
