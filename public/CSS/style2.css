@@ -47,7 +47,7 @@
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.336);
 }
-.fab{ /* Icons */
+.register-body .fab{ /* Icons */
     margin-top: 0.625rem;
     margin-left: 0.9375rem;
     font-size: 2.5rem;
@@ -55,7 +55,7 @@
     margin: 1rem;
 }
 
-nav img { /* Logo */
+.register-body nav img { /* Logo */
     width: 11.25rem;
     margin-right: 6.25rem;
 }
@@ -74,7 +74,7 @@ nav img { /* Logo */
 
 
 
-#principal { /* Séparations des Sections des Formulaires */
+.register-body #principal { /* Séparations des Sections des Formulaires */
     display: inline-block;
     flex: 1;
 }
@@ -99,7 +99,7 @@ nav img { /* Logo */
 
 }
 
-#inscription div {
+.register-body #inscription div {
     justify-content: space-around;
 }
 
@@ -130,16 +130,18 @@ nav img { /* Logo */
 
 #rejoindre { /* Button Inscription */
     background-color: yellow;
-    border-color: yellow;
+    border: yellow 0.3rem solid;
     color: #073590;
     margin-top: 1.5rem;
-    margin-left: 0%;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.9rem;
 }
 .register-body input[type="checkbox"], .accept-cgu{
     margin-top: 1.5rem;
 }
 
-label{
+.register-body label{
     color: #699BF7;
 }
 
@@ -165,11 +167,11 @@ label{
     display: grid;
 }
 
-form span { /* phrase CGU */
+.register-body form span { /* phrase CGU */
     color: white;
 }
 
-#connecté { /* Button Connexion */
+.register-body #connecté { /* Button Connexion */
     background-color: #699BF7;
     border-color: #699BF7;
     color: white;
@@ -217,12 +219,12 @@ form span { /* phrase CGU */
     margin: 0.25rem;
     margin-top: 0;
 }
-input[type="date"]{
+.register-body input[type="date"]{
     width: 13.5rem;
 }
 
 
-form button { /* Formes des button */
+.register-body form button { /* Formes des button */
     border: solid 0.625rem;
     border-radius: 1.3125rem;
     font-size: large;
@@ -237,7 +239,7 @@ form button { /* Formes des button */
 *__________________________________________________________________*/
 
 @media screen  and (max-width: 1070px){
-    .logo-nav{
+    .register-body .logo-nav{
         display: none;
     }
     #connexion-responsive{
@@ -257,12 +259,12 @@ form button { /* Formes des button */
     #register-principal2{
         display: none;
     }
-    .fab{
+    .register-body .fab{
         font-size: 1rem;
         margin: 0.5rem;
     }
 
-    .lab {
+    .register-body .lab {
         color:white;
         font-size: 1em;
         border: white solid 2px;
@@ -270,10 +272,10 @@ form button { /* Formes des button */
         padding: 0.5rem;
         margin-top: 0.5rem;
     }
-    label{
+    .register-body label{
         display: block;
     }
-    select, input{
+    .register-body select, input{
         width: 12rem;
     }
     #register-principal1{
