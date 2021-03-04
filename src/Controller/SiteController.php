@@ -38,11 +38,7 @@ class SiteController extends AbstractController
         ]);
     }
 
-
-
-
-
-    #[Route('/register', name: 'app_register')]
+    #[Route('/register', name:'app_register')]
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator): Response
     {
         $user = new User();
@@ -59,15 +55,8 @@ class SiteController extends AbstractController
             );
 
             $user->setRoles(["ROLE_USER"]);
-            $user->setSexe("homme");
-            $user->setNom("alexandre");
-            $user->setPrenom("toto");
-            // $user->setPoint(10);
-
-            // $user->setAmisId(5);
-
             $user->setDateInscription(new \DateTime());
-            // $user->setDateNaissance(new \DateTime());
+            $user->setDateNaissance(new \DateTime());
 
 
             $entityManager = $this->getDoctrine()->getManager();
