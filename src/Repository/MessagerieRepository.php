@@ -4,7 +4,9 @@ namespace App\Repository;
 
 use App\Entity\Messagerie;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\Persistence\ManagerRegistry;
+use PhpParser\Node\Expr\FuncCall;
 
 /**
  * @method Messagerie|null find($id, $lockMode = null, $lockVersion = null)
@@ -35,6 +37,20 @@ class MessagerieRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public Function  boiteuser($iduser){
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = "SELECT DISTINCT des.username,des.id FROM `messagerie` 
+        left JOIN user ON messagerie.expediteur_id = user.id
+        left JOIN user as des on messagerie.destinataire_id = des.id
+        
+        WHERE messagerie.expediteur_id = :id OR messagerie.destinataire_id = :id2";
+         $stmt = $conn->prepare($sql);
+         $stmt->execute([':id' => $iduser,
+                        ':id2' => $iduser
+         ]);
+         return $stmt->fetchAllAssociative();
+    }
 
     public function MpUser($expediteur,$destinataire)
     {

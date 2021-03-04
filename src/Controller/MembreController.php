@@ -43,10 +43,25 @@ class MembreController extends AbstractController
             'user' => $user,
         ]);
     }
+
+    #[Route('/mp/{username}', name: 'boitemessagerie', methods: ['GET'])]
+    public function boitemessage(user $user,MessagerieRepository $messagerieRepository): Response
+    {
+        $messagerie = new Messagerie();
+        $userConnecte = $this->getUser();
+        $userMessagerie = $user->getId();
+        if ($userConnecte->getid() == $userMessagerie){
+        return $this->render('messagerie/index.html.twig', [
+            'messageries' => $messagerieRepository->boiteuser($userConnecte),
+        ]);
+    }    
+        }
+        
+
     #[Route('/mp/{username}/{iduser}', name: 'messagerieduo', methods: ['GET', 'POST'])]
     public function messagerieduo(Request $request, User $user, UserRepository $userRepository, MessagerieRepository $messagerieRepository, $iduser): Response
     {
-
+      
         $messagerie = new Messagerie();
         $userConnecte = $this->getUser();
         $userMessagerie = $user->getId();
