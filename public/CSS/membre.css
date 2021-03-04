@@ -10,6 +10,7 @@ body {
 }
 
 /*vm => class qui permet de cacher une partie des profil et articles en vue mobile*/
+/*vt => class qui permet de cacher une partie articles en vue tablette*/
 
 
 
@@ -49,7 +50,9 @@ header {
 
 
 .info_profil {
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
+    padding-right: 0.5rem;
+
 }
 
 
@@ -175,8 +178,11 @@ h2 {
 .articles {
 
     display: grid;
-    padding-top: 5rem;
+    padding-top: 3rem;
     padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+
 
 }
 
@@ -184,10 +190,8 @@ h2 {
 .article {
 
     display: block;
-    padding: 0.5rem;
+    padding: 0.2rem;
     margin-top: 3rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
 }
 
 
@@ -224,6 +228,159 @@ h2 {
     display: none;
     
 }
+
+
+
+/*****************************VUE TABLETTE(min:600px) ***************************************/
+
+@media screen and (min-width: 600px){
+
+    /*****Partie Header*******/
+    
+    .profil {
+        color: white;
+        display: flex;
+        z-index: 1;
+        margin-left: 26rem;
+        top: 0;
+    }
+    
+    
+    .photoprofil {
+        height: 4rem;
+        border-radius: 50%;
+        margin-top: 0.6rem
+        
+    }
+    
+    
+    .info_profil {
+        margin-top: 0.8rem;
+        padding-right: 0.5rem;
+    }
+    
+    
+    
+    /*****Partie Main*******/
+    
+    /****Profils Connectés****/
+    
+    
+    
+    .input {
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: absolute;
+        top: 0.4rem;
+        left: 65%;
+        transform: translateX(-25%);
+    
+    }
+    
+    input{
+        width: 8rem;
+        height: 1.5rem;
+    }
+    
+    
+    .cp {    
+        width: 5%;
+        padding: 0.5rem;
+       
+    }
+    
+    .ville {
+         width: 5%;
+         padding: 0.5rem;
+         margin-right: 2rem;
+         
+    }
+    
+    
+    .profils{
+    
+        padding: 3rem;
+    
+    }
+    
+    .description {
+    
+        display: flex;
+        margin-left: -10rem;
+        margin-top: 10rem;
+    }
+    
+    i { 
+        margin-top: -1rem;
+        font-size: 2rem;
+    
+    }
+    
+    .prenom {
+        font-size: 1rem;
+        margin: 0;
+        width: 50%;
+        margin-left: -2rem;
+       
+    
+    }
+    
+    
+    .lieu {
+        font-size: 1rem;
+        width: 50%;
+        margin-left: 2rem;
+    
+    
+    }
+    
+    
+    .boutonprofil {
+    
+        bottom: 1rem;
+        font-size: 1em;
+    
+    }
+    
+    
+    h2 {
+        position: absolute;
+        color: white;
+        margin-top: 1rem;
+        margin-left: 4rem;
+    
+    }
+    
+    .articles{
+        padding: 3rem;
+    
+    }
+    
+    .article{
+        padding: 1rem;
+    }
+    
+    .articles_vt {
+    
+        display: flex;
+        
+    
+    }
+    
+    .vt{
+        display: initial;
+    }
+    
+    .button{
+        bottom: 1rem;
+        font-size: 1em;
+    
+    }
+    
+}
+    
+    
 
 
 
@@ -314,6 +471,11 @@ h2 {
        
         
 
+    }
+
+    input{
+        width: 12rem;
+        height: 1.5rem;
     }
 
     .input {
@@ -430,8 +592,8 @@ h2 {
         display: flex;
         padding-top: 5rem;
         padding-bottom: 5rem;
-        margin-right: 6rem;
-        margin-left: 6rem;
+        margin-right: 3rem;
+        margin-left: 3rem;
 
     }
 
@@ -442,6 +604,13 @@ h2 {
         margin-top: 5rem;
         margin-right: 0;
         margin-left: 0;
+    
+    }
+
+    .articles_vt {
+
+        display: initial;
+        
     
     }
 

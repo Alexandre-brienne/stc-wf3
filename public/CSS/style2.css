@@ -156,35 +156,10 @@ label{
 
                         Début partie Connexion 
 *__________________________________________________________________*/
-#register-principal2{
-    position: absolute;
-    right: 10rem;
-}
-#register-connexion {
-    margin-top: 3.2rem;
-    margin-left: 3.125rem;
-    margin-bottom: 1.375rem;
-    border: 0.9375rem solid rgba(0, 0, 0, 0);
-    border-radius: 1.25rem;
-    background-color: rgba(0, 0, 0, 0.514);
-}
 
-#register-connexion h1 {
-    margin-left: 5rem;
-    color: #699BF7;
-}
+    
 
-#register-connexion2 {
-    margin-left: 3.125rem;
-    margin-bottom: 1.25rem;
-    border-top: solid rgba(0, 0, 0, 0);
-    border-radius: 1.25rem;
-    background-color: rgba(0, 0, 0, 0.514);
-}
 
-#register-connexion2 div {
-    display: grid;
-}
 
 .sexe {
     display: grid;

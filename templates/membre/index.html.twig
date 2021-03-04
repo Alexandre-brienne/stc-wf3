@@ -14,8 +14,8 @@
 
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/membre.css">
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/membre.css') }}">
   
 </head>
 
@@ -29,7 +29,7 @@
                 <p>Sarah</p>
                 <p >200 GeekCoin</p>
             </div>
-            <img src="image/profil.png" alt="photo de profil" class="photoprofil">
+            <img src="{{asset('image/profil.png')}}" alt="photo de profil" class="photoprofil">
         </div>
 
 <div>
@@ -51,7 +51,7 @@
 
         <nav class="menu_profil">
 
-            <a href="#"><img src="image/Sans_titre.png" alt="logo GaS" class="logo"></a>
+            <a href="#"><img src="{{asset('image/Sans_titre.png')}}" alt="logo GaS" class="logo"></a>
 
             <section class="liste">
 
@@ -81,7 +81,7 @@
             </div>
             
                 <div class="profilco">
-                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <img src="{{ asset('image/profil.png')}}" alt="profil1" class="profilco_img">
                     <div class="description">
                         <div class="prenom">
                             <p>MARINE</p>
@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="profilco">
-                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <img src="{{ asset('image/profil.png')}}" alt="profil1" class="profilco_img">
                     <div class="description">
                         <div class="prenom">
                             <p>MARINE</p>
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="profilco">
-                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <img src="{{ asset('image/profil.png')}}" alt="profil1" class="profilco_img">
                     <div class="description">
                         <div class="prenom">
                             <p>MARINE</p>
@@ -123,7 +123,7 @@
                 </div>
            
                 <div class="profilco">
-                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <img src="{{ asset('image/profil.png')}}" alt="profil1" class="profilco_img">
                     <div class="description">
                         <div class="prenom">
                             <p>MARINE</p>
@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="profilco vm">
-                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <img src="{{ asset('image/profil.png')}}" alt="profil1" class="profilco_img">
                     <div class="description">
                         <div class="prenom">
                             <p>MARINE</p>
@@ -150,7 +150,7 @@
                     </div>
                 </div>
                 <div class="profilco vm">
-                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <img src="{{ asset('image/profil.png')}}" alt="profil1" class="profilco_img">
                     <div class="description">
                         <div class="prenom">
                             <p>MARINE</p>
@@ -163,7 +163,7 @@
                     </div>
                 </div>
                 <div class="profilco vm">
-                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <img src="{{ asset('image/profil.png')}}" alt="profil1" class="profilco_img">
                     <div class="description">
                         <div class="prenom">
                             <p>MARINE</p>
@@ -176,7 +176,7 @@
                     </div>
                 </div>
                 <div class="profilco vm">
-                    <img src="image/profil.png" alt="profil1" class="profilco_img">
+                    <img src="{{ asset('image/profil.png')}}" alt="profil1" class="profilco_img">
                     <div class="description">
                         <div class="prenom">
                             <p>MARINE</p>
@@ -199,9 +199,9 @@
             <h2>Les Actualités</h2>
 
             <div class="articles">
-                <div>
+                <div class="articles_vt">
                     <figure class="article">
-                        <img src="image/article.png" alt="article1" class="article_img">
+                        <img src="{{ asset('image/article.png')}}" alt="article1" class="article_img">
                         <figcaption class="article_text">
 
                             <h3>Titre Article</h3>
@@ -219,7 +219,7 @@
                     </figure>
 
                     <figure class="article part2_articles">
-                        <img src="image/article.png" alt="article2" class="article_img">
+                        <img src="{{ asset('image/article.png')}}" alt="article2" class="article_img">
                         <figcaption class="article_text">
                             <h3>Titre Article</h3>
                             <p>
@@ -236,9 +236,9 @@
                 </div>
 
 
-                <div>
-                    <figure class="article vm">
-                        <img src="image/article.png" alt="article3" class="article_img">
+                <div class="articles_vt">
+                    <figure class="article vm vt">
+                        <img src="{{ asset('image/article.png')}}" alt="article3" class="article_img">
                         <figcaption class="article_text">
                             <h3>Titre Article</h3>
                             <p>
@@ -253,9 +253,9 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="article vm">
+                    <figure class="article vm vt">
                         <div class="part2_articles">
-                            <img src="image/article.png" alt="article4" class="article_img">
+                            <img src="{{ asset('image/article.png')}}" alt="article4" class="article_img">
                             <figcaption class="article_text">
                                 <h3>Titre Article</h3>
                                 <p>
@@ -273,7 +273,7 @@
                 </div>
                 <div>
                     <figure class="article vm">
-                        <img src="image/article.png" alt="article5" class="article_img">
+                        <img src="{{ asset('image/article.png')}}" alt="article5" class="article_img">
                         <figcaption class="article_text">
                             <h3>Titre Article</h3>
                             <p>
@@ -290,7 +290,7 @@
 
                     <figure class="article vm">
                         <div class="part2_articles">
-                            <img src="image/article.png" alt="article6" class="article_img">
+                            <img src="{{ asset('image/article.png')}}" alt="article6" class="article_img">
                             <figcaption class="article_text">
                                 <h3>Titre Article</h3>
                                 <p>
