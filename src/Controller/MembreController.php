@@ -19,7 +19,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-#[Route('/membre')]
+#[Route('/toto')]
 class MembreController extends AbstractController
 {
     #[Route('/', name: 'membre')]
