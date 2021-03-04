@@ -14,39 +14,38 @@
 		{% endblock %}
 
 	</head>
-
-	<body>
 	{% block body %}
-		<header>
-			<nav>
-				<div class="brand-logo">
-					<a href="#">
+	<body class = "register-body">
+		<header class ="register-header ">
+			<nav class = "register-nav">
+				<div class="register-brand-logo">
+					<a href="#" class ='register-a'>
 						<i class="fab fa-facebook"></i>
 					</a>
-					<a href="#">
+					<a href="#" class ='register-a'>
 						<i class="fab fa-twitter"></i>
 					</a>
-					<a href="#">
+					<a href="#" class ='register-a'>
 						<i class="fab fa-instagram"></i>
 					</a>
 				</div>
-				<a href="#"><img src="public/image/logo_geekandstart.png" alt="logo" class="logo-nav"></a>
+				<a href="#" class ='register-a'><img src="public/image/logo_geekandstart.png" alt="logo" class="logo-nav"></a>
 				<i id="#connexion-responsive" class="las la-power-off"></i>
 			</nav>
 			<!-- Formulaire d'inscription -->
 			<section id="all">
 
-				<section id="principal1" class="principal">
-					<section id="inscription">
-						<form method="post">
-							<div class="grid2">
-								<div class="grid3">
-									<label id="title" for="username">Pseudo</label>
+				<section id="register-principal1" class="principal">
+					<section id="register-inscription">
+						<form  method="post" class="form-register">
+							<div class="register-grid2">
+								<div class="register-grid3">
+									<label id="register-title" for="username">Pseudo</label>
 									<input type="text" id="username" required placeholder="username">
 								</div>
-								<div class="grid3">
+								<div class="register-grid3">
 									<label class="sexe" for="sexe">
-										<span id="title">Sexe</span>
+										<span id="register-title">Sexe</span>
 										<select name="sexe" id="sexe" required>
 											<option value=""></option>
 											<option value="homme">Homme</option>
@@ -55,56 +54,56 @@
 									</label>
 								</div>
 							</div>
-							<div class="grid2">
-								<div class="grid3">
-									<label id="title" for="password">Mot de Passe</label>
+							<div class="register-grid2">
+								<div class="register-grid3">
+									<label id="register-title" for="password">Mot de Passe</label>
 									<input type="text" id="password" required placeholder="password">
 								</div>
-								<div class="grid3">
-									<label id="title" for="date_naissance">Née le</label>
+								<div class="register-grid3">
+									<label id="register-title" for="date_naissance">Née le</label>
 									<input type="date" id="date_naissance" required placeholder="date_naissance">
 								</div>
 							</div>
 							<!-- Vérification email -->
-							<div class="grid2">
-								<div class="grid3">
-									<label id="title" for="email1">Email</label>
+							<div class="register-grid2">
+								<div class="register-grid3">
+									<label id="register-title" for="email1">Email</label>
 									<input type="email" id="email1" required placeholder="email">
 								</div>
-								<div class="grid3">
-									<label id="title" for="email2">Confirmer Email</label>
+								<div class="register-grid3">
+									<label id="register-title" for="email2">Confirmer Email</label>
 									<input type="text" id="email2" required placeholder="email">
 								</div>
 							</div>
 							<label for="cgu">
 								<input type="checkbox">
 								<span class="accept-cgu">Je certifie avoir plus de 18ans;<br>Et confirme avoir lu et accepté les conditions
-									<a class="cgu" href="#">générale d'utilisation.</a>
+									<a class ='register-a' class="cgu" href="#">générale d'utilisation.</a>
 								</span>
 							</label>
 							<button type="submit" id="rejoindre">Rejoins-Nous!</button>
 						</form>
-						<a id="ButtonContact-Rejoindre" href="#">Nous Contacter</a>
+						<a class ='register-a' id="ButtonContact-Rejoindre" href="#">Nous Contacter</a>
 					</section>
 				</section>
 
 				<!-- Se Connecter -->
 
-				<section id="principal2" class="principal">
-					<section id="connexion">
-						<h1>Déjà membre?</h1>
-						<h1>Connecte toi.</h1>
+				<section id="register-principal2" class="principal">
+					<section id="register-connexion">
+						<h1 class = "register-h1">Déjà membre?</h1>
+						<h1 class = "register-h1" >Connecte toi.</h1>
 					</section>
 					<!-- Formulaire Connexion -->
-					<section id="connexion2">
-						<form method="post">
+					<section id="register-connexion2">
+						<form method="post" class="form-register">
 							<div>
 								<div>
-									<label id="title" for="username">Pseudo</label>
+									<label id="register-title" for="username">Pseudo</label>
 									<input type="text" id="username" required placeholder="username">
 								</div>
 								<div>
-									<label id="title" for="password">Mot de Passe</label>
+									<label id="register-title" for="password">Mot de Passe</label>
 									<input type="text" id="password" required placeholder="password">
 								</div>
 							</div>
@@ -125,7 +124,7 @@
 	</body>
 	{% endblock %}
 	{% block javascripts %}
-		<script src="https://kit.fontawesome.com/e4895b9a2a.js" crossorigin="anonymous"></script>
+		
 	{% endblock %}
 </html>
 </body>

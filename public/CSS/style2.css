@@ -3,23 +3,23 @@
                         Début partie Corps
 *_________________________________________________________________*/
 
-body {
+.register-body {
     font-family: Roboto;
     background-color: #111A39;
     padding: 0;
     
 }
-h1{
+.register-h1{
     font-size: 1.3rem;
     margin: 0.1rem;
     font-weight: normal;
 }
-a {
+.register-a {
     text-decoration: none;
 }
 
 
-header {
+.register-header {
     background-image: url(../image/Bannier.png);
     margin: -0.5rem;
     background-position: center;
@@ -42,7 +42,7 @@ header {
                     Début partie Navigateur
 *_________________________________________________________________*/
 
-nav { /* Navigateur */
+.register-nav { /* Navigateur */
     display: flex;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.336);
@@ -62,7 +62,7 @@ nav img { /* Logo */
 #connexion-responsive{
     display: none;
 }
-.brand-logo{
+.register-brand-logo{
     margin-left: 5rem;
 }
 
@@ -89,7 +89,7 @@ nav img { /* Logo */
                         Début partie Inscription
 *__________________________________________________________________*/
 
-#inscription {
+#register-inscription {
     margin-top: 3.125rem;
     margin-left: 3.125rem;
     margin-bottom: 2rem ;
@@ -103,17 +103,17 @@ nav img { /* Logo */
     justify-content: space-around;
 }
 
-.grid2{
+.register-grid2{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
    
 }
-.grid3{
+.register-grid3{
     margin-top: 0.1rem;
     margin-bottom: 0.1rem;
 }
-#principal1{
+#register-principal1{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
@@ -149,11 +149,11 @@ input[type="checkbox"], .accept-cgu{
 
                         Début partie Connexion 
 *__________________________________________________________________*/
-#principal2{
+#register-principal2{
     position: absolute;
     right: 10rem;
 }
-#connexion {
+#register-connexion {
     margin-top: 3.2rem;
     margin-left: 3.125rem;
     margin-bottom: 1.375rem;
@@ -162,12 +162,12 @@ input[type="checkbox"], .accept-cgu{
     background-color: rgba(0, 0, 0, 0.514);
 }
 
-#connexion h1 {
+#register-connexion h1 {
     margin-left: 5rem;
     color: #699BF7;
 }
 
-#connexion2 {
+#register-connexion2 {
     margin-left: 3.125rem;
     margin-bottom: 1.25rem;
     border-top: solid rgba(0, 0, 0, 0);
@@ -175,7 +175,7 @@ input[type="checkbox"], .accept-cgu{
     background-color: rgba(0, 0, 0, 0.514);
 }
 
-#connexion2 div {
+#register-connexion2 div {
     display: grid;
 }
 
@@ -210,28 +210,28 @@ form span { /* phrase CGU */
                     Début partie des Formulaires 
 *__________________________________________________________________*/
 
-form {
+.form-register {
     margin: 2.5rem;
 }
 
-#title { /* Labels des formulaires */
+#register-title { /* Labels des formulaires */
     color: #699BF7;
     font-size: large;
 }
 
-form div div input {
+.form-register div div input {
     border: solid white 0.700rem;
     font-size: large;
     border-radius: 0.9375rem;
 }
 
-form div div select { /* Selection du Sexe */
+.form-register div div select { /* Selection du Sexe */
     border: solid white 0.700rem;
     font-size: large;
     border-radius: 0.9375rem;
 }
 
-form div div label {
+.form-register div div label {
     margin: 0.25rem;
     margin-top: 0;
 }
@@ -272,7 +272,7 @@ form button { /* Formes des button */
         border-radius: 1.25rem;
         border: 0.1125rem solid rgba(0, 0, 0, 0);
     }
-    #principal2{
+    #register-principal2{
         display: none;
     }
     .fab{
@@ -294,10 +294,10 @@ form button { /* Formes des button */
     select, input{
         width: 12rem;
     }
-    #principal1{
+    #register-principal1{
         display: initial;
     }
-    .grid2{
+    .register-grid2{
         display: initial;
     }
 }
