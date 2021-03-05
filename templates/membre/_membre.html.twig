@@ -1,11 +1,11 @@
 	{% for membre in membres %}
-					<div class="profilco">
+					<figure class="profilco">
                          {% if membre.imageprofil != null %}
 						<img src="{{ asset('uploads/' ~ membre.imageprofil)}}" alt="profil1" class="profilco_img">
                         {% else %}
                         <img src="{{ asset('image/profil.png')}}" alt="profil1" class="profilco_img">
                         {% endif %}
-						<div class="description">
+						<figcaption class="description">
 							<div class="prenom">
 								<p>{{membre.username}}</p>
 								<span></span>
@@ -15,7 +15,7 @@
 								<a href="{{ path('messagerieduo', {'username': app.user.username,'iduser':membre.id})}}"><i class="las la-envelope"></i></a>
                                 <a href="{{ path('profil', {'username': membre.username})}}"><i class="las la-eye"></i></a> 
 							</div>
-						</div>
-					</div>
+						</figcaption>
+					</figure>
 
     {% endfor %}
