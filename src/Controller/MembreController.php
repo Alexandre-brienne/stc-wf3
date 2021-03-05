@@ -19,20 +19,24 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-#[Route('/toto')]
+#[Route('/membre')]
 class MembreController extends AbstractController
 {
     #[Route('/', name: 'membre')]
     public function index(AuthenticationUtils $authenticationUtils, UserRepository $userRepository): Response
     {
 
-        // $id = $this->getUser()->getid();
+        $id = $this->getUser()->getid();
         $date = new DateTime();
-        // $userRepository->editdateconexion($id, $date->format('Y-m-d H:i:s'));
+        $userRepository->editdateconexion($id, $date->format('Y-m-d H:i:s'));
+        $membres = $userRepository->findAll();
+        
+
 
 
         return $this->render('membre/index.html.twig', [
             'controller_name' => 'MembreController',
+            "membres" => $membres
         ]);
     }
 
