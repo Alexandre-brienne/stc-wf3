@@ -87,12 +87,15 @@ header {
 .profilco {
     position: relative;
     display: flex;
+    flex-direction: column;
     padding: 1rem;
     padding-bottom: 2rem;
+
 }
 
 
 .profilco_img {
+    
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 100%;
@@ -105,20 +108,18 @@ header {
     display: flex;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 20%; 
-    z-index: 1;
+    
     color: black;
+    bottom: 0; 
+
 }
 
 i {    
     font-size: 1.5rem;
-    
 
 }
 
-p{
-    margin-bottom: 0.5rem;
-}
+
 
 
 .prenom {
@@ -396,18 +397,19 @@ h2 {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         background-color: #2e416f;
         margin: 6rem;
-        padding: 2rem;
-       
-        
-
+        padding: 3rem;
     }
 
 
     .profilco {
         display: flex;
         position: relative;
-        padding: 0.3rem;
-        
+        padding: 0.3rem;   
+    }
+
+  
+    .description{
+        bottom: -2.5rem;
     }
 
     .prenom {
