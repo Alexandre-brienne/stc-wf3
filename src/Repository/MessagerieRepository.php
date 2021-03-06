@@ -8,6 +8,7 @@ use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\Persistence\ManagerRegistry;
 use PhpParser\Node\Expr\FuncCall;
 
+
 /**
  * @method Messagerie|null find($id, $lockMode = null, $lockVersion = null)
  * @method Messagerie|null findOneBy(array $criteria, array $orderBy = null)

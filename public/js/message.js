@@ -21,9 +21,10 @@ async function message(){
    
 }
  
-async function refreshAjax (messageSaisie){
+async function refreshAjax (messageSaisie= ''){
 
     let formData = new FormData
+    // formData.append('username', 'test')
     formData.append('message', messageSaisie);
     formData.append('userid', userid);
     let reponseServeur = await fetch(urlajax,{
@@ -36,10 +37,11 @@ async function refreshAjax (messageSaisie){
     boxmessage.innerHTML = '';
     for (let index = 0; index < contenuAjax.messages.length; index++) {
         const element = contenuAjax.messages[index]; 
-        boxmessage.innerHTML += `<p>${element.message}</p>`;
+        boxmessage.innerHTML += `
+        <p>${element.expediteur} ${element.message}</p>`;
     }
     console.log(contenuAjax);
 }
-
+setInterval(refreshAjax, 500)
 
 send.addEventListener('click',message);

@@ -19,9 +19,14 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\JsonSerializableNormalize;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
+
 
 #[Route('/membre')]
-class MembreController extends AbstractController
+class MembreController extends AbstractController 
 {
     #[Route('/', name: 'membre')]
     public function index(AuthenticationUtils $authenticationUtils, UserRepository $userRepository): Response
@@ -137,24 +142,42 @@ class MembreController extends AbstractController
         }
 
         
+
+        $encoders = array(new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+        $seralizer = new Serializer($normalizers,$encoders);
+
+
+        $messagerieRepository->MpUser($userConnecte,$destinataire);
+        
         $messages = [];
-        $messages2 = $messagerieRepository->findAll();
+        $messages2 = $messagerieRepository->MpUser($userConnecte,$destinataire);
         foreach ($messages2 as $message){
             $messages[] = [
-                'expediteur' =>  $userConnecte2,
-                'message' => $message -> getMessage() 
-                
+                'expediteur' =>  $message->getExpediteur()->getUsername(),
+                'message' => $message->getMessage(), 
+                'date' => $message->getDateEnvoi(),
             ];
         };
-        $response = new JsonResponse();
+
+        $message = $messagerieRepository->MpUser($userConnecte,$destinataire);
+        $response = new JsonResponse([
+                'content' =>  $message
+
+        ]);
+
+        dump($message);
         $response->setData([
             'data' => 123,
             // 'messages' => $messagerieRepository->findAll(),
+
             'expediteur' => $userConnecte2,
-            'messages' => $messagerieRepository->MpUser($userConnecte,$destinataire)
+            'messages' => $messages
         
         ]);
+            
         return $response;
+        
 
         }
         
@@ -226,6 +249,8 @@ class MembreController extends AbstractController
         } else {
 
             return $this->redirectToRoute('membre');
+
+            
         }
     }
 }
