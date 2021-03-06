@@ -120,10 +120,11 @@ class MembreController extends AbstractController
        
         $userConnecte = $this->getUser();
         $userConnecte2 = $this->getUser()->getUsername();
- 
         
-        $message = $request->get('message');
-        $userid = $request->get('userid');
+        
+        
+        $message =  strip_tags($request->get('message'));
+        $userid = strip_tags($request->get('userid'));
         $destinataire = $userRepository->find($userid);
         // dump($userid);
         if (!empty($message)){
