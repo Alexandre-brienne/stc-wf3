@@ -23,7 +23,7 @@ body {
 header {
     position: relative;
     background-color: #2e416f;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 }
 
 
@@ -216,32 +216,6 @@ h2 {
 
 @media screen and (min-width: 600px){
 
-    /*****Partie Header*******/
-    
-    .profil {
-        color: white;
-        display: flex;
-        z-index: 1;
-        margin-left: 26rem;
-        top: 0;
-    }
-    
-    
-    .photoprofil {
-        height: 4rem;
-        border-radius: 50%;
-        margin-top: 0.6rem
-        
-    }
-    
-    
-    .info_profil {
-        margin-top: 0.8rem;
-        padding-right: 0.5rem;
-    }
-    
-    
-    
     /*****Partie Main*******/
     
     /****Profils Connectés****/
@@ -289,9 +263,7 @@ h2 {
     
     .articles_vt {
     
-        display: flex;
-        
-    
+        display: flex;    
     }
     
     .vt{
@@ -317,9 +289,7 @@ h2 {
 
     /***********Partie header***************/
   
-    header{
-        padding-bottom: 0;
-    }
+
     .navbar{
         display: none;
     }
@@ -330,15 +300,7 @@ h2 {
         border-radius: 50%;
         padding-left: 1rem;
     }
-
-    .profil {
-        color: white;
-        position: absolute;
-        display: flex;
-        right: 1rem;
-        top: 1rem;
-    }
-
+ 
 
 
     .menu_profil {
@@ -354,16 +316,16 @@ h2 {
     .logo {
         display: initial;
         height: 5rem;
-        margin-top: 3rem;
         margin-left: 1rem;
+        margin-top: -4rem;
     }
 
 
     .liste {
         display: initial;
-        margin-top: 9rem;
-        margin-right: 1rem;
+        margin-right: 0.4rem;
     }
+
 
     ul li {
         display: inline;
@@ -382,6 +344,7 @@ h2 {
         text-decoration: none;
         text-transform: uppercase;
     }
+    
 
     /*********Main**********/
 
