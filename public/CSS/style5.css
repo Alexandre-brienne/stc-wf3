@@ -16,10 +16,13 @@ header {
 
 
 .profil {
+    position: relative;
+    justify-content: right;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
     color: white;
     display: flex;
     z-index: 1;
-    margin-left: 11rem;
     top: 0;
 }
 
@@ -169,9 +172,7 @@ header {
 
     /**Partie header**/
 
-    header {
-        padding-bottom: 0;
-    }
+   
 
     .navbar {
         display: none;
@@ -208,11 +209,16 @@ header {
         bottom: 2rem;
     }
 
-
+    .logo {
+        display: initial;
+        height: 5rem;
+        margin-left: 1rem;
+        margin-top: -4rem;
+    }
+    
     .liste {
         display: initial;
-        margin-top: 2rem;
-        margin-right: 1rem;
+        margin-right: 0.4rem;
     }
 
     ul li {

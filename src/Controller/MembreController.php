@@ -49,7 +49,7 @@ class MembreController extends AbstractController
     #[Route('/profil/{username}', name: 'profil', methods: ['GET'])]
     public function profil(User $user): Response
     {
-        return $this->render('user/show.html.twig', [
+        return $this->render('user/index_profil.html.twig', [
             'user' => $user,
         ]);
     }
