@@ -1,0 +1,260 @@
+/*******GENERAL*****/
+* {
+    box-sizing: border-box;
+}
+
+.profil_body{
+    background-color: #111a39;
+
+    /*1.6 rem => 16px*/
+}
+
+p{
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+/************************************************VUE MOBILE**********************************************************/
+
+
+/*****Partie Header*******/
+
+.profil_header {
+    position: relative;
+    background-color: #2e416f;
+    padding-bottom: 4rem;
+}
+
+
+.profil_membre {
+    position: relative;
+    justify-content: right;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+    color: white;
+    display: flex;
+    z-index: 1;
+    top: 0;
+}
+
+
+.profil_photo {
+    height: 4rem;
+    border-radius: 50%;
+    margin-top: 0.6rem
+}
+
+.profil_menu {
+
+    display: none;
+
+}
+
+
+.profil_info {
+    margin-top: 0.8rem;
+    padding-right: 0.5rem;
+
+}
+
+.profil_logo {
+    display: none;
+}
+
+
+.profil_liste {
+    display: none;
+   
+}
+
+
+
+/*************Partie Main**********/
+
+
+.profil_main_info{
+
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    position: relative;  
+    background-color: #2e416f;
+    display: flex;
+    flex-direction: column; 
+}
+    
+
+
+.profil_info_membre{
+    padding-top: 1rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2e416f;
+    display: flex;
+    flex-direction: column;
+}
+
+.photo_membre{
+    position: relative;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    height: 10rem;
+
+}
+
+
+.profil_button{
+    
+    display: none;
+}
+
+
+.profil_identite{
+
+    position: relative;
+    top: 2rem;
+   
+}
+
+.profil_prenom{
+
+    display: flex;
+    border-bottom: 3px black solid;
+    justify-content: space-around;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;;
+}
+
+.profil_name{
+    font-size: 1.2rem;
+}
+
+.profil_interets{
+    margin-top: 3rem;
+    
+
+}
+
+.profil_titre_interets{
+   border-bottom: 3px black solid; 
+   color: white;
+   padding-bottom: 1rem;
+   margin-bottom: 2rem;
+   font-size: 1.5rem;
+}
+
+
+.profil_preferences{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+/************************VUE ORDI********************/
+
+@media screen and (min-width: 1000px){
+
+
+        /***********Partie header***************/
+
+        .profil_header{
+
+            padding-bottom: 2rem;
+
+        }
+        .navbar{
+            display: none;
+        }
+
+    
+        .profil_photo {
+            height: 6rem;
+            margin-top: 1rem;
+            border-radius: 50%;
+            padding-left: 1rem;
+        }
+    
+        
+    
+        .profil_menu{
+            display: initial;
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        .profil_info {
+            margin-top: 2rem;
+        }
+    
+        .profil_logo {
+            display: initial;
+            height: 5rem;
+            margin-top: -4rem;
+            margin-left: 1rem;
+        }
+    
+        .profil_info_membre{
+            width: 50%;
+        }
+
+        
+        .photo_membre{
+            height: 250px;
+            width: 250px;
+        }
+    
+        .profil_liste {
+            display: initial;
+        }
+    
+        .profil_li {
+            display: inline;
+            padding: 10px;
+        }
+    
+        .profil_onglet {
+            color: #426a84;
+            text-decoration: none;
+            text-transform: uppercase;
+    
+        }
+    
+        .profil_deconnexion {
+            color: red;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .profil_button{
+            
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-around;          
+            
+        }
+
+        a{
+            text-decoration: none;
+
+        }
+
+        .profil_modif{
+            font-size:1rem;
+        }
+
+        .profil_i{
+            font-size: 2rem;
+        }
+        
+}
