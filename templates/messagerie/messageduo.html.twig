@@ -1,46 +1,58 @@
-{% extends 'base.html.twig' %}
+{% extends 'messagerie/index2.html.twig' %}
 
 
 {% block body %}
-<div class="message">
-	{% for messagerie in messageries %}
-		
-			<p>{{ messagerie.expediteur.username }} {{ messagerie.message }}</p>
-
-    
-
-	{% else %}
-           <p>oh je suis dessolé mais il y'a pas de message avec cette personne :(</p>         
-	{% endfor %}
-</div>
 
 
+	{% block message %}
+		<div class="message">
+			{% for message in messages %}
+
+				<div class="container" autofocus>
+					<p>{{ message.expediteur.username }}
+					</p>
+					<p>{{ message.message }}</p>
+
+				</div>
 
 
-
+			{% else %}
+				<p>oh je suis dessolé mais il y'a pas de message avec cette personne :(</p>
+			{% endfor %}
+		</div>
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {# <button class="btn btnjsfff">{{ button_label|default('Save') }}</button> #}
+{{form_widget(form.message,{'attr' : {'class': 'form-control input-sm chat_input' }})}}
 {{ form_end(form) }}
-<button class="btn btnjs">Envoiyer</button>
-    <pre>
+	<button class="btn btnjs btn-primary btn-sm" >Envoyer</button>
+	{% endblock %}
+
+
+
+	<pre>
         {{ dump(messageries) }}
     </pre>
 
-    <pre>
+	<pre>
         {{ dump(userid) }}
     </pre>
-<style>
-    .message{
-        
-        color: red;
+	<style>
+		.message {
 
-    }
-</style>
-<script> 
-var userid = {{ userid }} 
-var urlajax = "{{ path('sendmessage') }}";
+			color: red;
 
-</script>
-<script src="{{asset('js/message.js')}}"></script>
+		}
+	</style>
+
+
+	{% block script %}
+		<script>
+            
+			var userid = {{ userid }}
+            var urlajax = "{{ path('sendmessage') }}";
+		</script>
+
+		<script src="{{asset('js/message.js')}}"></script>
+	{% endblock %}
+
+
 {% endblock %}
