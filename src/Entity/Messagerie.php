@@ -4,11 +4,12 @@ namespace App\Entity;
 
 use App\Repository\MessagerieRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=MessagerieRepository::class)
  */
-class Messagerie
+class Messagerie 
 {
     /**
      * @ORM\Id
@@ -39,11 +40,13 @@ class Messagerie
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="messageries")
+     * @Groups("expediteur")
      */
     private $expediteur;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="Userdestinataire")
+     * @Groups("expediteur")
      */
     private $destinataire;
 
@@ -104,6 +107,7 @@ class Messagerie
     {
         return $this->expediteur;
     }
+    
 
     public function setExpediteur(?User $expediteur): self
     {
@@ -124,5 +128,7 @@ class Messagerie
         return $this;
     }
 
+
+   
     
 }

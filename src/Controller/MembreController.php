@@ -18,21 +18,31 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\JsonSerializableNormalize;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
-#[Route('/toto')]
-class MembreController extends AbstractController
+
+#[Route('/membre')]
+class MembreController extends AbstractController 
 {
     #[Route('/', name: 'membre')]
     public function index(AuthenticationUtils $authenticationUtils, UserRepository $userRepository): Response
     {
 
-        // $id = $this->getUser()->getid();
+        $id = $this->getUser()->getid();
         $date = new DateTime();
-        // $userRepository->editdateconexion($id, $date->format('Y-m-d H:i:s'));
+        $userRepository->editdateconexion($id, $date->format('Y-m-d H:i:s'));
+        $membres = $userRepository->findAll();
+        
+
 
 
         return $this->render('membre/index.html.twig', [
             'controller_name' => 'MembreController',
+            "membres" => $membres
         ]);
     }
 
@@ -50,6 +60,7 @@ class MembreController extends AbstractController
         $messagerie = new Messagerie();
         $userConnecte = $this->getUser();
         $userMessagerie = $user->getId();
+
         if ($userConnecte->getid() == $userMessagerie){
         return $this->render('messagerie/index.html.twig', [
             'messageries' => $messagerieRepository->boiteuser($userConnecte),
@@ -61,12 +72,12 @@ class MembreController extends AbstractController
     #[Route('/mp/{username}/{iduser}', name: 'messagerieduo', methods: ['GET', 'POST'])]
     public function messagerieduo(Request $request, User $user, UserRepository $userRepository, MessagerieRepository $messagerieRepository, $iduser): Response
     {
-      
+        
         $messagerie = new Messagerie();
         $userConnecte = $this->getUser();
+        $userConnecte2 = $this->getUser()->getUsername();
         $userMessagerie = $user->getId();
-
-        dump($iduser);
+        $destinataire = $userRepository->find(7);
         $form = $this->createForm(MessagerieType::class, $messagerie);
         $form->handleRequest($request);
         if ($userConnecte->getid() == $userMessagerie) {
@@ -81,6 +92,8 @@ class MembreController extends AbstractController
 
                 $destinataire = $userRepository->find($iduser);
 
+                dump($destinataire);
+
                 if ($destinataire != null) {
                     $messagerie->setDestinataire($destinataire);
                     $entityManager = $this->getDoctrine()->getManager();
@@ -93,10 +106,83 @@ class MembreController extends AbstractController
 
                 'messageries' => $messagerieRepository->MpUser($userConnecte, $iduser),
                 'form' => $form->createView(),
+                'userid' => intval($iduser)
+                
 
             ]);
         }
     }
+
+    #[Route('/test', name: 'sendmessage', methods: ['GET','POST'])]
+    public function sendmessage(UserRepository $userRepository,Request $request,MessagerieRepository $messagerieRepository): Response
+    {   
+
+       
+        $userConnecte = $this->getUser();
+        $userConnecte2 = $this->getUser()->getUsername();
+        
+        
+        
+        $message =  strip_tags($request->get('message'));
+        $userid = strip_tags($request->get('userid'));
+        $destinataire = $userRepository->find($userid);
+        // dump($userid);
+        if (!empty($message)){
+          
+            $messagerie = new Messagerie();
+            $objetDate = new \DateTime();
+            $messagerie->setDateEnvoi($objetDate);
+            $messagerie->setMessage($message);
+            $messagerie->setDestinataire($destinataire);
+            $messagerie->setExpediteur($userConnecte);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($messagerie);
+            $entityManager->flush();
+
+
+        }
+
+        
+
+        $encoders = array(new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+        $seralizer = new Serializer($normalizers,$encoders);
+
+
+        $messagerieRepository->MpUser($userConnecte,$destinataire);
+        
+        $messages = [];
+        $messages2 = $messagerieRepository->MpUser($userConnecte,$destinataire);
+        foreach ($messages2 as $message){
+            $messages[] = [
+                'expediteur' =>  $message->getExpediteur()->getUsername(),
+                'message' => $message->getMessage(), 
+                'date' => $message->getDateEnvoi(),
+            ];
+        };
+
+        $message = $messagerieRepository->MpUser($userConnecte,$destinataire);
+        $response = new JsonResponse([
+                'content' =>  $message
+
+        ]);
+
+        dump($message);
+        $response->setData([
+            'data' => 123,
+            // 'messages' => $messagerieRepository->findAll(),
+
+            'expediteur' => $userConnecte2,
+            'messages' => $messages
+        
+        ]);
+            
+        return $response;
+        
+
+        }
+        
+
 
     // #[Route('/mp/{username}', name: 'messagerieduo', methods: ['GET'])]
     // public function messagerieduo(User $user, MessagerieRepository $messagerieRepository): Response
@@ -164,6 +250,8 @@ class MembreController extends AbstractController
         } else {
 
             return $this->redirectToRoute('membre');
+
+            
         }
     }
 }
