@@ -125,13 +125,13 @@
 
 }
 .connexion-resp-index.show button{
-    background-color: yellow;
-    border: yellow 0.3rem solid;
-    color: #073590;
+    background-color:#699BF7;
+    border: #699BF7 0.3rem solid;
+    color: #FFFFFF;
     margin-top: 1.5rem;
     margin-left: 0.5rem;
     margin-bottom: 0.5rem;
-    border-radius: 0.9rem;
+    border-radius: 0.9375rem;
     font-size: 2rem;
     padding: 0.5rem;
     width: 70%;
@@ -874,9 +874,9 @@ Fin partie Navigateur
 }
 
 #ButtonContact-Rejoindre  { /* Lien "Nous Contacter" */
-    margin-left: 2.5rem;
     color: yellow;
     margin: 1rem;
+    margin-left: 2.5rem;
     text-decoration: underline;
 }
 
@@ -885,7 +885,7 @@ Fin partie Navigateur
     border: yellow 0.3rem solid;
     color: #073590;
     margin-top: 1.5rem;
-    margin-left: 0.5rem;
+    margin-left: 2.5rem;
     margin-bottom: 0.5rem;
     border-radius: 0.9rem;
     font-size: 2rem;
