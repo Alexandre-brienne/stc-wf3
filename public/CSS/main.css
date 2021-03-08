@@ -108,7 +108,7 @@
     text-align: center;
     color: #699BF7;
     background-color: rgba(105, 105, 105, 0.5);
-    width: 40%;
+    width: 60%;
     margin: auto;
     border-radius: 10px;
 }
@@ -116,6 +116,13 @@
     border: solid white 0.700rem;
     font-size: large;
     border-radius: 0.9375rem;
+    display: block;
+    width: 70%;
+}
+.connexion-resp-index.show label{
+    display: block;
+    text-align: left;
+
 }
 .connexion-resp-index.show button{
     background-color: yellow;
@@ -127,6 +134,7 @@
     border-radius: 0.9rem;
     font-size: 2rem;
     padding: 0.5rem;
+    width: 70%;
 }
 #connexion-responsive-button{
     display: initial;
@@ -590,14 +598,11 @@ footer hr{
         padding: 1.0rem;
         margin-left: 20rem;
     }
-    .body-of-index .header-index section .phrase .show{
-        display: none !important ;
+    .body-of-index .header-index section .phrase{
+        display: flex;
     }
-    .body-of-index .connexion-resp-index{
-        display: none;
-    }
-    .body-of-index .connexion-resp-index .show {
-        display: block !important ;
+    .body-of-index .header-index .connexion-resp-index.show{
+        display: none !important;
     }
 
 
