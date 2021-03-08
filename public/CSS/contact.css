@@ -1,0 +1,412 @@
+/*__________________________________________________________________________________*
+
+                        Début page Contact non-connecté
+*___________________________________________________________________________________*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto;
+    background-color: #111A39;
+}
+
+.fab {
+    text-decoration: none;
+    color: white;
+}
+
+.fas {
+    text-decoration: none;
+    color: red;
+}
+
+header {
+    background-image: url(../image/Bannier.png);
+    margin: -0.5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.mobilenav {
+    display: flex;
+    justify-content: space-around;
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+#navIndex {
+    display: none;
+}
+
+#principal {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#contacter {
+    border: 1rem solid rgba(0, 0, 0, 0);
+    display: grid;
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 1.5rem;
+}
+
+#contacter div input {
+    border: solid white 1rem;
+    width: auto;
+    font-size: large;
+    border-radius: 1rem;
+}
+
+
+#contacter input {
+    border: solid white 1rem;
+    width: auto;
+    font-size: large;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+#contacter textarea {
+    border: solid white 1rem;
+    font-size: large;
+    border-radius: 1rem;
+    font-family: Roboto;
+}
+
+#contacter Button {
+    justify-self: right;
+    border: solid 10px yellow;
+    border-radius: 5px;
+    font-size: large;
+    background-color: yellow;
+    color: #073590;
+    margin-top: 1rem;
+}
+
+#pageRegister {
+    display: none;
+}
+
+#social {
+    display: none;
+}
+
+@media screen and (min-width:740px) {
+
+    /* --------J'ai mis la nav mobile en none------------- */
+
+    #navIndex {
+        display: none;
+    }
+
+    #contacter div {
+        display: grid;
+        margin-bottom: 3.5rem;
+    }
+
+    .mobilenav div .fab {
+        font-size: large;
+    }
+
+    input::placeholder {
+        text-align: center;
+        color: #699BF7;
+    }
+
+    .login-container {
+        float: none;
+    }
+
+    input[type=text] {
+        padding: 0.1rem;
+        margin-top: 1rem;
+        font-size: 1.7rem;
+        border-radius: 1.0rem;
+        border: 0.5rem solid rgba(0, 0, 0, 0);
+        width: 150px;
+        /* adjust as needed (as long as it doesn't break the topnav) */
+    }
+
+    input[type=password] {
+        padding: 0.1rem;
+        margin-top: 2rem;
+        font-size: 1.7rem;
+        border-radius: 1.0rem;
+        border: 0.5rem solid rgba(0, 0, 0, 0);
+        width: 150px;
+        /* adjust as needed (as long as it doesn't break the topnav) */
+    }
+
+    input[type=email] {
+        padding: 0.1rem;
+        margin-top: 1rem;
+        font-size: 1.7rem;
+        border-radius: 1.0rem;
+        border: 0.5rem solid rgba(0, 0, 0, 0);
+        width: 150px;
+        /* adjust as needed (as long as it doesn't break the topnav) */
+    }
+
+    .login-container button {
+        float: right;
+        padding: 0.1rem;
+        margin-top: 2rem;
+        width: 100px;
+        background: #699BF7;
+        border-radius: 1.0rem;
+        border: 0.5rem solid rgba(0, 0, 0, 0);
+        font-size: 1.7rem;
+        cursor: pointer;
+        margin-left: 1rem;
+        color: white;
+    }
+
+    #contacter textarea {
+        border: solid white 1rem;
+        font-size: large;
+        border-radius: 1rem;
+        font-family: Roboto;
+    }
+
+    #contacter Button {
+        justify-self: right;
+        border: solid 10px yellow;
+        border-radius: 5px;
+        font-size: large;
+        background-color: yellow;
+        color: #073590;
+        margin-top: 1rem;
+    }
+
+    #pageRegister {
+        display: none;
+    }
+
+    #social {
+        display: none;
+    }
+
+    header nav div {
+        display: inline;
+        margin-right: 1.5rem;
+    }
+
+    header nav {
+        /* vh = viewport height  100vh = 100% de la hauteur visible */
+        /* vw = viewport width  100vw = 100% de la largeur visible */
+        /* vmin = viewport min  vw ou vh, selon le plus petit des 2 */
+        /* vmax = viewport max  vw ou vh, selon le plus grand des 2 */
+        /* Image de fond */
+        background-color: rgba(0, 0, 0, 0.518);
+        background-image: url("../image/illusindoptique.jpg");
+        /* (../) permet de SORTIR du dossier CSS*/
+        background-position: center;
+        /* Positionner l'image dans le header*/
+        background-size: cover;
+        /* Couvrir le header avec l'image sans la déformer (perte de certaine partie de l'image*/
+        /* background-attachment: fixed;Permet de Figer l'image */
+    }
+
+    /* Le CSS s'applique uniquement a partir de 600px de largeur d'ecran */
+    /* Dans la media querie on ecris uniquement le code a modifier  */
+    :root {
+        font-size: 12px;
+    }
+}
+
+
+
+/*________________________________________________________________*
+
+                    Début partie Navigateur
+*_________________________________________________________________*/
+@media screen and (min-width:1080px) {
+
+    .mobilenav {
+        display: none;
+    }
+
+    #navIndex {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.459);
+    }
+
+    #navIndex img {
+        margin-top: 0.5rem;
+        margin-left: 2rem;
+        margin-bottom: 0.4rem;
+        width: 14rem;
+    }
+
+    #navIndex form {
+        margin-right: 1rem;
+    }
+
+    #navIndex form input {
+        margin-right: 1rem;
+        border: solid white 0.4rem;
+        font-size: small;
+        border-radius: 1rem;
+    }
+
+    #navIndex form button {
+        background-color: #699BF7;
+        border: solid 5px #699BF7;
+        border-radius: 15px;
+        font-size: large;
+        color: white;
+    }
+
+
+
+    /* Version Mobile */
+
+
+
+    /*_________________________________________________________________*
+
+                        Fin partie Navigateur
+*__________________________________________________________________*/
+
+
+
+
+
+    /*_________________________________________________________________*
+
+                  Début partie Formulaire de Contact
+*__________________________________________________________________*/
+
+    #principal {
+        /* Séparations des Sections des Formulaires */
+        display: inline-block;
+    }
+
+    #contacter {
+        margin-top: 3rem;
+        margin-left: 8rem;
+        border-radius: 1.2rem;
+        border: 1rem solid rgba(0, 0, 0, 0);
+        display: grid;
+        background-color: rgba(0, 0, 0, 0.514);
+    }
+
+    #contacter div {
+        display: flex;
+    }
+    
+    #contacter div input {
+        border: solid white 1rem;
+        font-size: large;
+        width: auto;
+        border-radius: 1rem;
+    }
+
+    #email {
+        margin-left: 2rem;
+    }
+
+    #contacter input {
+        border: solid white 1rem;
+        font-size: large;
+        width: auto;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+    }
+
+    #contacter textarea {
+        border: solid white 1rem;
+        font-size: large;
+        border-radius: 1rem;
+        font-family: Roboto;
+    }
+
+    #contacter Button {
+        justify-self: right;
+        border: solid 10px yellow;
+        border-radius: 5px;
+        font-size: large;
+        background-color: yellow;
+        color: #073590;
+        margin-top: 1rem;
+    }
+
+    /*_________________________________________________________________*
+
+                  Fin partie Formulaire de Contact
+*__________________________________________________________________*/
+
+
+
+
+
+    /*_________________________________________________________________*
+
+                Début partie redirection vers Register
+*__________________________________________________________________*/
+
+    #pageRegister {
+        margin-top: 1rem;
+        margin-left: 80rem;
+        border-radius: 1.2rem;
+        position: relative;
+        bottom: 45rem;
+        border: 1.2rem solid rgba(0, 0, 0, 0);
+        display: grid;
+        background-color: rgba(0, 0, 0, 0.514);
+    }
+
+    #pageRegister h1 {
+        color: yellow;
+    }
+
+    #pageRegister button {
+        justify-self: center;
+        background-color: yellow;
+        border: solid 10px yellow;
+        border-radius: 5px;
+        font-size: large;
+        color: #073590;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /*_________________________________________________________________*
+
+                  Fin partie Formulaire de Contact
+*__________________________________________________________________*/
+
+
+
+
+
+    /*_________________________________________________________________*
+
+                        Début partie Social
+*__________________________________________________________________*/
+
+    #social {
+        margin-left: 97rem;
+        display: inline;
+        position: relative;
+        bottom: 3.8rem;
+    }
+
+    #social .fab {
+        margin-left: 1rem;
+        font-size: 3rem;
+        color: white;
+    }
+
+    /*_________________________________________________________________*
+
+                          Fin partie Social
+*__________________________________________________________________*/
+}
