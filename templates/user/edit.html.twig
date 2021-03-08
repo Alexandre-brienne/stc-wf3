@@ -46,15 +46,18 @@
 
 				<nav class="menu_profil">
 
-					<a href="#"><img src="images/logo_geekandstart_W.png" alt="logo GaS" class="logoNav"></a>
+					<a href="{{path('membre')}}"><img src="{{asset('image/logo_geekandstart.png')}}" alt="logo GaS" class="logoNav"></a>
 
 					<section class="liste">
 
+
+
+
 						<ul>
 							<li>
-								<a href="#" class="onglet">Mon Profil<a></li>
+								<a href="{{ path('profil', {'username': app.user.username})}}" class="onglet">Mon Profil<a></li>
 									<li>
-										<a href="#" class="onglet">Messagerie</a>
+										<a href="{{ path('boitemessagerie',{'username': app.user.username})}}" class="onglet">Messagerie</a>
 									</li>
 									<li>
 										<a href="{{ path('app_logout') }}" class="deconnexion">Déconnexion</a>

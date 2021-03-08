@@ -381,6 +381,7 @@ h3{
 
         display: flex;
         justify-content: space-between;
+
     }
 
     .info_profil {
@@ -390,15 +391,11 @@ h3{
     .logo {
         display: initial;
         height: 5rem;
-        margin-top: 3rem;
-        margin-left: 1rem;
     }
 
 
     .liste {
         display: initial;
-        margin-top: 9rem;
-        margin-right: 1rem;
     }
 
     ul li {
