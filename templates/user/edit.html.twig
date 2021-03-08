@@ -1,12 +1,162 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="fr">
 
-{% block title %}Edit User{% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Modifier mon Profil - Geek N' Start</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+		<link rel="stylesheet" href="CSS/normalize.css">
+		<link rel="stylesheet" href=" {{asset('CSS/style5.css')}}">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	</head>
 
-{% block body %}
-    <h1>Edit User</h1>
+	<body>
+		<header>
+			<div class="profil">
+				<div class="info_profil">
+					<p>{{app.user.username}}</p>
+					<p>{{app.user.point}}
+						GeekCoin</p>
+				</div>
+				{% if app.user.imageprofil != null %}
+					<img src="{{ asset('uploads/' ~ app.user.imageprofil)}}" alt="profil1" class="photoprofil">
+				{% else %}
+					<img src="{{asset('image/profil.png')}}" alt="photo de profil" class="photoprofil">
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+				{% endif %}
+				<div>
+					<div class="collapse" id="navbarToggleExternalContent">
+						<div class="bg-transparent p-4">
+							<h5 class="text-light h4">Collapsed content</h5>
+							<span class="text-muted">Toggleable via the navbar brand.</span>
+						</div>
+					</div>
+					<nav class="navbar navbar-dark bg-transparent position-absolute bottom-0 end-0">
+						<div class="container-fluid">
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+						</div>
+					</nav>
 
-    <a href="{{ path('profil', {'username':user.username}) }}">back to list</a>
+				</div>
 
-{% endblock %}
+				<nav class="menu_profil">
+
+					<a href="#"><img src="images/logo_geekandstart_W.png" alt="logo GaS" class="logoNav"></a>
+
+					<section class="liste">
+
+						<ul>
+							<li>
+								<a href="#" class="onglet">Mon Profil<a></li>
+									<li>
+										<a href="#" class="onglet">Messagerie</a>
+									</li>
+									<li>
+										<a href="#" class="deconnexion">Déconnexion</a>
+									</li>
+								</ul>
+							</li>
+						</section>
+					</nav>
+
+				</header>
+				<main>
+					<section id="modifProfil">
+						<form method="post" id="form">
+							{{ form_start(form) }}
+							{{ form_widget(form) }}
+							<button>{{ button_label|default('envoyer') }}</button>
+							{{ form_end(form) }}
+
+							{# <input type="image" src="images/avataaars.png" class="avatar" required placeholder="image_profil">
+							                <p>Informations générales</p>
+							                <div id="form1">
+							                    <label class="recherche" for="recherche">
+							                        <span id="title">Je recherche:</span>
+							                        <select name="recherche" class="recherche" required placeholder="recherche">
+							                            <option value=""></option>
+							                        </select>
+							                    </label>
+							                    <label for="profession">
+							                        <span>Profession:</span>
+							                        <input type="text" class="profession" required placeholder="profession">
+							                    </label>
+							                    <label for="situation">
+							                        <span>Situation Amoureuse:</span>
+							                        <select name="situation" class="situation" required placeholder="situation">
+							                            <option value=""></option>
+							                            <option value="celibataire">Célibataire</option>
+							                            <option value="en couple">En Couple</option>
+							                            <option value="divorcé">Divorcé(e)</option>
+							                            <option value="veuf">Veuf</option>
+							                            <option value="veuve">Veuve</option>
+							                        </select>
+							                    </label>
+							                    <label for="date_naissance">
+							                        <span>Date de Naissance:</span>
+							                        <input type="date" class="date_naissance" required placeholder="date_naissance">
+							                    </label>
+							                    <label for="pays">
+							                        <span>Pays de Résidence:</span>
+							                        <input type="text" class="pays" required placeholder="pays">
+							                    </label>
+							                    <label for="ville">
+							                        <span>Ville:</span>
+							                        <input type="text" class="ville" required placeholder="ville">
+							                    </label>
+							                    <label for="dapartement">
+							                        <span>Département:</span>
+							                        <input type="text" class="dapartement" required placeholder="dapartement">
+							                    </label>
+							                    <label for="taille">
+							                        <span>Votre taille:</span>
+							                        <input type="text" class="taille" required placeholder="taille">
+							                    </label>
+							                    <label for="cheveux">
+							                        <span>Cheveux:</span>
+							                        <input type="text" class="cheveux" required placeholder="cheveux">
+							                    </label>
+							                    <label for="astrologique">
+							                        <span>Signe Astrologique:</span>
+							                        <input type="text" class="astrologique" required placeholder="astrologique">
+							                    </label>
+							                </div>
+							                <br>
+							                <p>Centres d'intérêt</p>
+							                <br>
+							                <div>
+							                    <label for="categories">
+							                        <span>Jeux-Vidéos</span>
+							                        <input type="text" required placeholder="categories">
+							                    </label>
+							                    <label for="categories">
+							                        <span>Informatiques</span>
+							                        <input type="text" required placeholder="categories">
+							                    </label>
+							                    <label for="categories">
+							                        <span>Lecture</span>
+							                        <input type="text" required placeholder="categories">
+							                    </label>
+							                    <label for="categories">
+							                        <span>Vidéos</span>
+							                        <input type="text" required placeholder="categories">
+							                    </label>
+							                    <label for="categories">
+							                        <span>Cosplay</span>
+							                        <input type="text" required placeholder="categories">
+							                    </label>
+							                </div>
+							                <button type="submit">Envoyer</button> #}
+						</form>
+					</section>
+				</main>
+				<script src="https://kit.fontawesome.com/e4895b9a2a.js" crossorigin="anonymous"></script>
+			</body>
+
+		</html>
+	</body>
+</html>
