@@ -77,11 +77,10 @@
     padding: 50px;
     box-sizing: border-box;
 }
-.header-index section:first-of-type{
+.phrase{
     /* 4 lignes "magiques" pour centrer parfaitement un bloc */
     display: flex;
     margin-left: 1.0rem;
-    text-align: center;
     background-color: rgba(105, 105, 105, 0.5);
     border-radius: 10px;
     
@@ -90,7 +89,25 @@
     width: 40%;
     padding: 3.0rem;
     box-sizing: border-box; 
-        
+    
+}
+
+.body-of-index .header-index .phrase.show{
+    display: none !important ;
+    padding: 1.6rem;
+    text-align: center;
+    color: #699BF7;
+    background-color: rgba(105, 105, 105, 0.5);
+    margin: auto;
+}
+.connexion-resp-index.show{
+    padding: 1.6rem;
+    text-align: center;
+    color: #699BF7;
+    background-color: rgba(105, 105, 105, 0.5);
+    width: 40%;
+    margin: auto;
+    border-radius: 10px;
 }
 
 .header-index .mobilenav {
@@ -163,7 +180,7 @@
     position:absolute;
     left: 50%;
     transform: translate(-50%);
-    bottom: 85%;
+    bottom: 90%;
     min-width:50px;
     max-width: 300px;
 }
@@ -315,6 +332,12 @@ footer hr{
     grid-template-columns: repeat(3, 1fr);
     text-decoration: none;
 }
+ .connexion-resp-index{
+    display: none;
+}
+.body-of-index .connexion-resp-index.show {
+    display: block !important;
+}
 
 /********************************* Vue tablette *************************/
 /* Ecran et a partir d'une largeur de 600px */
@@ -437,7 +460,7 @@ footer hr{
 
     .login-container {
             float: none;
-      }
+    }
     
     .body-of-index input[type=text] {
         padding-top: 0.5rem;
@@ -539,6 +562,15 @@ footer hr{
         margin: 0;
         padding: 1.0rem;
         margin-left: 20rem;
+    }
+    .body-of-index .header-index section .phrase .show{
+        display: none !important ;
+    }
+    .body-of-index .connexion-resp-index{
+        display: none;
+    }
+    .body-of-index .connexion-resp-index .show {
+        display: block !important ;
     }
 
 
@@ -646,6 +678,9 @@ footer hr{
 
         box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
     }
+    .body-of-index .connexion-resp-index{
+        display: none;
+    }
 }
 
 
@@ -676,6 +711,8 @@ footer hr{
 
 
 .register-header {
+    width: 100vw;
+    height: 100vh;
     background-image: url(../image/Bannier.png);
     margin: -0.5rem;
     background-position: center;
@@ -683,10 +720,34 @@ footer hr{
     
     
 }
+.principal2{
+    display: none;
+
+}
+.connexion2{
+    display: none;
+}
+.principal2{
+    position: absolute;
+    right: 10rem;
+}
+#connexion {
+    margin-top: 3.2rem;
+    margin-left: 3.125rem;
+    margin-bottom: 1.375rem;
+    border: 0.9375rem solid rgba(0, 0, 0, 0);
+    border-radius: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+#connexion h1 {
+    margin-left: 5rem;
+    color: #699BF7;
+}
 
 /*________________________________________________________________*
 
-                        Fin partie Corps
+Fin partie Corps
 *_________________________________________________________________*/
 
 
@@ -695,7 +756,7 @@ footer hr{
 
 /*________________________________________________________________*
 
-                    Début partie Navigateur
+Début partie Navigateur
 *_________________________________________________________________*/
 
 .register-nav { /* Navigateur */
@@ -724,16 +785,14 @@ footer hr{
 
 /*_________________________________________________________________*
 
-                        Fin partie Navigateur
+Fin partie Navigateur
 *__________________________________________________________________*/
 
 
 
 
-.register-body #principal { /* Séparations des Sections des Formulaires */
-    display: inline-block;
-    flex: 1;
-}
+
+
 #all{
     display:flex
 }
@@ -754,6 +813,10 @@ footer hr{
     background-color: rgba(0, 0, 0, 0.514);
 
 }
+.principal.show{
+    display: none !important;
+
+}
 
 .register-body #inscription div {
     justify-content: space-around;
@@ -763,7 +826,7 @@ footer hr{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
-   
+    
 }
 .register-grid3{
     display: flex;
@@ -781,6 +844,7 @@ footer hr{
 #ButtonContact-Rejoindre  { /* Lien "Nous Contacter" */
     margin-left: 2.5rem;
     color: yellow;
+    margin: 1rem;
     text-decoration: underline;
 }
 
@@ -792,6 +856,8 @@ footer hr{
     margin-left: 0.5rem;
     margin-bottom: 0.5rem;
     border-radius: 0.9rem;
+    font-size: 2rem;
+    padding: 0.5rem;
 }
 .register-body input[type="checkbox"], .accept-cgu{
     margin-top: 1.5rem;
@@ -803,7 +869,7 @@ footer hr{
 
 /*_________________________________________________________________*
 
-                        Fin partie inscription
+Fin partie inscription
 *__________________________________________________________________*/
 
 
@@ -812,10 +878,10 @@ footer hr{
 
 /* ________________________________________________________________*
 
-                        Début partie Connexion 
+Début partie Connexion 
 *__________________________________________________________________*/
 
-    
+
 
 
 
@@ -836,6 +902,7 @@ footer hr{
     margin-bottom: 0.9375rem;
 }
 
+
 /*_________________________________________________________________*
 
                         Fin partie Connexion
@@ -847,7 +914,7 @@ footer hr{
 
 /*_________________________________________________________________*
 
-                    Début partie des Formulaires 
+Début partie des Formulaires 
 *__________________________________________________________________*/
 
 .form-register {
@@ -891,7 +958,7 @@ footer hr{
 
 /*_________________________________________________________________*
 
-                Fin de la partie des Formulaires
+Fin de la partie des Formulaires
 *__________________________________________________________________*/
 
 @media screen  and (max-width: 1070px){
@@ -902,7 +969,9 @@ footer hr{
         display: initial;
         margin: 0.5rem;
         margin-right: 2rem;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
+        color: green;
+        text-decoration: none;
     }
     #inscription{
         margin-top: 2rem;
@@ -916,10 +985,10 @@ footer hr{
         display: none;
     }
     .register-body .fab{
-        font-size: 1rem;
+        font-size: 2rem;
         margin: 0.5rem;
     }
-
+    
     .register-body .lab {
         color:white;
         font-size: 1em;
@@ -939,6 +1008,34 @@ footer hr{
     }
     .register-grid2{
         display: initial;
+    }
+    .connexion2 {
+        margin-left: 3.125rem;
+        margin-right: 3.125rem;
+        margin-top: 3.125rem;
+        margin-bottom: 1.25rem;
+        border-top: solid rgba(0, 0, 0, 0);
+        border-radius: 1.25rem;
+        background-color: rgba(0, 0, 0, 0.514);
+        width: 25rem;
+    }
+    .connexion2 input{
+        border: solid white 0.700rem;
+        font-size: large;
+        border-radius: 0.9375rem;
+        margin: 0.5rem 2rem;
+    }
+    .connexion2 label{
+        margin: 0.1rem 1.5rem;
+    }
+    .connexion2.show{
+        display : none;
+    }
+    .connexion2 div {
+        display: grid;
+    }
+    .connexion2.show{
+        display: block !important;
     }
     
 }
