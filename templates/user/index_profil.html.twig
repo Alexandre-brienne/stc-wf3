@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<<<<<<< HEAD
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,76 +10,73 @@
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="{{asset('css/profil_membre.css')}}">
+		<link rel="stylesheet" href=" {{asset('css/profil_membre.css')}}">
 
 
 		<title>Profil Membre</title>
 	</head>
 
 	<body class="profil_body">
-			<header>
-			{% block header %}
-				<div class="profil">
-					<div class="info_profil">
-						<p>{{app.user.username}}</p>
-						<p>{{app.user.point}}
-							GeekCoin</p>
-					</div>
-					{% if app.user.imageprofil != null %}
-						<img src="{{ asset('uploads/' ~ app.user.imageprofil)}}" alt="profil1" class="photoprofil">
-					{% else %}
-						<img src="{{asset('image/profil.png')}}" alt="photo de profil" class="photoprofil">
-
-					{% endif %}
-
+		<header class="profil_header">
+			<div class="profil_membre">
+				<div class="profil_info">
+					<h3>{{app.user.username}}</h3>
+					<p>{{app.user.point}} GeekCoin</p>
 				</div>
+				{% if app.user.imageprofil != null %}
+					<img src="{{ asset('uploads/' ~ app.user.imageprofil)}}" alt="profil1" class="profil_photo">
+				{% else %}
+					<img src="{{asset('image/profil.png')}}" alt="photo de profil" class="profil_photo">
 
-				<div>
-					<div class="collapse" id="navbarToggleExternalContent">
-						<div class="bg-transparent p-4">
-							<h5 class="text-light h4">Collapsed content</h5>
-							<span class="text-muted">Toggleable via the navbar brand.</span>
-						</div>
+				{% endif %}
+			</div>
+
+			<div>
+				<div class="collapse" id="navbarToggleExternalContent">
+					<div class="bg-transparent p-4">
+						<h5 class="text-light h4">Collapsed content</h5>
+						<span class="text-muted">Toggleable via the navbar brand.</span>
 					</div>
-					<nav class="navbar navbar-dark bg-transparent position-absolute bottom-0 end-0">
-						<div class="container-fluid">
-							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-								<span class="navbar-toggler-icon"></span>
-							</button>
-						</div>
-					</nav>
-
 				</div>
-				<nav class="menu_profil">
+				<nav class="navbar navbar-dark bg-transparent position-absolute bottom-0 end-0">
+					<div class="container-fluid">
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+				</nav>
 
-					<a href="#"><img src="{{asset('image/logo_geekandstart.png')}}" alt="logo GaS" class="logo"></a>
+			</div>
 
-					<section class="liste">
+			<nav class="profil_menu">
 
-						<ul>
-							<li>
-								<a href="{{ path('profil', {'username': app.user.username})}}" class="onglet">Mon Profil<a></li>
-									<li>
-										<a href="{{ path('boitemessagerie',{'username': app.user.username})}}" class="onglet">Messagerie</a>
-									</li>
-									<li>
-										<a href="{{ path('app_logout')}}" class="deconnexion">Déconnexion</a>
-									</li>
-								</ul>
-							</li>
-						</section>
-					</nav>
-				{% endblock %}
+				<a href="#"><img src="{{asset('image/logo_geekandstart.png')}}" alt="logo GaS" class="profil_logo"></a>
+
+				<section class="profil_liste">
+
+					<ul>
+						<li class="profil_li">
+							<a href="{{ path('profil', {'username': app.user.username})}}" class="profil_onglet">Mon Profil<a></li>
+								<li class="profil_li">
+									<a href="{{ path('boitemessagerie',{'username': app.user.username})}}" class="profil_onglet">Messagerie</a>
+								</li>
+								<li class="profil_li">
+									<a href="{{ path('app_logout')}}" class="profil_deconnexion">Déconnexion</a>
+								</li>
+							</ul>
+						</li>
+					</section>
+				</nav>
 			</header>
 
 
 			<main class="profil_main_info">
 
 				<section>
+
 					<div class="profil_info_membre">
 
 						<img src="{{ asset('uploads/' ~ user.imageprofil)}}" alt="photoprofil" class="photo_membre">
-
 						<div class="profil_button">
 							{% if app.user.username == user.username %}
 								<a href="{{ path('profil_edit', {'username': user.username}) }}">
@@ -107,120 +103,36 @@
 								</div>
 
 							</div>
-							<p>profession :
-								{{ user.profession }}<</p><p>Département:{{user.dapartement}}</p><p>SituationAmoureuse:{{user.situation}}</p><p>Taille:{{user.taille}}cm</p><p>Cheveux:{{user.cheveux}}</p><p>SigneAstrologique:{{user.astrologique}}</p><p>Recherche:{{user.recherche}}</p></div><divclass="profil_interets"><h2class="profil_titre_interets">Centresd'intérêts</h2><divclass="profil_preferences"><div><p>{{dump(user)}}</p></div></div></div></div></section></main><footer></footer></body></body></html></p>
-=======
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+							<p>profession:{{ user.profession }}</p>
+							<p>Département:{{user.dapartement}}</p>
+							<p>Situation Amoureuse :
+								{{user.situation}}</p>
+							<p>Recherche:{{user.recherche}}</p>
+							<p>Taille :
+								{{user.taille}}
+								cm</p>
+							<p>Cheveux :
+								{{user.cheveux}}</p>
+							<p>Signe Astrologique :
+								{{user.astrologique}}</p>
+						</div>
+						<div class="profil_interets">
+							<h2 class="profil_titre_interets">Centres d'intérêts</h2>
+							<div class="profil_preferences">
+								<div>
+									<p>Cinema</p>
+								</div>
+								<div>
+									<p>Comics/Bd</p>
+								</div>
+							</div>
+						</div>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/profil_membre.css">
+					</div>
+				</section>
+			</main>
 
-
-    <title>Profil Membre</title>
-</head>
-
-<body class="profil_body">
-    <header class="profil_header">
-        <div class="profil_membre">
-            <div class="profil_info">
-                <p>Sarah</p>
-                <p>200 GeekCoin</p>
-            </div>
-            <img src="image/profil.png" alt="photo de profil" class="profil_photo">
-        </div>
-
-        <div>
-            <div class="collapse" id="navbarToggleExternalContent">
-                <div class="bg-transparent p-4">
-                    <h5 class="text-light h4">Collapsed content</h5>
-                    <span class="text-muted">Toggleable via the navbar brand.</span>
-                </div>
-            </div>
-            <nav class="navbar navbar-dark bg-transparent position-absolute bottom-0 end-0">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </nav>
-
-        </div>
-
-        <nav class="profil_menu">
-
-            <a href="#"><img src="image/logo_geekandstart_W.png" alt="logo GaS" class="profil_logo"></a>
-
-            <section class="profil_liste">
-
-                <ul>
-                    <li class="profil_li"><a href="#" class="profil_onglet">Mon Profil<a></li>
-                    <li class="profil_li"><a href="#" class="profil_onglet">Messagerie</a></li>
-                    <li class="profil_li"><a href="#" class="profil_deconnexion">Déconnexion</a></li>
-                </ul>
-
-            </section>
-        </nav>
-    </header>
-
-
-    <main class="profil_main_info">
-
-        <section>
-
-            <div class="profil_info_membre">
-
-                <img src="image/profil.png" alt="photoprofil" class="photo_membre">
-                <div class="profil_button">
-                    <button type="button" class="btn btn-light"><span class="profil_modif">Modifier le profil</span></button>
-                    <button type="button" class="btn btn-light"><i class="las la-envelope profil_i"></i></button>
-                </div>
-                <div class="profil_identite">
-                    <div class="profil_prenom">
-                        <div>
-                            <p class="profil_name">Lorem</p>
-                            <p>Marseille</p>
-                        </div>
-                        <div>
-                            <p>25ans</p>
-                        </div>
-                    </div>
-
-                    <p>Situation Amoureuse : Célibataire</p>
-                    <p>Pays de résidence : France</p>
-                    <p>Taille : 170 cm</p>
-                    <p>Cheveux : Blond</p>
-                    <p>Yeux : Verts</p>
-                    <p>Fumeur : non</p>
-                    <p>Signe Astrologique : Lion</p>
-                </div>
-                <div class="profil_interets">
-                    <h2 class="profil_titre_interets">Centres d'intérêts</h2>
-                    <div class="profil_preferences">
-                        <div>
-                            <p>Cinema</p>
-                        </div>
-                        <div>
-                            <p>Comics/Bd</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-
-    </footer>
-</body>
-
+			<footer></footer>
+		</body>
+	</body>
 </html>
->>>>>>> 3ecbe653191ff9eee0e0f7d88150f77c5878fada
