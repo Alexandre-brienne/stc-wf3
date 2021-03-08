@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="message">
+	{% for messagerie in messageries %}
+		
+			<p>{{ messagerie.expediteur.username }} {{ messagerie.message }}</p>
+
+    
+
+	{% else %}
+           <p>oh je suis dessolé mais il y'a pas de message avec cette personne :(</p>         
+	{% endfor %}
+</div>
+
+
+
+
+
+
+<button class="btn btnjs">Envoyer</button>
+    <pre>
+        {{ dump(messageries) }}
+    </pre>
+
+    <pre>
+        {{ dump(userid) }}
+    </pre>
+<style>
+    .message{
+        
+        color: red;
+
+    }
+</style>
+<script> 
+var userid = {{ userid }} 
+var urlajax = "{{ path('sendmessage') }}";
+
+</script>
+<script src="{{asset('js/message.js')}}"></script>
+{% endblock %}

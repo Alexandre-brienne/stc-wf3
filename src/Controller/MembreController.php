@@ -62,7 +62,7 @@ class MembreController extends AbstractController
         $userMessagerie = $user->getId();
 
         if ($userConnecte->getid() == $userMessagerie){
-        return $this->render('messagerie/index.html.twig', [
+        return $this->render('messagerie/index2.html.twig', [
             'messageries' => $messagerieRepository->boiteuser($userConnecte),
         ]);
     }    
@@ -104,10 +104,10 @@ class MembreController extends AbstractController
 
             return $this->render('messagerie/messageduo.html.twig', [
 
-                'messageries' => $messagerieRepository->MpUser($userConnecte, $iduser),
+                'messages' => $messagerieRepository->MpUser($userConnecte, $iduser),
                 'form' => $form->createView(),
-                'userid' => intval($iduser)
-                
+                'userid' => intval($iduser),
+                'messageries' => $messagerieRepository->boiteuser($userConnecte),
 
             ]);
         }

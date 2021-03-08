@@ -62,7 +62,7 @@ class MessagerieRepository extends ServiceEntityRepository
             FROM App\Entity\Messagerie m
             JOIN App\Entity\user u
             WHERE m.expediteur  = :id AND m.destinataire = :id2  OR m.expediteur  = :id2 AND m.destinataire = :id 
-            ORDER BY m.date_envoi ASC'
+            ORDER BY m.date_envoi DESC'
         )->setParameter('id', $expediteur)
             ->setParameter('id2', $destinataire);
         return $query->getResult();

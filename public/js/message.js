@@ -1,6 +1,7 @@
 let send = document.querySelector('.btnjs');
 let inputmessage = document.querySelector('textarea');
 
+
 console.log(inputmessage);
 console.log(userid);
 
@@ -38,7 +39,7 @@ async function refreshAjax (messageSaisie= ''){
     for (let index = 0; index < contenuAjax.messages.length; index++) {
         const element = contenuAjax.messages[index]; 
         boxmessage.innerHTML += `
-        <p>${element.expediteur} ${element.message}</p>`;
+        <div class = "container" ><p>${element.expediteur}</p><p>${element.message}</p></div>`;
     }
     console.log(contenuAjax);
 }
