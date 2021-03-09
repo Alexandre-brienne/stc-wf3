@@ -335,20 +335,19 @@ ________________________________________________________________________________
     border-radius: 1.2rem;
     border: 1rem solid rgba(0, 0, 0, 0);
     display: grid;
+    grid-template-columns: 1fr;
     background-color: rgba(0, 0, 0, 0.514);
 }
 
 #contacter div input {
     border: solid white 1rem;
     font-size: large;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1rem;
     border-radius: 1rem;
     justify-content: space-around;
 }
 
-#email {
-    margin-left: 1rem;
-}
+
 
 #contacter input {
     border: solid white 1rem;
@@ -443,3 +442,7 @@ ________________________________________________________________________________
 
                           Fin partie Social
 *__________________________________________________________________*/
+
+@media screen and ( min-width:775px ){
+    
+}
