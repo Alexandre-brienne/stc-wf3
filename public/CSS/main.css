@@ -87,6 +87,7 @@
     background-color: rgba(105, 105, 105, 0.5);
     border-radius: 10px;
     
+    
     color: #699BF7;
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
     width: 40%;
@@ -155,6 +156,7 @@
     right: 0rem;
     left: 0;
     z-index: 1;
+    padding: 0.5rem;
 }
 
 .header-index nav div a {
@@ -199,7 +201,7 @@
 }
 
 .body-of-index p {
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 .header-index section:first-of-type {
@@ -385,6 +387,7 @@ footer hr{
     }
     .nav-index{
         display: flex;
+        padding: 0.5rem;
     }
     
 
@@ -506,6 +509,7 @@ footer hr{
         border: solid white 0.700rem;
         width: 150px;
         height: 3rem;
+        margin-right: 0.5rem;
       }
 
     .body-of-index input[type=Password] {
@@ -665,6 +669,11 @@ footer hr{
         display: flex;
         margin-right: 10rem;
         text-decoration: underline;
+    }
+
+
+    .body-of-index p {
+        font-size: 2rem;
     }
     
     .main_of-section section {
@@ -1069,7 +1078,7 @@ Fin de la partie des Formulaires
     .connexion2.show{
         display: block !important;
     }
-    
+
 }
 
 
@@ -1099,6 +1108,8 @@ footer li{
 footer p{
     text-align: center;
     color: white;
+    font-size: 1.5rem !important
+    
 
 }
 footer hr{
@@ -1134,6 +1145,7 @@ footer hr{
 }
 
 .list{
+    
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     text-decoration: none;

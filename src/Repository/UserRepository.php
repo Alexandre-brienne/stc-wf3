@@ -69,7 +69,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
         // ATTENTION: REQUETE EN DQL (Doctrine Query Language)
         $sql = 
-            'UPDATE User
+            'UPDATE user
             SET user.date_connexion =:connexion
             WHERE user.id =:id
           ';
