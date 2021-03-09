@@ -156,6 +156,7 @@
     right: 0rem;
     left: 0;
     z-index: 1;
+    padding: 0.5rem;
 }
 
 .header-index nav div a {
@@ -386,6 +387,7 @@ footer hr{
     }
     .nav-index{
         display: flex;
+        padding: 0.5rem;
     }
     
 
@@ -529,7 +531,6 @@ footer hr{
         border: none;
         width: 150px;
         height: 3rem;
-        margin-right: 0.5rem;
          /* adjust as needed (as long as it doesn't break the topnav) */
       }
 
