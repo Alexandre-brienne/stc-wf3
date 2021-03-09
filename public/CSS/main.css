@@ -507,6 +507,7 @@ footer hr{
         border: solid white 0.700rem;
         width: 150px;
         height: 3rem;
+        margin-right: 0.5rem;
       }
 
     .body-of-index input[type=Password] {
