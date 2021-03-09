@@ -1142,6 +1142,8 @@ footer hr{
 
 .list{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     text-decoration: none;
+    margin-left: 25vw;
+    margin-right: 25vw;
 }
