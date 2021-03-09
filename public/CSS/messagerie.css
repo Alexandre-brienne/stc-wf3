@@ -361,8 +361,9 @@ h3{
     /***********Partie header***************/
   
     header{
-        padding-bottom: 0;
+        padding-bottom: 2rem;
     }
+    
     .navbar{
         display: none;
     }
