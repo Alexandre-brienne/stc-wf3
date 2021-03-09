@@ -1,0 +1,294 @@
+/**VUE MOBILE(min 350px)**/
+
+
+/**Partie Header***/
+
+body {
+    background-color: #111A39;
+    font-family: Roboto;
+}
+
+header {
+    position: relative;
+    background-color: #2e416f;
+    padding-bottom: 3rem;
+}
+
+
+.profil {
+    position: relative;
+    justify-content: right;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+    color: white;
+    display: flex;
+    z-index: 1;
+    top: 0;
+}
+
+
+.photoprofil {
+    height: 4rem;
+    border-radius: 50%;
+    margin-top: 0.6rem
+}
+
+.menu_profil {
+
+    display: none;
+}
+
+
+.info_profil {
+    margin-top: 0.8rem;
+    padding-right: 0.5rem;
+
+}
+
+
+.logoNav {
+    display: none;
+}
+
+
+.liste {
+    display: none;
+}
+
+#modifProfil {
+    background-color: #2E416F;
+    margin-top: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+#form {
+    margin: 2rem;
+}
+
+.avatar {
+    width: 15rem;
+    border-radius: 50%;
+
+}
+
+#form p {
+    color: white;
+    font-size: larger;
+}
+
+#form label {
+    display: grid;
+    margin: 1rem;
+}
+
+#form label span {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: medium;
+}
+
+#form label select {
+    border: 0.6rem solid white;
+    border-radius: 0.5rem;
+    font-size: large;
+    font-family: Roboto;
+    color: black;
+}
+
+#form label input {
+    border: 0.6rem solid white;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+#form1 label input {
+    width: max-content;
+}
+
+#form1 label select {
+    width: max-content;
+}
+
+#form button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: rgb(185, 185, 185);
+    border: 1rem solid rgb(185, 185, 185);
+    border-radius: 0.5rem;
+    font-size: larger;
+    color: black;
+}
+
+
+#edit_profil_categories{
+    display: flex;
+}
+
+/**VUE TABLETTE(min:600px) **/
+
+@media screen and (min-width: 600px) {
+
+    /*Partie Header*/
+
+    .profil {
+        color: white;
+        display: flex;
+        z-index: 1;
+        justify-content: right;
+        margin-right: 1.5rem;
+        top: 0;
+    }
+
+
+    .photoprofil {
+        height: 4rem;
+        border-radius: 50%;
+        margin-top: 0.6rem
+    }
+
+
+    .info_profil {
+        margin-top: 0.8rem;
+        padding-right: 0.5rem;
+    }
+
+    #modifProfil {
+        background-color: #2E416F;
+        margin-top: 5rem;
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
+    #form {
+        margin: 3rem;
+    }
+}
+
+/**VUE ORDI**/
+
+
+@media screen and (min-width: 1080px) {
+
+    /**Partie header**/
+
+   
+
+    .navbar {
+        display: none;
+    }
+
+    .photoprofil {
+        height: 6rem;
+        margin-top: 1rem;
+        border-radius: 50%;
+        padding-left: 1rem;
+    }
+
+    .profil {
+        color: white;
+    }
+
+
+
+    .menu_profil {
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info_profil {
+        margin-top: 2rem;
+    }
+
+    .logoNav {
+        display: initial;
+        width: 20rem;
+        position: absolute;
+        left: 2rem;
+        bottom: 2rem;
+    }
+
+    .logo {
+        display: initial;
+        height: 5rem;
+        margin-left: 1rem;
+        margin-top: -4rem;
+    }
+    
+    .liste {
+        display: initial;
+        margin-right: 0.4rem;
+    }
+
+    ul li {
+        display: inline;
+        padding: 10px;
+    }
+
+    .onglet {
+        color: #49788C;
+        text-decoration: none;
+        text-transform: uppercase;
+
+    }
+
+    .deconnexion {
+        color: red;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+
+    #modifProfil {
+        background-color: #2E416F;
+        margin-top: 5rem;
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+
+    #form {
+        margin: 5rem;
+    }
+
+    .avatar {
+        width: 12rem;
+        border-radius: 50%;
+
+    }
+
+    #form p {
+        color: white;
+        font-size: larger;
+    }
+
+    #form label {
+        display: grid;
+        margin: 1.5rem;
+    }
+
+    #form label span {
+        color: white;
+        font-size: medium;
+    }
+
+    #form label select {
+        border: 0.6rem solid white;
+        border-radius: 0.5rem;
+        color: black;
+    }
+
+    #form label input {
+        border: 0.6rem solid white;
+        border-radius: 0.5rem;
+        color: black;
+    }
+
+    #form1 label input {
+        width: max-content;
+    }
+
+    #form1 label select {
+        width: max-content;
+    }
+}

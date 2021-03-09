@@ -43,6 +43,6 @@ async function refreshAjax (messageSaisie= ''){
     }
     console.log(contenuAjax);
 }
-setInterval(refreshAjax, 500)
+setInterval(refreshAjax, 1000)
 
 send.addEventListener('click',message);

@@ -49,7 +49,7 @@ class MembreController extends AbstractController
     #[Route('/profil/{username}', name: 'profil', methods: ['GET'])]
     public function profil(User $user): Response
     {
-        return $this->render('user/show.html.twig', [
+        return $this->render('user/index_profil.html.twig', [
             'user' => $user,
         ]);
     }
@@ -214,7 +214,7 @@ class MembreController extends AbstractController
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $imageFile = $form->get('image_profil')->getData();
-
+                dump($imageFile);
                 if ($imageFile) {
                     $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                     $safeFilename = $slugger->slug($originalFilename);
@@ -240,7 +240,7 @@ class MembreController extends AbstractController
 
 
                 $this->getDoctrine()->getManager()->flush();
-                // return $this->redirectToRoute('membre');
+                return $this->redirectToRoute('membre');
             }
             dump($user);
             return $this->render('user/edit.html.twig', [
