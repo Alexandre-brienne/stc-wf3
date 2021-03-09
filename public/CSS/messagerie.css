@@ -329,7 +329,7 @@ h2 {
         margin-top: 1rem;
         margin-left: 4rem;
     
-}
+    }
 
 h3{
     font-size: smaller;
@@ -349,14 +349,14 @@ h3{
     margin-bottom: 0px;
 }
     
-    
+}   
 
 
 
 /*****************************VUE ORDI***************************************/
 
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px){
 
     /***********Partie header***************/
   
@@ -391,6 +391,8 @@ h3{
     .logo {
         display: initial;
         height: 5rem;
+        margin-top: -4rem;
+        margin-left: 1rem;
     }
 
 
