@@ -87,6 +87,7 @@
     background-color: rgba(105, 105, 105, 0.5);
     border-radius: 10px;
     
+    
     color: #699BF7;
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
     width: 40%;
@@ -199,7 +200,7 @@
 }
 
 .body-of-index p {
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 .header-index section:first-of-type {
@@ -527,6 +528,7 @@ footer hr{
         border: none;
         width: 150px;
         height: 3rem;
+        margin-right: 0.5rem;
          /* adjust as needed (as long as it doesn't break the topnav) */
       }
 
@@ -665,6 +667,11 @@ footer hr{
         display: flex;
         margin-right: 10rem;
         text-decoration: underline;
+    }
+
+
+    .body-of-index p {
+        font-size: 2rem;
     }
     
     .main_of-section section {
