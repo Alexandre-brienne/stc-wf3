@@ -202,11 +202,10 @@ header {
     }
 
     .logoNav {
-        display: initial;
-        width: 20rem;
-        position: absolute;
-        left: 2rem;
-        bottom: 2rem;
+            display: initial;
+            height: 5rem;
+            margin-top: -4rem;
+            margin-left: 1rem;
     }
 
     .logo {
