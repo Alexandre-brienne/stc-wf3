@@ -64,6 +64,8 @@ header {
 
 #form {
     margin: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .avatar {
