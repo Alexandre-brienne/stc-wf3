@@ -35,9 +35,9 @@ class EditProfilType extends AbstractType
                     new Image([
                         // "maxsize" => "10240k",
                         'minWidth' => 200,
-                        'maxWidth' => 1000,
+                        'maxWidth' => 12000,
                         'minHeight' => 200,
-                        'maxHeight' => 1000,
+                        'maxHeight' => 12000,
                     ])
                 ]
 
