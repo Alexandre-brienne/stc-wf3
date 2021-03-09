@@ -6,42 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/stylecontact.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" 
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
 <body>
     <header>
-        <nav id="navIndex">
-            <a href="#"><img src="images/logo_geekandstart_W.png" alt="logo"></a>
-            <div class="login-container">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Pseudo" name="username">
-                    <input type="password" placeholder="Mot de passe" name="psw">
-                    <button type="submit">connexion</button>
+                <nav class="nav-contact">
+                    <div class="logos-contact">
+						<img class="imagelogo-contact" src="image/logo_geekandstart.png" alt="logo">
+					</div>
+					<div class="socialnetwork-contact">
+						<ul>
+						<li><i class="lab la-instagram"></i></li>
+						<li><i class="lab la-facebook-f"></i></li>
+						<li><i class="lab la-twitter"></i></li>
+						</ul>
+					</div>
+					<div class="login-container-contact">
+						<form method="POST">
+								<input type="text" placeholder="Pseudo"  id="inputUsername-contact" name="username" required autofocus>
+								<input type="password" placeholder="Mot de passe" id="inputPassword-contact" name="password">
+								<input type="hidden" name="_csrf_token" >
+								<button type="submit">connexion</button>
+						</form>
+					</div>
+				</nav>
+        <section class="all-contact">
+            <section id="principal">
+                <form method="post" id="contacter">
+                    <div>
+                        <input type="text" placeholder="nom" name="Nom Prenom">
+                        <input id="email" type="email" placeholder="email" name="Votre e-mail">
+                    </div>
+                    <input type="text" placeholder="objet" name="Objet">
+                    <textarea name="message" placeholder="Votre message" id="message" cols="30" rows="10"></textarea>
+                    <button type="submit">Contacte-Nous</button>
                 </form>
-            </div>
-        </nav>
-        <section id="principal">
-            <form method="post" id="contacter">
-                <div>
-                    <input type="text" placeholder="nom" name="Nom Prenom">
-                    <input id="email" type="email" placeholder="email" name="Votre e-mail">
+            </section>
+            <section id="principal">
+                <div id="pageRegister">
+                    <h1>Pas de compte?</h1>
+                    <button type="button"><a href="register.html">Rejoins-Nous</a></button>
                 </div>
-                <input type="text" placeholder="objet" name="Objet">
-                <textarea name="message" placeholder="Votre message" id="message" cols="30" rows="10"></textarea>
-                <button type="submit">Contacte-Nous</button>
-            </form>
-        </section>
-        <section id="principal">
-            <div id="pageRegister">
-                <h1>Pas de compte?</h1>
-                <button type="button"><a href="register.html">Rejoins-Nous</a></button>
-            </div>
-        </section>
-        <aside id="social">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </aside>
+            </section>
+        </section>        
     </header>
     <script src="https://kit.fontawesome.com/e4895b9a2a.js" crossorigin="anonymous"></script>
 </body>
